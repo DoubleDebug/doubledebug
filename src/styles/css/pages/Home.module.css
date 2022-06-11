@@ -1,0 +1,13 @@
+.pageContainer {
+  display: grid;
+  padding-top: 5rem;
+}
+
+.mainContainer {
+  display: grid;
+  padding: 1rem;
+  border: 1px solid silver;
+  margin: auto;
+}
+
+/*# sourceMappingURL=Home.module.css.map */
