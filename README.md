@@ -4,6 +4,6 @@ This is my portfolio website where I showcase my work experience, past projects 
 
 Tech stack:
 
--   NextJS
--   Typescript
--   SASS
+- NextJS
+- Typescript
+- Chakra UI

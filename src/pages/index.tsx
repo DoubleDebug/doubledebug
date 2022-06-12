@@ -1,18 +1,18 @@
-import css from '../styles/scss/pages/Home.module.scss';
+import { Box } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { HomepageCTA } from '../components/homepageCTA';
 
 export const Home: NextPage = () => {
   return (
-    <div className={css.pageContainer}>
+    <div>
       <Head>
         <title>Dusan Dodic | Junior full stack web developer</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
-      <main className={css.mainContainer}>
-        <h1>Dusan Dodic</h1>
-        <p>Junior full stack web developer</p>
-      </main>
+      <Box height={'80vh'}>
+        <HomepageCTA />
+      </Box>
     </div>
   );
 };
