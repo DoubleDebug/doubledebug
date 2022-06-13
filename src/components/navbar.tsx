@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -28,10 +29,11 @@ export const NavLink = ({ children }: { children: ReactNode }) => (
 
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const router = useRouter();
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+    <Box bg={useColorModeValue('gray.200', 'gray.900')} px={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-        <Link display="flex" alignItems="center" cursor="pointer" href="#">
+        <Link display="flex" alignItems="center" cursor="pointer" href="/">
           <Image
             src={
               colorMode === 'light' ? '/avatar_light.png' : '/avatar_dark.png'
@@ -42,7 +44,12 @@ const Nav = () => {
         </Link>
 
         <Flex alignItems={'center'}>
-          <Button variant="solid" mr={4} colorScheme="orange">
+          <Button
+            variant="solid"
+            mr={4}
+            colorScheme="blue"
+            onClick={() => router.push('/projects/explore')}
+          >
             Explore projects
           </Button>
           <Stack direction={'row'} spacing={7}>

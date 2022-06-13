@@ -1,3 +1,4 @@
+import css from '../styles/Footer.module.css';
 import {
   Box,
   chakra,
@@ -8,7 +9,11 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faTwitter,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactNode } from 'react';
 
@@ -47,7 +52,7 @@ const SocialButton = ({
 export const Footer = () => {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      bg={useColorModeValue('gray.100', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container
@@ -59,17 +64,15 @@ export const Footer = () => {
         align={'center'}
       >
         <Stack direction={'row'} spacing={6}>
-          <Link href={'#'}>Home</Link>
-          <Link href={'#'}>About</Link>
-          <Link href={'#'}>Blog</Link>
-          <Link href={'#'}>Contact</Link>
+          <Link href="/projects/explore">Projects</Link>
+          <Link href="/blog">Blog</Link>
         </Stack>
       </Container>
 
       <Box
         borderTopWidth={1}
         borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.700')}
+        borderColor={useColorModeValue('gray.300', 'gray.700')}
       >
         <Container
           as={Stack}
@@ -80,16 +83,31 @@ export const Footer = () => {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2022 Dušan Dodić. All rights reserved.</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'#'}>
-              <FontAwesomeIcon icon={faCircle} />
+            <SocialButton
+              label={'Github'}
+              href={'https://github.com/DoubleDebug'}
+            >
+              <div className={css.socialMediaButton} title="Github">
+                <FontAwesomeIcon icon={faGithub} />
+              </div>
             </SocialButton>
-            <SocialButton label={'YouTube'} href={'#'}>
-              <FontAwesomeIcon icon={faCircle} />
+            <SocialButton
+              label={'YouTube'}
+              href={'https://www.youtube.com/c/DoubleDYouTube'}
+            >
+              <div className={css.socialMediaButton} title="YouTube">
+                <FontAwesomeIcon icon={faYoutube} />
+              </div>
             </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
-              <FontAwesomeIcon icon={faCircle} />
+            <SocialButton
+              label={'Twitter'}
+              href={'https://twitter.com/YoutubeDoubleD'}
+            >
+              <div className={css.socialMediaButton} title="Twitter">
+                <FontAwesomeIcon icon={faTwitter} />
+              </div>
             </SocialButton>
           </Stack>
         </Container>

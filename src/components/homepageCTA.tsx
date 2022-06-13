@@ -6,10 +6,13 @@ import {
   Heading,
   Text,
   Button,
-  IconButton,
 } from '@chakra-ui/react';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export const HomepageCTA = () => {
+  const router = useRouter();
+
   return (
     <Container maxW={'7xl'}>
       <Stack
@@ -18,30 +21,25 @@ export const HomepageCTA = () => {
         py={{ base: 20, md: 28 }}
         direction={{ base: 'column', md: 'row' }}
       >
+        <Flex
+          flex="0.5"
+          justify={'center'}
+          align={'center'}
+          position={'relative'}
+          w={'full'}
+        >
+          <Box rounded="full" boxShadow="2xl">
+            <Image src="/favicon.png" width={300} height={300} />
+          </Box>
+        </Flex>
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
           >
-            <Text
-              as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: '30%',
-                position: 'absolute',
-                bottom: 1,
-                left: 0,
-                bg: 'red.400',
-                zIndex: -1,
-              }}
-            >
-              Dušan Dodić,
-            </Text>
-            <br />
-            <Text as={'span'} color={'red.400'}>
+            <Text mb={3}>Dušan Dodić,</Text>
+            <Text as={'span'} color={'blue.300'}>
               a full stack web developer.
             </Text>
           </Heading>
@@ -56,49 +54,18 @@ export const HomepageCTA = () => {
             direction={{ base: 'column', sm: 'row' }}
           >
             <Button
-              rounded={'full'}
               size={'lg'}
-              fontWeight={'normal'}
               px={6}
-              colorScheme={'red'}
-              bg={'red.400'}
-              _hover={{ bg: 'red.500' }}
+              colorScheme={'blue'}
+              onClick={() => router.push('/projects/explore')}
             >
-              Get started
+              Explore projects
             </Button>
-            <Button rounded={'full'} size={'lg'} fontWeight={'normal'} px={6}>
-              How It Works
+            <Button size={'lg'} fontWeight={'normal'} px={6}>
+              Hire me
             </Button>
           </Stack>
         </Stack>
-        <Flex
-          flex="0.5"
-          justify={'center'}
-          align={'center'}
-          position={'relative'}
-          w={'full'}
-        >
-          <Box
-            position={'relative'}
-            height={'300px'}
-            rounded={'2xl'}
-            boxShadow={'2xl'}
-            width={'full'}
-            overflow={'hidden'}
-          >
-            <IconButton
-              aria-label={'Play Button'}
-              variant={'ghost'}
-              _hover={{ bg: 'transparent' }}
-              size={'lg'}
-              color={'white'}
-              position={'absolute'}
-              left={'50%'}
-              top={'50%'}
-              transform={'translateX(-50%) translateY(-50%)'}
-            />
-          </Box>
-        </Flex>
       </Stack>
     </Container>
   );
