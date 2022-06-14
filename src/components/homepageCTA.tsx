@@ -29,7 +29,7 @@ export const HomepageCTA = () => {
           w={'full'}
         >
           <Box rounded="full" boxShadow="2xl">
-            <Image src="/favicon.png" width={300} height={300} />
+            <Image src="/images/avatar_circle.png" width={300} height={300} />
           </Box>
         </Flex>
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>

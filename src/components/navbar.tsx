@@ -36,7 +36,9 @@ const Nav = () => {
         <Link display="flex" alignItems="center" cursor="pointer" href="/">
           <Image
             src={
-              colorMode === 'light' ? '/avatar_light.png' : '/avatar_dark.png'
+              colorMode === 'light'
+                ? '/images/avatar_light.png'
+                : '/images/avatar_dark.png'
             }
             width={50}
             height={50}

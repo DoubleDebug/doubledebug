@@ -1,10 +1,10 @@
 import { Box, CloseButton, Text } from '@chakra-ui/react';
 
-interface IProjectHeaderProps {
-  name: string;
+interface IOSWindowHeaderProps {
+  windowTitle: string;
 }
 
-const ProjectHeader: React.FC<IProjectHeaderProps> = (props) => {
+const OSWindowHeader: React.FC<IOSWindowHeaderProps> = (props) => {
   return (
     <Box
       display="flex"
@@ -13,17 +13,17 @@ const ProjectHeader: React.FC<IProjectHeaderProps> = (props) => {
       width="full"
       height="30px"
       borderBottom="1px solid silver"
-      className="projectHeader"
+      className="draggable"
       paddingLeft="1rem"
       cursor="all-scroll"
     >
       <Box rounded="full" h="15px" w="15px" bgColor="green.300" />
       <Text variant="blue" size="lg">
-        {props.name}
+        {props.windowTitle}
       </Text>
       <CloseButton ml="auto" />
     </Box>
   );
 };
 
-export default ProjectHeader;
+export default OSWindowHeader;

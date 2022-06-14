@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" type="image/x-icon" href="favicon.png" />
       </Head>
       <Nav />
       <Component {...pageProps} />

@@ -1,0 +1,21 @@
+.startMenu {
+  animation: slideUp 0.5s ease, fadeIn 1s ease;
+}
+
+@keyframes slideUp {
+  from {
+    height: 0;
+  }
+  to {
+    height: 400px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}

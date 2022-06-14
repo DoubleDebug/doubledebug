@@ -1,9 +1,23 @@
-import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
-import Draggable from 'react-draggable';
-import ProjectWindow from '../../components/projectWindow';
+import fs from 'fs/promises';
+import path from 'path';
+import OperatingSystem from '../../components/operatingSystem/operatingSystem';
 
-const ExploreProjects: React.FC = () => {
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), 'public/data/projects.json');
+  const projectsRaw = await fs.readFile(filePath);
+  const projectsJson = JSON.parse(projectsRaw.toString());
+
+  return {
+    props: {
+      data: projectsJson.projects,
+    },
+  };
+}
+
+const ExploreProjects: React.FC<{ data: ProjectInfo[] }> = ({
+  data: projects,
+}) => {
   return (
     <>
       <Head>
@@ -11,14 +25,7 @@ const ExploreProjects: React.FC = () => {
         <meta name="description" content="Web developer portfolio website" />
       </Head>
       <main>
-        <Box width="full" height="200vh" padding="2rem">
-          <Draggable bounds="parent" handle=".projectHeader">
-            <ProjectWindow
-              url="https://fake-reddit.com"
-              name="Reddit clone with React, Typescript and Firebase"
-            />
-          </Draggable>
-        </Box>
+        <OperatingSystem projects={projects} />
       </main>
     </>
   );
