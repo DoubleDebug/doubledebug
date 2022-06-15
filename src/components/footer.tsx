@@ -37,7 +37,7 @@ const SocialButton = ({
       href={href}
       display={'inline-flex'}
       alignItems={'center'}
-      justifyContent={'center'}
+      justifyContent="center"
       transition={'background 0.3s ease'}
       _hover={{
         bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
