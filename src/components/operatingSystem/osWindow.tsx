@@ -1,8 +1,10 @@
 import css from '../../styles/OSWindow.module.css';
 import { Box, ColorMode, useColorMode } from '@chakra-ui/react';
 import OSWindowHeader from './osWindowHeader';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { OSContext } from './osContext';
+import { playPopupAnimation } from '../../utils/animations/popup';
+import { playPopoutAnimation } from '../../utils/animations/popout';
 
 interface IOSWindowProps {
   project: ProjectInfo;
@@ -33,6 +35,18 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
   const { colorMode } = useColorMode();
   const { setActiveWindowId } = useContext(OSContext);
   const [isClosing, setIsClosing] = useState(false);
+  const windowRef = useRef<HTMLDivElement>();
+
+  useEffect(() => {
+    playPopupAnimation(windowRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (isClosing) {
+      playPopoutAnimation(windowRef.current);
+      setIsClosing(false);
+    }
+  }, [isClosing]);
 
   return (
     <Box
@@ -41,17 +55,17 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
       bgColor={getWindowColor(colorMode, isActive)}
       zIndex={isActive ? 1 : 0}
       {...rest}
-      className={`os-window ${css.window} ${isClosing ? css.closing : ''}`}
+      width={project.windowSize.w}
+      height={project.windowSize.h}
+      className={`os-window ${css.window}`}
+      ref={windowRef}
     >
       <OSWindowHeader
         windowTitle={project.title}
         windowId={project.id}
         setIsClosing={setIsClosing}
       />
-      <Box
-        padding="1rem 0 0 1rem"
-        onMouseDown={() => setActiveWindowId(project.id)}
-      >
+      <Box padding="1rem" onMouseDown={() => setActiveWindowId(project.id)}>
         <iframe
           src={project.url}
           width="100%"

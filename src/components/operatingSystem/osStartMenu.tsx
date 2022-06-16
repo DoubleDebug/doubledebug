@@ -4,19 +4,33 @@ import {
   Button,
   Grid,
   Heading,
-  Skeleton,
   Stack,
   Text,
   useColorMode,
 } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+  faBabyCarriage,
   faBars,
+  faBomb,
+  faBug,
+  faBusSimple,
+  faCheck,
+  faCloudSun,
   faCog,
+  faDiceD6,
+  faFolder,
   faImage,
+  faPlay,
   faPowerOff,
   faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faBluetooth,
+  faDiscord,
+  faDropbox,
+} from '@fortawesome/free-brands-svg-icons';
 
 const OSStartMenu: React.FC = () => {
   const { colorMode } = useColorMode();
@@ -50,19 +64,37 @@ const OSStartMenu: React.FC = () => {
           <Text fontSize="lg">START MENU</Text>
         </Heading>
         <Grid gridTemplateColumns="29% 29% 29%" columnGap={2} rowGap={2}>
-          {Array(12)
-            .fill(null)
-            .map((_, index) => (
-              <Skeleton
-                height={14}
-                rounded="lg"
-                speed={1.5}
-                key={`start-menu-skeleton-${index}`}
-              />
-            ))}
+          <StartMenuApps
+            icons={[
+              faFolder,
+              faBabyCarriage,
+              faBluetooth,
+              faPlay,
+              faBomb,
+              faBug,
+              faBusSimple,
+              faCheck,
+              faCloudSun,
+              faDiceD6,
+              faDiscord,
+              faDropbox,
+            ]}
+          />
         </Grid>
       </Grid>
     </Box>
+  );
+};
+
+const StartMenuApps: React.FC<{ icons: IconProp[] }> = (props) => {
+  return (
+    <>
+      {props.icons.map((icon, index) => (
+        <Button height={14} rounded="lg" key={`windows-app-${index}`}>
+          <FontAwesomeIcon icon={icon} />
+        </Button>
+      ))}
+    </>
   );
 };
 

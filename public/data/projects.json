@@ -14,7 +14,15 @@
                 "Material UI"
             ],
             "url": "https://fake-reddit.com",
-            "iconURL": "https://i.imgur.com/LSSbGSc.png"
+            "iconURL": "https://i.imgur.com/LSSbGSc.png",
+            "windowSize": {
+                "w": 1000,
+                "h": 700
+            },
+            "iconOffset": {
+                "x": 0,
+                "y": 10
+            }
         },
         {
             "id": 2,
@@ -26,7 +34,15 @@
                 "Javascript"
             ],
             "url": "https://minesweeper-52419.web.app",
-            "iconURL": "https://i.imgur.com/7rcDJEy.png"
+            "iconURL": "https://i.imgur.com/7rcDJEy.png",
+            "windowSize": {
+                "w": 500,
+                "h": 700
+            },
+            "iconOffset": {
+                "x": 0,
+                "y": 30
+            }
         }
     ]
 }

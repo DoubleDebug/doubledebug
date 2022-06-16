@@ -33,6 +33,7 @@ const OSIcon: React.FC<IOSIconProps & any> = ({
       maxHeight={100}
       overflow="hidden"
       ml="5rem"
+      cursor="default"
       border={isSelected ? '1px dotted silver' : undefined}
       onClick={(e) => {
         e.stopPropagation();

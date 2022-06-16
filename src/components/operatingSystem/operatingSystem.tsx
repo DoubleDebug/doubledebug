@@ -50,8 +50,12 @@ const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
               bounds="parent"
               handle=".draggable"
               positionOffset={{
-                x: -40,
+                x: -60,
                 y: 0,
+              }}
+              defaultPosition={{
+                x: proj.iconOffset.x,
+                y: proj.iconOffset.y,
               }}
               key={`os-icon-${index}`}
             >
@@ -63,6 +67,10 @@ const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
               bounds="parent"
               handle=".draggable"
               key={`os-window-${index}`}
+              defaultPosition={{
+                x: Math.round(Math.random() * 200),
+                y: Math.round(Math.random() * 100),
+              }}
             >
               <OSWindow project={proj} isActive={proj.id === activeWindowId} />
             </Draggable>

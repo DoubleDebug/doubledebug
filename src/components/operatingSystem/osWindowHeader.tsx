@@ -17,7 +17,6 @@ const OSWindowHeader: React.FC<IOSWindowHeaderProps> = (props) => {
       display="flex"
       columnGap="0.5rem"
       alignItems="center"
-      width="calc(100% + 1rem)"
       height="30px"
       borderBottom="1px solid silver"
       className="draggable"

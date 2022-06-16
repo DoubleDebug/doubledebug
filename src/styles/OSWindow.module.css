@@ -1,60 +1,10 @@
 .window {
   display: grid;
   grid-template-rows: 30px auto;
-  width: 1000px;
-  height: 600px;
   min-width: 450px;
   min-height: calc(31px + 1rem);
   border: 1px solid silver;
-  animation: popup 0.3s ease;
   position: absolute;
-}
-
-.window {
-  resize: both;
-  overflow: scroll;
-}
-
-.window::-webkit-scrollbar {
-  width: 1em;
-}
-
-.window::-webkit-resizer {
-  background: #2d3748;
-}
-
-.window::-moz-resizer {
-  background: #2d3748;
-}
-
-.window::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px #2d3748;
-}
-
-.window::-webkit-scrollbar-thumb {
-  background-color: #2d3748;
-}
-
-.closing {
-  animation: fadeout 0.3s ease;
-}
-
-@keyframes popup {
-  from {
-    opacity: 0%;
-    transform: scale(0);
-  }
-  to {
-    opacity: 100%;
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeout {
-  from {
-    opacity: 100%;
-  }
-  to {
-    opacity: 0%;
-  }
+  opacity: 0%;
+  transform: scale(0);
 }
