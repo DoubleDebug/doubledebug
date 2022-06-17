@@ -9,8 +9,11 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useWindowSize } from 'usehooks-ts';
+import { OS_MIN_WINDOW_SIZE } from '../utils/constants';
 
 export const HomepageCTA = () => {
+  const { width: windowWidth } = useWindowSize();
   const router = useRouter();
 
   return (
@@ -57,7 +60,13 @@ export const HomepageCTA = () => {
               size={'lg'}
               px={6}
               colorScheme={'blue'}
-              onClick={() => router.push('/projects/explore')}
+              onClick={() => {
+                if (windowWidth <= OS_MIN_WINDOW_SIZE) {
+                  router.push('/projects');
+                } else {
+                  router.push('/projects/explore');
+                }
+              }}
             >
               Explore projects
             </Button>

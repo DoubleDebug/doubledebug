@@ -10,19 +10,21 @@ import {
 } from '@chakra-ui/react';
 import {
   faBatteryThreeQuarters,
+  faCompress,
+  faExpand,
   faHouse,
   faVolumeLow,
   faWifi,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { formatDate, formatTime } from '../../utils/formatTime';
 import { OSContext } from './osContext';
 
 function getTaskbarWindowColor(colorMode: ColorMode, isActive: boolean) {
   if (colorMode === 'light') {
     if (isActive) {
-      return 'gray.400';
+      return 'blackAlpha.300';
     } else {
       return 'gray.200';
     }
@@ -35,7 +37,10 @@ function getTaskbarWindowColor(colorMode: ColorMode, isActive: boolean) {
   }
 }
 
-const OSTaskbarButton: React.FC<any> = ({ children, ...rest }) => {
+const OSTaskbarButton: React.FC<{
+  children?: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+}> = ({ children, onClick }) => {
   const { colorMode } = useColorMode();
 
   return (
@@ -43,7 +48,7 @@ const OSTaskbarButton: React.FC<any> = ({ children, ...rest }) => {
       px={0}
       bgColor={colorMode === 'light' ? 'gray.200' : 'gray.600'}
       _hover={{ bgColor: colorMode === 'light' ? 'gray.300' : 'gray.500' }}
-      {...rest}
+      onClick={onClick}
     >
       {children}
     </Button>
@@ -52,6 +57,7 @@ const OSTaskbarButton: React.FC<any> = ({ children, ...rest }) => {
 
 interface IOSTaskbarProps {
   toggleShowStartMenu: () => void;
+  osRef: HTMLDivElement | undefined;
 }
 
 const OSTaskbar: React.FC<IOSTaskbarProps & any> = (props) => {
@@ -60,11 +66,11 @@ const OSTaskbar: React.FC<IOSTaskbarProps & any> = (props) => {
     useContext(OSContext);
   return (
     <Box
+      height="42px"
       width="full"
       bgColor={colorMode === 'light' ? 'gray.200' : 'gray.600'}
       display="flex"
       alignItems="center"
-      pr="0.5rem"
       position="relative"
       className="os-taskbar"
     >
@@ -91,18 +97,40 @@ const OSTaskbar: React.FC<IOSTaskbarProps & any> = (props) => {
       </Flex>
       <Box className="system-tray" ml="auto" display="flex" alignItems="center">
         <OSTaskbarButton>
-          <FontAwesomeIcon icon={faWifi} size="lg" />
+          <FontAwesomeIcon icon={faWifi} size="lg" title="Internet" />
         </OSTaskbarButton>
         <OSTaskbarButton>
-          <FontAwesomeIcon icon={faVolumeLow} size="lg" />
+          <FontAwesomeIcon icon={faVolumeLow} size="lg" title="Sound" />
         </OSTaskbarButton>
         <OSTaskbarButton>
-          <FontAwesomeIcon icon={faBatteryThreeQuarters} size="lg" />
+          <FontAwesomeIcon
+            icon={faBatteryThreeQuarters}
+            size="lg"
+            title="Battery"
+          />
         </OSTaskbarButton>
-        <Grid textAlign="center" ml={2}>
+        <Grid textAlign="center" ml={2} mr={2}>
           <Text fontSize="sm">{formatTime()}</Text>
           <Text fontSize="sm">{formatDate()}</Text>
         </Grid>
+        <OSTaskbarButton
+          onClick={() => {
+            if (!props.osRef) return;
+            if (document.fullscreenElement) {
+              document.exitFullscreen();
+            } else {
+              (props.osRef as HTMLDivElement).requestFullscreen();
+            }
+          }}
+        >
+          <FontAwesomeIcon
+            icon={document.fullscreenElement ? faCompress : faExpand}
+            size="lg"
+            title={
+              document.fullscreenElement ? 'Exit full screen' : 'Full screen'
+            }
+          />
+        </OSTaskbarButton>
       </Box>
     </Box>
   );

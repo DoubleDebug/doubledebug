@@ -20,8 +20,8 @@
                 "h": 700
             },
             "iconOffset": {
-                "x": 0,
-                "y": 10
+                "x": 600,
+                "y": 100
             }
         },
         {
@@ -37,11 +37,11 @@
             "iconURL": "https://i.imgur.com/7rcDJEy.png",
             "windowSize": {
                 "w": 500,
-                "h": 700
+                "h": 710
             },
             "iconOffset": {
-                "x": 0,
-                "y": 30
+                "x": 710,
+                "y": 42
             }
         }
     ]

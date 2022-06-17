@@ -29,7 +29,7 @@ const OSIcon: React.FC<IOSIconProps & any> = ({
       justifyItems="center"
       rowGap="5px"
       textAlign="center"
-      maxWidth={100}
+      maxWidth={110}
       maxHeight={100}
       overflow="hidden"
       ml="5rem"
@@ -40,8 +40,10 @@ const OSIcon: React.FC<IOSIconProps & any> = ({
         setSelectedIconId(data.id);
       }}
       onDoubleClick={() => {
-        setOpenedWindows([...openedWindows, data]);
-        setActiveWindowId(data.id);
+        if (data.url !== '') {
+          setOpenedWindows([...openedWindows, data]);
+          setActiveWindowId(data.id);
+        }
       }}
       {...rest}
     >

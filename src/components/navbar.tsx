@@ -1,6 +1,8 @@
+import css from '../styles/Navbar.module.css';
 import { ReactNode } from 'react';
 import {
   Box,
+  Text,
   Flex,
   Link,
   Button,
@@ -11,6 +13,8 @@ import {
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useWindowSize } from 'usehooks-ts';
+import { OS_MIN_WINDOW_SIZE } from '../utils/constants';
 
 export const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -28,6 +32,7 @@ export const NavLink = ({ children }: { children: ReactNode }) => (
 );
 
 const Nav = () => {
+  const { width: windowWidth } = useWindowSize();
   const { colorMode, toggleColorMode } = useColorMode();
   const router = useRouter();
   return (
@@ -43,6 +48,10 @@ const Nav = () => {
             width={50}
             height={50}
           />
+          <Text
+            fontSize="2xl"
+            className={css.logoText}
+          >{`<DoubleDebug />`}</Text>
         </Link>
 
         <Flex alignItems={'center'}>
@@ -50,7 +59,13 @@ const Nav = () => {
             variant="solid"
             mr={4}
             colorScheme="blue"
-            onClick={() => router.push('/projects/explore')}
+            onClick={() => {
+              if (windowWidth <= OS_MIN_WINDOW_SIZE) {
+                router.push('/projects');
+              } else {
+                router.push('/projects/explore');
+              }
+            }}
           >
             Explore projects
           </Button>
