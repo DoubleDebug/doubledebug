@@ -22,7 +22,7 @@ const ExploreProjects: React.FC<{ data: ProjectInfo[] }> = ({
   return (
     <>
       <Head>
-        <title>Dušan Dodić | Explore my projects</title>
+        <title>Explore my projects | Dušan Dodić</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
       <main>

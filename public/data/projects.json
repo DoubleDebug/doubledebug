@@ -1,7 +1,7 @@
 {
     "projects": [
         {
-            "id": 1,
+            "id": "fake-reddit",
             "title": "Fake Reddit",
             "description": "React clone with React, Typescript and Firebase",
             "technologies": [
@@ -9,9 +9,7 @@
                 "Typescript",
                 "Firebase",
                 "NodeJS",
-                "Express",
-                "Algolia",
-                "Material UI"
+                "Express"
             ],
             "url": "https://fake-reddit.com",
             "iconURL": "https://i.imgur.com/LSSbGSc.png",
@@ -25,7 +23,7 @@
             }
         },
         {
-            "id": 2,
+            "id": "minesweeper",
             "title": "Minesweeper",
             "description": "Simple Javascript Minesweeper game",
             "technologies": [

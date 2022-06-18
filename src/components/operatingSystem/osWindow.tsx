@@ -5,6 +5,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { OSContext } from './osContext';
 import { playPopupAnimation } from '../../utils/animations/popup';
 import { playPopoutAnimation } from '../../utils/animations/popout';
+import OSWindowSidebar from './osWindowSidebar';
 
 interface IOSWindowProps {
   project: ProjectInfo;
@@ -35,15 +36,15 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
   const { colorMode } = useColorMode();
   const { setActiveWindowId } = useContext(OSContext);
   const [isClosing, setIsClosing] = useState(false);
-  const windowRef = useRef<HTMLDivElement>();
+  const windowRef = useRef<HTMLDivElement | undefined>();
 
   useEffect(() => {
-    playPopupAnimation(windowRef.current);
+    playPopupAnimation(windowRef?.current);
   }, []);
 
   useEffect(() => {
     if (isClosing) {
-      playPopoutAnimation(windowRef.current);
+      playPopoutAnimation(windowRef?.current);
       setIsClosing(false);
     }
   }, [isClosing]);
@@ -55,8 +56,9 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
       bgColor={getWindowColor(colorMode, isActive)}
       zIndex={isActive ? 1 : 0}
       {...rest}
-      width={project.windowSize.w}
       height={project.windowSize.h}
+      width={`calc(${project.windowSize.w}px + 3px)`}
+      overflow="hidden"
       className={`os-window ${css.window}`}
       ref={windowRef}
     >
@@ -64,14 +66,25 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
         windowTitle={project.title}
         windowId={project.id}
         setIsClosing={setIsClosing}
+        windowRef={windowRef.current}
       />
-      <Box padding="1rem" onMouseDown={() => setActiveWindowId(project.id)}>
+      <Box
+        display="flex"
+        columnGap="1rem"
+        padding="1rem"
+        onMouseDown={() => setActiveWindowId(project.id)}
+      >
         <iframe
           src={project.url}
-          width="100%"
           height="100%"
-          style={{ backgroundColor: 'white' }}
+          width="100%"
+          scrolling="no"
+          style={{
+            width: `calc(${project.windowSize.w}px - 2rem)`,
+            backgroundColor: 'white',
+          }}
         />
+        <OSWindowSidebar data={project} />
       </Box>
     </Box>
   );
