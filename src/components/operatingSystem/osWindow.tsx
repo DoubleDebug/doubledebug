@@ -56,8 +56,8 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
       bgColor={getWindowColor(colorMode, isActive)}
       zIndex={isActive ? 1 : 0}
       {...rest}
-      height={project.windowSize.h}
-      width={`calc(${project.windowSize.w}px + 3px)`}
+      height={project.osSettings.windowSize.h}
+      width={`calc(${project.osSettings.windowSize.w}px + 3px)`}
       overflow="hidden"
       className={`os-window ${css.window}`}
       ref={windowRef}
@@ -80,7 +80,7 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
           width="100%"
           scrolling="no"
           style={{
-            width: `calc(${project.windowSize.w}px - 2rem)`,
+            width: `calc(${project.osSettings.windowSize.w}px - 2rem)`,
             backgroundColor: 'white',
           }}
         />

@@ -1,8 +1,5 @@
 import { Badge, Button, Flex, Grid, Heading, Text } from '@chakra-ui/react';
-import {
-  faArrowUpRightFromSquare,
-  faCircleInfo,
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SIDEBAR_WIDTH } from '../../utils/constants';
 
@@ -43,17 +40,6 @@ const OSWindowSidebar: React.FC<IOSWindowSidebarProps> = (props) => {
       </Grid>
       <Grid height="min-content" mt="auto" rowGap={2}>
         <Button
-          variant="outline"
-          display="flex"
-          alignItems="center"
-          columnGap="0.5rem"
-          borderColor="gray.500"
-          onClick={() => window.open(`/projects/${props.data.id}`)}
-        >
-          <FontAwesomeIcon icon={faCircleInfo} />
-          Read more
-        </Button>
-        <Button
           variant="solid"
           colorScheme="blue"
           display="flex"
@@ -64,6 +50,16 @@ const OSWindowSidebar: React.FC<IOSWindowSidebarProps> = (props) => {
         >
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           Visit site
+        </Button>
+        <Button
+          variant="outline"
+          display="flex"
+          alignItems="center"
+          columnGap="0.5rem"
+          borderColor="gray.500"
+          onClick={() => window.open(`/projects/${props.data.id}`)}
+        >
+          Read more
         </Button>
       </Grid>
     </Grid>

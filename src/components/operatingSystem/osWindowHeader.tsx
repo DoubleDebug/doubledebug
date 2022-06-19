@@ -9,7 +9,7 @@ import { SIDEBAR_WIDTH } from '../../utils/constants';
 import { OSContext } from './osContext';
 
 interface IOSWindowHeaderProps {
-  windowId: number;
+  windowId: string;
   windowTitle: string;
   setIsClosing: (c: boolean) => void;
   windowRef: HTMLDivElement | undefined;

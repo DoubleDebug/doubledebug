@@ -3,12 +3,12 @@ import { createContext } from 'react';
 export const OSContext = createContext<{
   isStartMenuShown: boolean;
   setIsStartMenuShown: (s: boolean) => void;
-  selectedIconId: number | undefined;
-  setSelectedIconId: (i: number | undefined) => void;
+  selectedIconId: string | undefined;
+  setSelectedIconId: (i: string | undefined) => void;
+  activeWindowId: string | undefined;
+  setActiveWindowId: (w: string | undefined) => void;
   openedWindows: ProjectInfo[];
   setOpenedWindows: (w: ProjectInfo[]) => void;
-  activeWindowId: number | undefined;
-  setActiveWindowId: (w: number | undefined) => void;
 }>({
   isStartMenuShown: false,
   setIsStartMenuShown: () => {},

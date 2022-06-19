@@ -1,16 +1,20 @@
 type ProjectInfo = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   technologies: string[];
   url: string;
   iconURL: string;
-  windowSize: {
-    w: number;
-    h: number;
+  previewImageURL?: string;
+  osSettings: {
+    windowSize: {
+      w: number;
+      h: number;
+    };
+    iconOffset: {
+      x: number;
+      y: number;
+    };
   };
-  iconOffset: {
-    x: number;
-    y: number;
-  };
+  showOnHomepage?: true;
 };

@@ -23,6 +23,8 @@ export const HomepageCTA = () => {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
         direction={{ base: 'column', md: 'row' }}
+        mt={{ base: 0, md: 32 }}
+        mb={{ base: 0, md: 32 }}
       >
         <Flex
           flex="0.5"
@@ -36,25 +38,36 @@ export const HomepageCTA = () => {
           </Box>
         </Flex>
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
-          >
-            <Text mb={3}>Dušan Dodić,</Text>
-            <Text as={'span'} color={'blue.300'}>
+          <Heading lineHeight={1.1} fontWeight={600}>
+            <Text
+              fontSize={{ base: '3xl', sm: '4xl', lg: '7xl' }}
+              textAlign={{ base: 'center', md: 'left', lg: 'left', xl: 'left' }}
+              mb={3}
+            >
+              I'm Double Debug,
+            </Text>
+            <Text
+              fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}
+              textAlign={{ base: 'center', md: 'left', lg: 'left', xl: 'left' }}
+              color={'blue.300'}
+            >
               a full stack web developer.
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
-            Hi! I'm Dušan and I've been learning web development for 2 years and
-            programming for 10 years. <br />
-            Need a beautiful, well designed and fully responsive website like
-            this one? Contact me!
+          <Text
+            color={'gray.500'}
+            textAlign={{ sm: 'center', md: 'left', lg: 'left' }}
+          >
+            Hi! My name is Dušan Dodić and I'm a 24 year old student from
+            Serbia. <br />
+            Feel free to browse through my past projects and read about my work
+            and education. <br /> In case you need a beautiful, well designed
+            and fully responsive website like this one, contact me and let's
+            talk.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
-            direction={{ base: 'column', sm: 'row' }}
+            direction={{ base: 'column', lg: 'row' }}
           >
             <Button
               size={'lg'}

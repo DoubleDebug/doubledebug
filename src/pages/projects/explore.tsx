@@ -3,21 +3,22 @@ import fs from 'fs/promises';
 import path from 'path';
 import OperatingSystem from '../../components/operatingSystem/operatingSystem';
 import { Box, Heading, Text } from '@chakra-ui/react';
+import { GetStaticProps } from 'next';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const filePath = path.join(process.cwd(), 'public/data/projects.json');
   const projectsRaw = await fs.readFile(filePath);
   const projectsJson = JSON.parse(projectsRaw.toString());
 
   return {
     props: {
-      data: projectsJson.projects,
+      projects: projectsJson.projects,
     },
   };
-}
+};
 
-const ExploreProjects: React.FC<{ data: ProjectInfo[] }> = ({
-  data: projects,
+const ExploreProjects: React.FC<{ projects: ProjectInfo[] }> = ({
+  projects,
 }) => {
   return (
     <>

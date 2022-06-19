@@ -13,14 +13,18 @@
             ],
             "url": "https://fake-reddit.com",
             "iconURL": "https://i.imgur.com/LSSbGSc.png",
-            "windowSize": {
-                "w": 1000,
-                "h": 700
+            "previewImageURL": "https://i.imgur.com/O3OPruB.png",
+            "osSettings": {
+                "windowSize": {
+                    "w": 1000,
+                    "h": 700
+                },
+                "iconOffset": {
+                    "x": 600,
+                    "y": 100
+                }
             },
-            "iconOffset": {
-                "x": 600,
-                "y": 100
-            }
+            "showOnHomepage": true
         },
         {
             "id": "minesweeper",
@@ -33,14 +37,18 @@
             ],
             "url": "https://minesweeper-52419.web.app",
             "iconURL": "https://i.imgur.com/7rcDJEy.png",
-            "windowSize": {
-                "w": 500,
-                "h": 710
+            "previewImageURL": "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png",
+            "osSettings": {
+                "windowSize": {
+                    "w": 500,
+                    "h": 710
+                },
+                "iconOffset": {
+                    "x": 710,
+                    "y": 42
+                }
             },
-            "iconOffset": {
-                "x": 710,
-                "y": 42
-            }
+            "showOnHomepage": true
         }
     ]
 }

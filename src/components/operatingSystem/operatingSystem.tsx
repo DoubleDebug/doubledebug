@@ -22,9 +22,9 @@ interface IOperatingSystemProps {
 
 const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
   const [isStartMenuShown, setIsStartMenuShown] = useState<boolean>(false);
-  const [selectedIconId, setSelectedIconId] = useState<number | undefined>();
+  const [selectedIconId, setSelectedIconId] = useState<string | undefined>();
   const [openedWindows, setOpenedWindows] = useState<ProjectInfo[]>([]);
-  const [activeWindowId, setActiveWindowId] = useState<number | undefined>();
+  const [activeWindowId, setActiveWindowId] = useState<string | undefined>();
   const { width: windowWidth } = useWindowSize();
   const osRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -89,8 +89,8 @@ const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
                 y: 0,
               }}
               defaultPosition={{
-                x: proj.iconOffset.x,
-                y: proj.iconOffset.y,
+                x: proj.osSettings.iconOffset.x,
+                y: proj.osSettings.iconOffset.y,
               }}
               key={`os-icon-${index}`}
             >
