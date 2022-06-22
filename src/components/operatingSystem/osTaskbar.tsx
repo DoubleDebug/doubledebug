@@ -83,7 +83,7 @@ const OSTaskbar: React.FC<IOSTaskbarProps & any> = (props) => {
           <Button
             key={`taskbar-window-${index}`}
             display="flex"
-            leftIcon={<Image src={proj.iconURL} width="20px" />}
+            leftIcon={<Image src={proj.urls.icon} width="20px" />}
             overflow="hidden"
             bgColor={getTaskbarWindowColor(
               colorMode,

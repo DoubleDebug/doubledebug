@@ -16,7 +16,7 @@ const Error = ({ statusCode }: { statusCode: number }) => {
   return (
     <>
       <Head>
-        <title>Error | Dušan Dodić</title>
+        <title>Error | Double Debug</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
       <Flex justifyContent="center" alignItems="center" height="80vh">

@@ -22,7 +22,7 @@ export const Home: NextPage<{ projects: ProjectInfo[] }> = ({ projects }) => {
   return (
     <div>
       <Head>
-        <title>Dušan Dodić | Junior full stack web developer</title>
+        <title>Double Debug | Junior full stack web developer</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
 

@@ -45,8 +45,8 @@ const OSWindowSidebar: React.FC<IOSWindowSidebarProps> = (props) => {
           display="flex"
           alignItems="center"
           columnGap="0.5rem"
-          title={props.data.url}
-          onClick={() => window.open(props.data.url)}
+          title={props.data.urls.liveDemo}
+          onClick={() => window.open(props.data.urls.liveDemo)}
         >
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           Visit site

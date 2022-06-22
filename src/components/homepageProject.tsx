@@ -41,15 +41,24 @@ const HomepageProject: React.FC<{ data: ProjectInfo }> = (props) => {
           justifyContent={isMobile ? 'center' : undefined}
           mb={isMobile ? 4 : undefined}
         >
-          {props.data.previewImageURL && (
-            <Image
-              src={props.data.previewImageURL}
-              alt="Project frontpage screenshot"
+          {props.data.urls.previewImage && (
+            <Link
+              href={`/projects/${props.data.id}`}
+              overflow="hidden"
               borderRadius="lg"
-              objectFit="contain"
-              maxHeight={400}
               mx="auto"
-            />
+            >
+              <Image
+                src={props.data.urls.previewImage}
+                alt="Project frontpage screenshot"
+                objectFit="contain"
+                maxHeight={400}
+                transition="transform 0.5s ease"
+                _hover={{
+                  transform: 'scale(1.02)',
+                }}
+              />
+            </Link>
           )}
         </Box>
       </Box>
@@ -105,17 +114,19 @@ const HomepageProject: React.FC<{ data: ProjectInfo }> = (props) => {
           >
             Read more
           </Button>
-          <Button
-            variant="outline"
-            display={{ base: 'none', md: 'flex', lg: 'flex' }}
-            alignItems="center"
-            columnGap="0.5rem"
-            borderColor="gray.500"
-            onClick={() => window.open(props.data.url)}
-          >
-            <FontAwesomeIcon icon={faExternalLink} />
-            Live demo
-          </Button>
+          {props.data.urls.liveDemo && (
+            <Button
+              variant="outline"
+              display={{ base: 'none', md: 'flex', lg: 'flex' }}
+              alignItems="center"
+              columnGap="0.5rem"
+              borderColor="gray.500"
+              onClick={() => window.open(props.data.urls.liveDemo)}
+            >
+              <FontAwesomeIcon icon={faExternalLink} />
+              Live demo
+            </Button>
+          )}
         </Stack>
       </Box>
     </Box>

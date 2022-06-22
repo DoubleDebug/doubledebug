@@ -23,7 +23,7 @@ const ExploreProjects: React.FC<{ projects: ProjectInfo[] }> = ({
   return (
     <>
       <Head>
-        <title>Explore my projects | Dušan Dodić</title>
+        <title>Explore my projects | Double Debug</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
       <main>
@@ -39,7 +39,9 @@ const ExploreProjects: React.FC<{ projects: ProjectInfo[] }> = ({
             by double clicking it in this totally real operating system.
           </Text>
         </Box>
-        <OperatingSystem projects={projects} />
+        <OperatingSystem
+          projects={projects.filter((p) => p.urls.liveDemo !== undefined)}
+        />
       </main>
     </>
   );

@@ -75,7 +75,7 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
         onMouseDown={() => setActiveWindowId(project.id)}
       >
         <iframe
-          src={project.url}
+          src={project.urls.liveDemo}
           height="100%"
           width="100%"
           scrolling="no"

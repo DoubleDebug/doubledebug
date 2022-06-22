@@ -3,9 +3,12 @@ type ProjectInfo = {
   title: string;
   description: string;
   technologies: string[];
-  url: string;
-  iconURL: string;
-  previewImageURL?: string;
+  urls: {
+    liveDemo?: string;
+    icon: string;
+    previewImage: string;
+    githubRepo: string;
+  };
   osSettings: {
     windowSize: {
       w: number;

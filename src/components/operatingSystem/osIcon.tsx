@@ -40,14 +40,19 @@ const OSIcon: React.FC<IOSIconProps & any> = ({
         setSelectedIconId(data.id);
       }}
       onDoubleClick={() => {
-        if (data.url !== '') {
+        if (data.urls.liveDemo && data.urls.liveDemo !== '') {
           setOpenedWindows([...openedWindows, data]);
           setActiveWindowId(data.id);
         }
       }}
       {...rest}
     >
-      <Image src={data.iconURL} width={30} height={30} className="draggable" />
+      <Image
+        src={data.urls.icon}
+        width={30}
+        height={30}
+        className="draggable"
+      />
       <Text className="draggable" color="white">
         {data.title}
       </Text>

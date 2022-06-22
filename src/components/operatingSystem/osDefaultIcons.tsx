@@ -34,10 +34,13 @@ const OSDefaultIcons: React.FC = () => {
         data={{
           id: 'this-pc',
           description: 'This PC',
-          iconURL: 'https://i.imgur.com/7eYAcYq.png',
+          urls: {
+            icon: 'https://i.imgur.com/7eYAcYq.png',
+            previewImage: '',
+            githubRepo: '',
+          },
           technologies: [],
           title: 'This PC',
-          url: '',
           osSettings: {
             iconOffset: {
               x: 0,
@@ -54,10 +57,13 @@ const OSDefaultIcons: React.FC = () => {
         data={{
           id: 'my-documents',
           description: 'My documents',
-          iconURL: 'https://i.imgur.com/35AldHk.png',
+          urls: {
+            icon: 'https://i.imgur.com/35AldHk.png',
+            previewImage: '',
+            githubRepo: '',
+          },
           technologies: [],
           title: 'My documents',
-          url: '',
           osSettings: {
             iconOffset: {
               x: 0,
@@ -74,10 +80,13 @@ const OSDefaultIcons: React.FC = () => {
         data={{
           id: 'recycle-bin',
           description: 'Recycle Bin',
-          iconURL: 'https://i.imgur.com/Uv4nn20.png',
+          urls: {
+            icon: 'https://i.imgur.com/Uv4nn20.png',
+            previewImage: '',
+            githubRepo: '',
+          },
           technologies: [],
           title: 'Recycle Bin',
-          url: '',
           osSettings: {
             iconOffset: {
               x: 0,
