@@ -1,9 +1,9 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
-import Nav from '../components/navbar';
+import Nav from '../components/layout/navbar';
 import Head from 'next/head';
-import { Footer } from '../components/footer';
+import { Footer } from '../components/layout/footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

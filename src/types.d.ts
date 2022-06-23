@@ -21,3 +21,12 @@ type ProjectInfo = {
   };
   showOnHomepage?: true;
 };
+
+type ResponseStatus =
+  | {
+      success: true;
+    }
+  | {
+      success: false;
+      message: string;
+    };

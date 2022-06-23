@@ -14,7 +14,6 @@ export function playTranslateButtonsAnimation(
     element.style.transform = `translateX(${
       direction === 'left' ? '-' : ''
     }${counter}px)`;
-    console.log(element.style.transform);
     counter += step;
     if (counter === destination) {
       clearInterval(intervalId);

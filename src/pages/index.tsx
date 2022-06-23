@@ -1,10 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next';
-import { HomepageCTA } from '../components/homepageCTA';
+import { HomepageCTA } from '../components/homepage/homepageCTA';
 import Head from 'next/head';
 import path from 'path';
 import fs from 'fs/promises';
-import { Container, Heading } from '@chakra-ui/react';
-import HomepageProject from '../components/homepageProject';
+import { ContactForm } from '../components/contact/contactForm';
+import HomepageProjectsSection from '../components/homepage/homepageProjectsSection';
+import { Heading } from '@chakra-ui/react';
 
 export const getStaticProps: GetStaticProps = async () => {
   const filePath = path.join(process.cwd(), 'public/data/projects.json');
@@ -22,30 +23,23 @@ export const Home: NextPage<{ projects: ProjectInfo[] }> = ({ projects }) => {
   return (
     <div>
       <Head>
-        <title>Double Debug | Junior full stack web developer</title>
+        <title>Double Debug | Full stack web developer</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
 
       <HomepageCTA />
 
-      <Container maxW={'7xl'} p="12">
+      <HomepageProjectsSection projects={projects} />
+
+      <ContactForm>
         <Heading
-          as="h1"
-          size="3xl"
-          mb={{ base: 8, lg: 16 }}
-          textAlign={{ base: 'center', lg: 'left' }}
+          size="2xl"
+          textAlign={{ base: 'center', md: 'left' }}
+          ml={{ base: 0, md: 32 }}
         >
-          Projects
+          Get in touch
         </Heading>
-        {projects
-          .filter((p) => p.showOnHomepage)
-          .map((project) => (
-            <HomepageProject
-              data={project}
-              key={`project-preview-${project.id}`}
-            />
-          ))}
-      </Container>
+      </ContactForm>
     </div>
   );
 };

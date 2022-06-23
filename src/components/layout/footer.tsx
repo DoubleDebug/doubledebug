@@ -1,4 +1,4 @@
-import css from '../styles/Footer.module.css';
+import css from '../../styles/Footer.module.css';
 import {
   Box,
   chakra,
@@ -16,6 +16,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactNode } from 'react';
+import { NAVIGATION_ITEMS, SOCIAL_LINKS } from '../../utils/constants';
 
 const SocialButton = ({
   children,
@@ -55,17 +56,17 @@ export const Footer = () => {
       bg={useColorModeValue('gray.100', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
     >
-      <Container
-        as={Stack}
-        maxW={'6xl'}
-        py={4}
-        spacing={4}
-        justify={'center'}
-        align={'center'}
-      >
-        <Stack direction={'row'} spacing={6}>
-          <Link href="/projects/explore">Projects</Link>
-          <Link href="/blog">Blog</Link>
+      <Container as={Stack} maxW={'6xl'} py={4} spacing={4} align={'center'}>
+        <Stack direction={'row'} spacing={6} display="flex">
+          {NAVIGATION_ITEMS.map((navItem) => (
+            <Link href={navItem.url} key={`nav-item-${navItem.title}`}>
+              {navItem.title}
+            </Link>
+          ))}
+          <span className="vSeparator" role="separator" />
+          <Link href="#" onClick={() => window.scrollTo(0, 0)} ml="auto">
+            Back to top
+          </Link>
         </Stack>
       </Container>
 
@@ -83,28 +84,19 @@ export const Footer = () => {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© 2022 Dušan Dodić. All rights reserved.</Text>
+          <Text>© 2022 Double Debug. All rights reserved.</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton
-              label={'Github'}
-              href={'https://github.com/DoubleDebug'}
-            >
+            <SocialButton label={'Github'} href={SOCIAL_LINKS.github}>
               <div className={css.socialMediaButton} title="Github">
                 <FontAwesomeIcon icon={faGithub} />
               </div>
             </SocialButton>
-            <SocialButton
-              label={'YouTube'}
-              href={'https://www.youtube.com/c/DoubleDYouTube'}
-            >
+            <SocialButton label={'YouTube'} href={SOCIAL_LINKS.youtube}>
               <div className={css.socialMediaButton} title="YouTube">
                 <FontAwesomeIcon icon={faYoutube} />
               </div>
             </SocialButton>
-            <SocialButton
-              label={'Twitter'}
-              href={'https://twitter.com/YoutubeDoubleD'}
-            >
+            <SocialButton label={'Twitter'} href={SOCIAL_LINKS.twitter}>
               <div className={css.socialMediaButton} title="Twitter">
                 <FontAwesomeIcon icon={faTwitter} />
               </div>

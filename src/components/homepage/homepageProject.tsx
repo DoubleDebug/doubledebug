@@ -1,4 +1,4 @@
-import css from '../styles/HomepageProject.module.css';
+import css from '../../styles/HomepageProject.module.css';
 import {
   Text,
   HStack,

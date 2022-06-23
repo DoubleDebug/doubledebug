@@ -15,30 +15,7 @@ import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useWindowSize } from 'usehooks-ts';
-import { OS_MIN_WINDOW_SIZE } from '../utils/constants';
-
-const NavData = [
-  {
-    title: 'Home',
-    url: '/',
-  },
-  {
-    title: 'Projects',
-    url: '/projects',
-  },
-  {
-    title: 'Blog',
-    url: '/blog',
-  },
-  {
-    title: 'Education',
-    url: '/education',
-  },
-  {
-    title: 'Work Experience',
-    url: '/work-experience',
-  },
-];
+import { NAVIGATION_ITEMS, OS_MIN_WINDOW_SIZE } from '../../utils/constants';
 
 const NavLink = (props: { children: ReactNode; link: string }) => (
   <Link
@@ -92,7 +69,7 @@ const Nav = () => {
             />
           </Link>
           <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-            {NavData.map((navDataItem) => (
+            {NAVIGATION_ITEMS.map((navDataItem) => (
               <NavLink key={navDataItem.url} link={navDataItem.url}>
                 {navDataItem.title}
               </NavLink>
@@ -131,7 +108,7 @@ const Nav = () => {
       {isOpen ? (
         <Box pb={4} display={{ md: 'none' }}>
           <Stack as={'nav'} spacing={4}>
-            {NavData.map((navDataItem) => (
+            {NAVIGATION_ITEMS.map((navDataItem) => (
               <NavLink key={navDataItem.url} link={navDataItem.url}>
                 {navDataItem.title}
               </NavLink>

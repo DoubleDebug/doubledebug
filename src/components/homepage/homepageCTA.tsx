@@ -10,7 +10,7 @@ import {
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useWindowSize } from 'usehooks-ts';
-import { OS_MIN_WINDOW_SIZE } from '../utils/constants';
+import { OS_MIN_WINDOW_SIZE } from '../../utils/constants';
 
 export const HomepageCTA = () => {
   const { width: windowWidth } = useWindowSize();
@@ -23,8 +23,7 @@ export const HomepageCTA = () => {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
         direction={{ base: 'column', md: 'row' }}
-        mt={{ base: 0, md: 32 }}
-        mb={{ base: 0, md: 32 }}
+        height={{ base: '100vh', md: 'calc(100vh - 64px)' }}
       >
         <Flex
           flex="0.5"
@@ -83,7 +82,16 @@ export const HomepageCTA = () => {
             >
               Explore projects
             </Button>
-            <Button size={'lg'} fontWeight={'normal'} px={6}>
+            <Button
+              size={'lg'}
+              fontWeight={'normal'}
+              px={6}
+              onClick={() =>
+                window.scrollTo({
+                  top: 5000,
+                })
+              }
+            >
               Hire me
             </Button>
           </Stack>
