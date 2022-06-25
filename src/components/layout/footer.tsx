@@ -63,7 +63,10 @@ export const Footer = () => {
               {navItem.title}
             </Link>
           ))}
-          <span className="vSeparator" role="separator" />
+          <span
+            className={useColorModeValue('vSeparatorLight', 'vSeparatorDark')}
+            role="separator"
+          />
           <Link href="#" onClick={() => window.scrollTo(0, 0)} ml="auto">
             Back to top
           </Link>

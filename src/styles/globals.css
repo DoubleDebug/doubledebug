@@ -26,8 +26,72 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.vSeparator {
+.vSeparatorLight {
+  background: black;
+  width: 1px;
+  height: 25px;
+}
+
+.vSeparatorDark {
   background: white;
   width: 1px;
   height: 25px;
+}
+
+/* Education page */
+
+.vertical-timeline-element-content {
+  position: relative;
+  box-shadow: none !important;
+}
+
+@media screen and (max-width: 1155px) {
+  .vertical-timeline-element-date {
+    margin-top: 0.75rem;
+  }
+
+  .date-no-content .vertical-timeline-element-date {
+    margin-left: -1rem;
+  }
+
+  .date-no-content .vertical-timeline-element-content span {
+    margin-top: -1rem;
+  }
+}
+
+@media screen and (min-width: 1155px) {
+  .vertical-timeline-element-content:hover .bottom-line {
+    left: 0;
+    right: 0;
+  }
+
+  .bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 7px;
+    background: #1572b7;
+    transition: left 0.75s ease, right 0.75s ease;
+    border-radius: 5px;
+  }
+
+  .bottom-line.light {
+    background: #1572b7;
+    opacity: 75%;
+  }
+
+  .bottom-line.dark {
+    background: white;
+    opacity: 50%;
+  }
+
+  @keyframes expand {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 100%;
+    }
+  }
 }
