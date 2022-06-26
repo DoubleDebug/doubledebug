@@ -15,7 +15,7 @@ import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useWindowSize } from 'usehooks-ts';
-import { NAVIGATION_ITEMS, OS_MIN_WINDOW_SIZE } from '../../utils/constants';
+import { NAVIGATION_ITEMS, OS_MIN_WINDOW_WIDTH } from '../../utils/constants';
 
 const NavLink = (props: { children: ReactNode; link: string }) => (
   <Link
@@ -82,7 +82,7 @@ const Nav = () => {
             mr={4}
             colorScheme="blue"
             onClick={() => {
-              if (windowWidth <= OS_MIN_WINDOW_SIZE) {
+              if (windowWidth <= OS_MIN_WINDOW_WIDTH) {
                 router.push('/projects');
               } else {
                 router.push('/projects/explore');

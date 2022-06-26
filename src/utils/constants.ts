@@ -1,4 +1,5 @@
-export const OS_MIN_WINDOW_SIZE = 930;
+export const OS_MIN_WINDOW_WIDTH = 930;
+export const HOMEPAGE_SPEECH_BUBBLE_MIN_WINDOW_WIDTH = 1200;
 export const SIDEBAR_WIDTH = 256;
 
 export const SOCIAL_LINKS = {

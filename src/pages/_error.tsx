@@ -45,7 +45,7 @@ const Error = ({ statusCode }: { statusCode: number }) => {
             px={8}
             onClick={() => router.push('/')}
           >
-            Go home
+            Oh well...
           </Button>
         </Grid>
       </Flex>

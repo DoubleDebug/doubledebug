@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import { useWindowSize } from 'usehooks-ts';
-import { OS_MIN_WINDOW_SIZE } from '../../utils/constants';
+import { OS_MIN_WINDOW_WIDTH } from '../../utils/constants';
 import {
   getStartingPositionX,
   getStartingPositionY,
@@ -29,7 +29,7 @@ const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
   const osRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  if (windowWidth <= OS_MIN_WINDOW_SIZE) {
+  if (windowWidth <= OS_MIN_WINDOW_WIDTH) {
     return (
       <Box textAlign="center" height="60vh" mt={32}>
         <WarningTwoIcon boxSize={'50px'} color={'orange.300'} />
