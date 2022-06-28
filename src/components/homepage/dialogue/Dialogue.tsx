@@ -2,90 +2,188 @@ import {
   Text,
   Stack,
   Heading,
-  Button,
   Image as ImageChakra,
+  Button,
+  Grid,
+  useColorModeValue,
+  Flex,
+  Box,
+  IconButton,
+  Link,
+  Tooltip,
 } from '@chakra-ui/react';
-import router from 'next/router';
-import { useState } from 'react';
-import { useWindowSize } from 'usehooks-ts';
-import { OS_MIN_WINDOW_WIDTH } from '../../../utils/constants';
+import {
+  faChevronRight,
+  faCircleQuestion,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter } from 'next/router';
+import { useMemo, useState } from 'react';
+import { dialogueData } from './data';
+import FadeInOut from './FadeInComponent';
 
 const HomepageDialogue: React.FC = () => {
-  const { width: windowWidth } = useWindowSize();
-  const [dialogStage, setDialogStage] = useState<1 | 2 | 3>(1);
+  const router = useRouter();
+  const [dialogueStage, setDialogueStage] = useState<number>(1);
+  const [showReplyBox, setShowReplyBox] = useState(true);
+  const currentDialogueStage = useMemo(
+    () => dialogueData.filter((s) => s.stage === dialogueStage)[0],
+    [dialogueStage]
+  );
 
   return (
-    <Stack flex={1} spacing={{ base: 5, md: 10 }} position="relative">
-      <ImageChakra
-        src="/images/speech_bubble.png"
-        alt="Speech bubble"
-        width={900}
-        height={500}
-        position="absolute"
-        left={-100}
-        top={-150}
-        zIndex={-10}
-      />
-      <Heading lineHeight={1.1} fontWeight={600} pb={36} pl={10}>
-        <Text
-          fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
-          textAlign={{ base: 'center', md: 'left', lg: 'left', xl: 'left' }}
-          mb={2}
-          color="black"
-        >
-          I'm Double Debug,
-        </Text>
-        <Text
-          fontSize={{ base: '3xl', sm: '4xl', lg: '4xl' }}
-          textAlign={{ base: 'center', md: 'left', lg: 'left', xl: 'left' }}
-          color={'blue.300'}
-          pl={20}
-        >
-          a full stack web developer.
-        </Text>
-      </Heading>
-      <Text
-        color={'gray.500'}
-        textAlign={{ sm: 'center', md: 'left', lg: 'left' }}
-        fontSize="lg"
-        fontFamily="Mosk"
+    <>
+      <Flex
+        flex="0.5"
+        justify={'center'}
+        align={'center'}
+        position={'relative'}
+        w={'full'}
+        ml={32}
       >
-        Feel free to browse through my past projects and read about my work and
-        education. <br /> In case you need a beautiful, well designed and fully
-        responsive website like this one, contact me and let's talk.
-      </Text>
-      <Stack
-        spacing={{ base: 4, sm: 6 }}
-        direction={{ base: 'column', lg: 'row' }}
-      >
-        <Button
-          size={'lg'}
-          px={6}
-          colorScheme={'blue'}
-          onClick={() => {
-            if (windowWidth <= OS_MIN_WINDOW_WIDTH) {
-              router.push('/projects');
-            } else {
-              router.push('/projects/explore');
+        <Box rounded="full" boxShadow="2xl" justifySelf="center">
+          <ImageChakra
+            src={
+              dialogueStage === 6
+                ? '/images/avatar_circle_happy.png'
+                : '/images/avatar_circle_meh.png'
             }
-          }}
+            width={300}
+            height={300}
+            animation="fadeIn 1s ease"
+          />
+        </Box>
+        {dialogueStage === 6 && (
+          <FadeInOut delay={3000} duration={2000}>
+            <Box position="relative">
+              <Tooltip
+                label="Learn more"
+                hasArrow
+                placement="top"
+                position="absolute"
+                top="-65px"
+                left={595}
+              >
+                <Link
+                  href="/blog/how-i-made-this-react-dialogue-component"
+                  isExternal
+                >
+                  <IconButton
+                    aria-label="learn more"
+                    variant="ghost"
+                    size="lg"
+                    fontSize="3xl"
+                    icon={<FontAwesomeIcon icon={faCircleQuestion} />}
+                    _hover={{
+                      bg: 'blue.500',
+                      color: 'white',
+                    }}
+                    isRound
+                    position="absolute"
+                    top={-16}
+                    left={570}
+                    animation="popUp 2s ease 3s"
+                  />
+                </Link>
+              </Tooltip>
+            </Box>
+          </FadeInOut>
+        )}
+      </Flex>
+      <Stack flex={1} spacing={{ base: 5, md: 10 }} position="relative">
+        <FadeInOut duration={1000} delay={500}>
+          <ImageChakra
+            src="/images/speech_bubble_2.png"
+            alt="Speech bubble"
+            position="absolute"
+            left={-120}
+            top={-650}
+            zIndex={-10}
+            width={800}
+          />
+        </FadeInOut>
+        <Heading
+          lineHeight={1.2}
+          fontWeight={600}
+          position="absolute"
+          left={-6}
+          top={-550}
         >
-          Explore projects
-        </Button>
-        <Button
-          size={'lg'}
-          fontWeight={'normal'}
-          px={6}
-          onClick={() =>
-            window.scrollTo({
-              top: 5000,
-            })
-          }
-        >
-          Hire me
-        </Button>
+          {showReplyBox &&
+            currentDialogueStage.elements.map((dialogueElement, index) => (
+              <FadeInOut
+                key={`dialogue-text-${index}`}
+                duration={dialogueElement.duration}
+                delay={dialogueElement.delay}
+              >
+                <Text {...dialogueElement.props}>{dialogueElement.text}</Text>
+              </FadeInOut>
+            ))}
+        </Heading>
+        {showReplyBox && (
+          <FadeInOut delay={currentDialogueStage.repliesDelay}>
+            <Grid position="absolute" top={-150} left={50} rowGap={2}>
+              <Text
+                color={useColorModeValue('gray.600', 'gray.400')}
+                fontSize="lg"
+                fontWeight="semibold"
+              >
+                Choose a reply:
+              </Text>
+              <Grid
+                rounded="lg"
+                borderWidth="2px"
+                borderStyle="solid"
+                borderColor={useColorModeValue('gray.400', 'gray.600')}
+                width={500}
+                height={134}
+                rowGap={4}
+                p={4}
+              >
+                {currentDialogueStage.replies.map((dialogueReply, index) => (
+                  <Button
+                    w="full"
+                    key={`dialogue-reply-${index}`}
+                    onClick={() => {
+                      if (dialogueReply.action) {
+                        dialogueReply.action({
+                          router,
+                          setShowReplyBox,
+                        });
+                      }
+                      if (dialogueStage === 9) {
+                        setDialogueStage(dialogueReply.nextStage);
+                        setShowReplyBox(false);
+                        process.nextTick(() => {
+                          setShowReplyBox(true);
+                        });
+                      }
+                      if (dialogueStage === 6) {
+                        if (dialogueReply.isPrimary) {
+                        } else {
+                          window.scrollTo(0, 5000);
+                        }
+                        return;
+                      }
+
+                      setDialogueStage(dialogueReply.nextStage);
+                      setShowReplyBox(false);
+                      process.nextTick(() => {
+                        setShowReplyBox(true);
+                      });
+                    }}
+                    colorScheme={dialogueReply.isPrimary ? 'blue' : undefined}
+                  >
+                    <FontAwesomeIcon icon={faChevronRight} />
+                    <Text ml="auto">{dialogueReply.text}</Text>
+                  </Button>
+                ))}
+              </Grid>
+            </Grid>
+          </FadeInOut>
+        )}
       </Stack>
-    </Stack>
+    </>
   );
 };
 

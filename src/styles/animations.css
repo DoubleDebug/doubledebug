@@ -1,0 +1,28 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0%;
+    transform: translateY(-300px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes popUp {
+  from {
+    transform: translateY(75px);
+  }
+  to {
+    transform: translateY(px);
+  }
+}

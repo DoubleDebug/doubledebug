@@ -10,6 +10,7 @@ const HomepageProjectsSection: React.FC<IHomepageProjectsSectionProps> = ({
 }) => {
   return (
     <Container
+      id="homepage-section-projects"
       display="grid"
       justifyContent="center"
       maxW="100%"

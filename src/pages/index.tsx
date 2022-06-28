@@ -1,11 +1,11 @@
-import type { GetStaticProps, NextPage } from 'next';
-import { HomepageCTA } from '../components/homepage/homepageCTA';
-import Head from 'next/head';
-import path from 'path';
 import fs from 'fs/promises';
-import { ContactForm } from '../components/contact/contactForm';
-import HomepageProjectsSection from '../components/homepage/homepageProjectsSection';
+import path from 'path';
+import Head from 'next/head';
+import type { GetStaticProps, NextPage } from 'next';
 import { Heading } from '@chakra-ui/react';
+import { ContactForm } from '../components/contact/contactForm';
+import { HomepageCTA } from '../components/homepage/homepageCTA';
+import HomepageProjectsSection from '../components/homepage/homepageProjectsSection';
 
 export const getStaticProps: GetStaticProps = async () => {
   const filePath = path.join(process.cwd(), 'public/data/projects.json');
