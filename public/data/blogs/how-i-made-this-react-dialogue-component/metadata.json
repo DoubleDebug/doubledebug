@@ -1,0 +1,16 @@
+{
+    "id": "how-i-made-this-react-dialogue-component",
+    "title": "How I made this React Dialogue Component",
+    "summary": "On today's episode of overengineering, I'm making an interactive dialogue mini game in React. The setup: you're talking to my avatar and whenever he says something, you can choose your reply. Different replies lead the conversation in different paths, mimicing a real life conversation.",
+    "author": {
+        "name": "Double Debug",
+        "icon": "/images/avatar_circle_meh.png",
+        "createdAt": "6/28/2022"
+    },
+    "tags": [
+        "React",
+        "Data structures",
+        "Graphs"
+    ],
+    "previewImageURL": "https://i.imgur.com/m7iyWz8.png"
+}

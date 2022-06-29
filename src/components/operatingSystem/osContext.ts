@@ -7,8 +7,8 @@ export const OSContext = createContext<{
   setSelectedIconId: (i: string | undefined) => void;
   activeWindowId: string | undefined;
   setActiveWindowId: (w: string | undefined) => void;
-  openedWindows: ProjectInfo[];
-  setOpenedWindows: (w: ProjectInfo[]) => void;
+  openedWindows: Project[];
+  setOpenedWindows: (w: Project[]) => void;
 }>({
   isStartMenuShown: false,
   setIsStartMenuShown: () => {},

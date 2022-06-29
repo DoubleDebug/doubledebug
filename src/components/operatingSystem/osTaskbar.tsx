@@ -79,7 +79,7 @@ const OSTaskbar: React.FC<IOSTaskbarProps & any> = (props) => {
         <FontAwesomeIcon icon={faHouse} />
       </OSTaskbarButton>
       <Flex className="opened-windows">
-        {openedWindows.map((proj: ProjectInfo, index: number) => (
+        {openedWindows.map((proj: Project, index: number) => (
           <Button
             key={`taskbar-window-${index}`}
             display="flex"

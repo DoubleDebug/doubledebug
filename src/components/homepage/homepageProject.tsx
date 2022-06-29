@@ -16,7 +16,7 @@ import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
 
-const HomepageProject: React.FC<{ data: ProjectInfo }> = (props) => {
+const HomepageProject: React.FC<{ data: Project }> = (props) => {
   const [isMobile] = useMediaQuery('(max-width: 640px)');
   const router = useRouter();
   return (

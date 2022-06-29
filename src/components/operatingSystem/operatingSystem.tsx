@@ -17,13 +17,13 @@ import OSTaskbar from './osTaskbar';
 import OSWindow from './osWindow';
 
 interface IOperatingSystemProps {
-  projects: ProjectInfo[];
+  projects: Project[];
 }
 
 const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
   const [isStartMenuShown, setIsStartMenuShown] = useState<boolean>(false);
   const [selectedIconId, setSelectedIconId] = useState<string | undefined>();
-  const [openedWindows, setOpenedWindows] = useState<ProjectInfo[]>([]);
+  const [openedWindows, setOpenedWindows] = useState<Project[]>([]);
   const [activeWindowId, setActiveWindowId] = useState<string | undefined>();
   const { width: windowWidth } = useWindowSize();
   const osRef = useRef<HTMLDivElement>(null);

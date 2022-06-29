@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export const Home: NextPage<{ projects: ProjectInfo[] }> = ({ projects }) => {
+export const Home: NextPage<{ projects: Project[] }> = ({ projects }) => {
   return (
     <div>
       <Head>

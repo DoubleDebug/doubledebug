@@ -17,9 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const ExploreProjects: React.FC<{ projects: ProjectInfo[] }> = ({
-  projects,
-}) => {
+const ExploreProjects: React.FC<{ projects: Project[] }> = ({ projects }) => {
   return (
     <>
       <Head>

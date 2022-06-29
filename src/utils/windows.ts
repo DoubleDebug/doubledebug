@@ -1,6 +1,6 @@
 export function getStartingPositionX(
   osRef: HTMLDivElement | null,
-  projectData: ProjectInfo
+  projectData: Project
 ) {
   if (!osRef) {
     return 0;
@@ -12,7 +12,7 @@ export function getStartingPositionX(
 
 export function getStartingPositionY(
   osRef: HTMLDivElement | null,
-  projectData: ProjectInfo
+  projectData: Project
 ) {
   if (!osRef) {
     return 0;

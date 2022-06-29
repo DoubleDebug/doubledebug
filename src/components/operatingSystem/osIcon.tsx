@@ -4,10 +4,10 @@ import { useContext } from 'react';
 import { OSContext } from './osContext';
 
 interface IOSIconProps {
-  data: ProjectInfo;
+  data: Project;
   isSelected: boolean;
   setIsSelected: (id: number) => void;
-  setOpenedProjects: (p: ProjectInfo[]) => void;
+  setOpenedProjects: (p: Project[]) => void;
 }
 
 const OSIcon: React.FC<IOSIconProps & any> = ({

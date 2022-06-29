@@ -4,7 +4,7 @@ import { OSContext } from './osContext';
 import OSIcon from './osIcon';
 
 const OSDefaultIcon: React.FC<{
-  data: ProjectInfo;
+  data: Project;
 }> = (props) => {
   const { selectedIconId } = useContext(OSContext);
 

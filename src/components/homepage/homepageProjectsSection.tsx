@@ -2,7 +2,7 @@ import { Container, useColorModeValue, Heading } from '@chakra-ui/react';
 import HomepageProject from './homepageProject';
 
 interface IHomepageProjectsSectionProps {
-  projects: ProjectInfo[];
+  projects: Project[];
 }
 
 const HomepageProjectsSection: React.FC<IHomepageProjectsSectionProps> = ({

@@ -1,4 +1,4 @@
-type ProjectInfo = {
+type Project = {
   id: string;
   title: string;
   description: string;
@@ -20,6 +20,21 @@ type ProjectInfo = {
     };
   };
   showOnHomepage?: true;
+};
+
+type Blog = {
+  id: string;
+  title: string;
+  summary: string;
+  author: BlogAuthorInfo;
+  tags: string[];
+  previewImageURL: string;
+};
+
+type BlogAuthor = {
+  name: string;
+  icon: string;
+  createdAt: string;
 };
 
 type ResponseStatus =

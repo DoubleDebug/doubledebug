@@ -23,6 +23,10 @@ export const NAVIGATION_ITEMS = [
     url: '/education',
   },
   {
+    title: 'Blog',
+    url: '/blog',
+  },
+  {
     title: 'Contact',
     url: '/contact',
   },

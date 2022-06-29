@@ -8,7 +8,7 @@ import { playPopoutAnimation } from '../../utils/animations/popout';
 import OSWindowSidebar from './osWindowSidebar';
 
 interface IOSWindowProps {
-  project: ProjectInfo;
+  project: Project;
   isActive: boolean;
 }
 

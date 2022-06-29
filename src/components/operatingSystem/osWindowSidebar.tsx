@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SIDEBAR_WIDTH } from '../../utils/constants';
 
 interface IOSWindowSidebarProps {
-  data: ProjectInfo;
+  data: Project;
 }
 
 const OSWindowSidebar: React.FC<IOSWindowSidebarProps> = (props) => {
