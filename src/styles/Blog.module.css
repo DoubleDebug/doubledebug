@@ -1,0 +1,136 @@
+.markdown p {
+  font-size: 1.4rem;
+}
+
+.markdown h1 {
+  font-size: xxx-large !important;
+  font-weight: 600 !important;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown h2 {
+  font-size: xx-large !important;
+  font-weight: 500 !important;
+}
+
+.markdown h3 {
+  font-size: x-large !important;
+  font-weight: 500 !important;
+}
+
+.markdown h4 {
+  font-size: large !important;
+  font-weight: 500 !important;
+}
+
+.markdown h5 {
+  font-size: medium !important;
+  font-weight: 400 !important;
+}
+
+.markdown h6 {
+  font-size: small !important;
+  font-weight: 400 !important;
+}
+
+.markdown ul {
+  margin-left: 2rem;
+}
+
+.markdown hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.markdown a {
+  color: blue;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown a:visited {
+  color: purple;
+}
+
+.markdown blockquote {
+  display: block;
+  margin: 0 0 20px;
+  border-left: 5px solid #eee;
+  padding: 10px 20px;
+}
+
+.markdown code {
+  border-radius: 5px;
+  padding: 1px 6px 2px;
+  background-color: #1a202c;
+  color: white;
+}
+
+.markdown pre code {
+  display: block;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 0;
+}
+
+.markdown pre > code {
+  padding: 1rem;
+}
+
+.markdown p,
+.markdown pre {
+  margin-bottom: 5px;
+}
+
+.markdown table {
+  border-color: #e2e8f0;
+  border-collapse: collapse;
+  word-wrap: break-word;
+  width: 100%;
+  margin-top: 32px;
+  text-align: left;
+  display: table;
+  border-spacing: 2px;
+}
+
+.markdown th {
+  background: #f7fafc;
+  font-weight: 600;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  display: table-cell;
+  border-bottom-width: 2px;
+  border-color: inherit;
+}
+
+.markdown tr {
+  border-color: #e2e8f0;
+  word-wrap: break-word;
+  display: table-row;
+}
+
+.markdown td {
+  padding: 0.5rem;
+  border-top-width: 1px;
+  border-color: inherit;
+  font-size: 0.875rem;
+  white-space: normal;
+}
+
+.markdown tbody :nth-child(2) td {
+  background: #f7fafc;
+}
+
+.markdown img {
+  width: 100%;
+}

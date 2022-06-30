@@ -49,12 +49,14 @@ export const BlogArticlePreview: React.FC<Blog> = (blog) => {
     >
       <Box display="flex" flex="1" marginRight="3" alignItems="center">
         <Box m={{ base: '0 0 7% 0', md: '5%' }}>
-          <Image
-            borderRadius="lg"
-            src={blog.previewImageURL}
-            alt="Blog preview"
-            objectFit="contain"
-          />
+          <Link href={`/blog/${blog.id}`}>
+            <Image
+              borderRadius="lg"
+              src={blog.previewImageURL}
+              alt="Blog preview"
+              objectFit="contain"
+            />
+          </Link>
         </Box>
       </Box>
       <Box

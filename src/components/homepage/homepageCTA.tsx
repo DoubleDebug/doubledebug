@@ -21,6 +21,10 @@ export const HomepageCTA = () => {
   const router = useRouter();
   const isLargeScreen = windowWidth > W_CONSTRAINT;
 
+  if (windowWidth === 0) {
+    return <Container maxW="7xl" height="100vh" />;
+  }
+
   return (
     <Container maxW={'7xl'}>
       <Stack

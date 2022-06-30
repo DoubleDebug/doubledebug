@@ -93,6 +93,7 @@ const Nav = () => {
           </Button>
           <Stack direction={'row'} spacing={7}>
             <Button
+              title={useColorModeValue('Light theme', 'Dark theme')}
               bgColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
               onClick={toggleColorMode}
               _hover={{
