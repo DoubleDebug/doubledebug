@@ -57,11 +57,11 @@ const BlogArticleList: React.FC<IBlogArticleListProps> = (props) => {
         {props.latestBlogs.map((blog, index) => (
           <BlogArticlePreview key={`blog-article-preview-${index}`} {...blog} />
         ))}
-        <Divider my={16} />
+        {/* <Divider my={16} />
         <Heading as="h1">Top 5 picks</Heading>
         {props.recommendedBlogs.map((blog, index) => (
           <BlogArticlePreview key={`blog-article-preview-${index}`} {...blog} />
-        ))}
+        ))} */}
       </Container>
     </>
   );

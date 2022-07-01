@@ -120,7 +120,7 @@ const HomepageDialogue: React.FC = () => {
               </FadeInOut>
             ))}
         </Heading>
-        {showReplyBox && (
+        {showReplyBox ? (
           <FadeInOut delay={currentDialogueStage.repliesDelay}>
             <Grid position="absolute" top={-150} left={50} rowGap={2}>
               <Text
@@ -181,6 +181,8 @@ const HomepageDialogue: React.FC = () => {
               </Grid>
             </Grid>
           </FadeInOut>
+        ) : (
+          <div aria-label="empty-div" />
         )}
       </Stack>
     </>
