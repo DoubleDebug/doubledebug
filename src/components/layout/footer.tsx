@@ -57,7 +57,7 @@ export const Footer = () => {
       color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container as={Stack} maxW={'6xl'} py={4} spacing={4} align={'center'}>
-        <Stack direction={'row'} spacing={6} display="flex">
+        <Stack direction={'row'} spacing={{ base: 4, md: 6 }} display="flex">
           {NAVIGATION_ITEMS.map((navItem) => (
             <Link href={navItem.url} key={`nav-item-${navItem.title}`}>
               {navItem.title}
@@ -67,7 +67,12 @@ export const Footer = () => {
             className={useColorModeValue('vSeparatorLight', 'vSeparatorDark')}
             role="separator"
           />
-          <Link href="#" onClick={() => window.scrollTo(0, 0)} ml="auto">
+          <Link
+            href="#"
+            onClick={() => window.scrollTo(0, 0)}
+            ml="auto"
+            whiteSpace="nowrap"
+          >
             Back to top
           </Link>
         </Stack>

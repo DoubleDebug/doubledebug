@@ -17,8 +17,8 @@ const OSDefaultIcon: React.FC<{
         y: 0,
       }}
       defaultPosition={{
-        x: props.data.osSettings.iconOffset.x,
-        y: props.data.osSettings.iconOffset.y,
+        x: props.data.osSettings?.iconOffset.x || 0,
+        y: props.data.osSettings?.iconOffset.y || 0,
       }}
       key={`os-icon-${props.data.id}`}
     >
@@ -36,7 +36,7 @@ const OSDefaultIcons: React.FC = () => {
           description: 'This PC',
           urls: {
             icon: 'https://i.imgur.com/7eYAcYq.png',
-            previewImage: '',
+            previewImages: [],
             githubRepo: '',
           },
           technologies: [],
@@ -59,7 +59,7 @@ const OSDefaultIcons: React.FC = () => {
           description: 'My documents',
           urls: {
             icon: 'https://i.imgur.com/35AldHk.png',
-            previewImage: '',
+            previewImages: [],
             githubRepo: '',
           },
           technologies: [],
@@ -82,7 +82,7 @@ const OSDefaultIcons: React.FC = () => {
           description: 'Recycle Bin',
           urls: {
             icon: 'https://i.imgur.com/Uv4nn20.png',
-            previewImage: '',
+            previewImages: [],
             githubRepo: '',
           },
           technologies: [],

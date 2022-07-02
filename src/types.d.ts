@@ -6,10 +6,11 @@ type Project = {
   urls: {
     liveDemo?: string;
     icon: string;
-    previewImage: string;
+    previewImages: string[];
     githubRepo: string;
+    isPrivate?: true;
   };
-  osSettings: {
+  osSettings?: {
     windowSize: {
       w: number;
       h: number;

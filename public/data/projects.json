@@ -1,9 +1,26 @@
 {
     "projects": [
         {
+            "id": "portfolio-website",
+            "title": "Portfolio website",
+            "description": "Project showcase + blog website with NextJS, Typescript and Chakra UI",
+            "technologies": [
+                "NextJS",
+                "Typescript",
+                "Chakra UI"
+            ],
+            "urls": {
+                "icon": "images/avatar_circle_meh.png",
+                "previewImages": [
+                    "https://i.imgur.com/y6JGvm8.png"
+                ],
+                "githubRepo": "https://github.com/DoubleDebug/portfolio-website"
+            }
+        },
+        {
             "id": "fake-reddit",
             "title": "Fake Reddit",
-            "description": "React clone with React, Typescript and Firebase",
+            "description": "Reddit clone with React, Typescript and Firebase",
             "technologies": [
                 "React",
                 "Typescript",
@@ -14,7 +31,9 @@
             "urls": {
                 "liveDemo": "https://fake-reddit.com",
                 "icon": "https://i.imgur.com/LSSbGSc.png",
-                "previewImage": "https://i.imgur.com/O3OPruB.png",
+                "previewImages": [
+                    "https://i.imgur.com/O3OPruB.png"
+                ],
                 "githubRepo": "https://github.com/DoubleDebug/fake-reddit"
             },
             "osSettings": {
@@ -41,7 +60,9 @@
             "urls": {
                 "liveDemo": "https://minesweeper-52419.web.app",
                 "icon": "https://i.imgur.com/7rcDJEy.png",
-                "previewImage": "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png",
+                "previewImages": [
+                    "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png"
+                ],
                 "githubRepo": "https://github.com/DoubleDebug/minesweeper"
             },
             "osSettings": {
@@ -67,7 +88,9 @@
             ],
             "urls": {
                 "icon": "https://i.imgur.com/tkgsusx.png",
-                "previewImage": "https://i.imgur.com/zigSgrb.png",
+                "previewImages": [
+                    "https://i.imgur.com/zigSgrb.png"
+                ],
                 "githubRepo": "https://github.com/DoubleDebug/project-manager"
             },
             "osSettings": {
@@ -81,6 +104,27 @@
                 }
             },
             "showOnHomepage": true
+        },
+        {
+            "id": "probcut",
+            "title": "ProbCut Barbershop",
+            "description": "Barbershop appointment scheduling app with ASP.NET Core",
+            "technologies": [
+                "C#",
+                "ASP.NET Core",
+                "Javascript",
+                "Razor pages"
+            ],
+            "urls": {
+                "icon": "https://i.imgur.com/L4MdxlM.png",
+                "previewImages": [
+                    "https://i.imgur.com/lvmw9CW.png",
+                    "https://i.imgur.com/06jxbTj.png",
+                    "https://i.imgur.com/b4rjlIh.png"
+                ],
+                "githubRepo": "https://github.com/DoubleDebug/probcut",
+                "isPrivate": true
+            }
         }
     ]
 }

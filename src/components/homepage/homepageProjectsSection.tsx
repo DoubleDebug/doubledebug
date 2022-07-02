@@ -1,5 +1,13 @@
-import { Container, useColorModeValue, Heading } from '@chakra-ui/react';
-import HomepageProject from './homepageProject';
+import {
+  Container,
+  useColorModeValue,
+  Heading,
+  Flex,
+  Link,
+  Text,
+  Grid,
+} from '@chakra-ui/react';
+import ProjectPreview from './homepageProject';
 
 interface IHomepageProjectsSectionProps {
   projects: Project[];
@@ -17,22 +25,26 @@ const HomepageProjectsSection: React.FC<IHomepageProjectsSectionProps> = ({
       p="12"
       bg={useColorModeValue('gray.100', 'gray.900')}
     >
-      <Heading
-        as="h1"
-        size="2xl"
-        mb={{ base: 8, lg: 16 }}
-        textAlign={{ base: 'center', lg: 'left' }}
-      >
-        Projects
-      </Heading>
-      {projects
-        .filter((p) => p.showOnHomepage)
-        .map((project) => (
-          <HomepageProject
-            data={project}
-            key={`project-preview-${project.id}`}
-          />
-        ))}
+      <Flex align="center" justify="space-between">
+        <Heading as="h1" size="2xl" textAlign={{ base: 'center', lg: 'left' }}>
+          Projects
+        </Heading>
+        <Flex columnGap={4}>
+          <Text>Showing 3 of {projects.length}</Text>
+          <span>—</span>
+          <Link href="/projects"> See all</Link>
+        </Flex>
+      </Flex>
+      <Grid mt={{ base: 8, lg: 16 }}>
+        {projects
+          .filter((p) => p.showOnHomepage)
+          .map((project) => (
+            <ProjectPreview
+              data={project}
+              key={`project-preview-${project.id}`}
+            />
+          ))}
+      </Grid>
     </Container>
   );
 };

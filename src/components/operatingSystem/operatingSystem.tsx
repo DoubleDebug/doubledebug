@@ -89,8 +89,8 @@ const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
                 y: 0,
               }}
               defaultPosition={{
-                x: proj.osSettings.iconOffset.x,
-                y: proj.osSettings.iconOffset.y,
+                x: proj.osSettings?.iconOffset.x || 0,
+                y: proj.osSettings?.iconOffset.y || 0,
               }}
               key={`os-icon-${index}`}
             >

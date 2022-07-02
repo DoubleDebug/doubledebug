@@ -16,7 +16,7 @@ import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
 
-const HomepageProject: React.FC<{ data: Project }> = (props) => {
+const ProjectPreview: React.FC<{ data: Project }> = (props) => {
   const [isMobile] = useMediaQuery('(max-width: 640px)');
   const router = useRouter();
   return (
@@ -41,7 +41,7 @@ const HomepageProject: React.FC<{ data: Project }> = (props) => {
           justifyContent={isMobile ? 'center' : undefined}
           mb={isMobile ? 4 : undefined}
         >
-          {props.data.urls.previewImage && (
+          {props.data.urls.previewImages.length > 0 && (
             <Link
               href={`/projects/${props.data.id}`}
               overflow="hidden"
@@ -49,7 +49,7 @@ const HomepageProject: React.FC<{ data: Project }> = (props) => {
               mx="auto"
             >
               <Image
-                src={props.data.urls.previewImage}
+                src={props.data.urls.previewImages[0]}
                 alt="Project frontpage screenshot"
                 objectFit="contain"
                 maxHeight={400}
@@ -133,4 +133,4 @@ const HomepageProject: React.FC<{ data: Project }> = (props) => {
   );
 };
 
-export default HomepageProject;
+export default ProjectPreview;
