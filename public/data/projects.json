@@ -49,6 +49,22 @@
             "showOnHomepage": true
         },
         {
+            "id": "wordle",
+            "title": "Wordle clone",
+            "description": "Cloning Wordle in Javascript in 30 minutes (exercise)",
+            "technologies": [
+                "Javascript",
+                "CSS"
+            ],
+            "urls": {
+                "icon": "https://i.imgur.com/CnqxIq4.png",
+                "previewImages": [
+                    "https://i.imgur.com/ofa3hJa.png"
+                ],
+                "githubRepo": "https://github.com/DoubleDebug/wordle-speedrun"
+            }
+        },
+        {
             "id": "minesweeper",
             "title": "Minesweeper",
             "description": "Simple Javascript Minesweeper game",
@@ -113,7 +129,8 @@
                 "C#",
                 "ASP.NET Core",
                 "Javascript",
-                "Razor pages"
+                "Razor pages",
+                "Bootstrap"
             ],
             "urls": {
                 "icon": "https://i.imgur.com/L4MdxlM.png",
@@ -123,6 +140,59 @@
                     "https://i.imgur.com/b4rjlIh.png"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/probcut",
+                "isPrivate": true
+            }
+        },
+        {
+            "id": "implement-your-own",
+            "title": "Implement your own",
+            "description": "Rewriting existing classes and features of Javascript (exercise)",
+            "technologies": [
+                "Javascript",
+                "ES6",
+                "Jest"
+            ],
+            "urls": {
+                "icon": "https://i.imgur.com/rQTImVR.png",
+                "previewImages": [
+                    "https://i.imgur.com/EryoL55.png"
+                ],
+                "githubRepo": "https://github.com/DoubleDebug/implement-your-own"
+            }
+        },
+        {
+            "id": "random-persona",
+            "title": "Random persona",
+            "description": "NodeJS API for generating random personnal data",
+            "technologies": [
+                "Node",
+                "Express"
+            ],
+            "urls": {
+                "icon": "https://i.imgur.com/QesQwmJ.png",
+                "previewImages": [
+                    "https://i.imgur.com/voMjETj.png"
+                ],
+                "githubRepo": "https://github.com/DoubleDebug/random-persona"
+            }
+        },
+        {
+            "id": "technical-office",
+            "title": "Technical Office",
+            "description": "Technical PDF drawing management system",
+            "technologies": [
+                "Javascript",
+                "Firebase",
+                "Tailwind"
+            ],
+            "urls": {
+                "icon": "https://i.imgur.com/fmMky53.png",
+                "previewImages": [
+                    "https://i.imgur.com/X0mSCwI.png",
+                    "https://i.imgur.com/GwiVFkl.png",
+                    "https://i.imgur.com/EFFOSrk.png"
+                ],
+                "githubRepo": "https://github.com/DoubleDebug/technical-office",
                 "isPrivate": true
             }
         }
