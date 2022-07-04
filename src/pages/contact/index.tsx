@@ -63,7 +63,7 @@ const ContactPage: React.FC = () => {
             }}
           >
             <Avatar
-              src="/images/avatar_circle.png"
+              src="/images/avatar_circle_meh.png"
               size="full"
               position="absolute"
               top={0}

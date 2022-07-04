@@ -1,7 +1,7 @@
 import { Badge, Button, Flex, Grid, Heading, Text } from '@chakra-ui/react';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SIDEBAR_WIDTH } from '../../utils/constants';
+import { SIDEBAR_WIDTH } from '../../utils/misc/constants';
 
 interface IOSWindowSidebarProps {
   data: Project;

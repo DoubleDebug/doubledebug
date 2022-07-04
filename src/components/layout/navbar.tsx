@@ -15,7 +15,10 @@ import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useWindowSize } from 'usehooks-ts';
-import { NAVIGATION_ITEMS, OS_MIN_WINDOW_WIDTH } from '../../utils/constants';
+import {
+  NAVIGATION_ITEMS,
+  OS_MIN_WINDOW_WIDTH,
+} from '../../utils/misc/constants';
 
 const NavLink = (props: { children: ReactNode; link: string }) => (
   <Link

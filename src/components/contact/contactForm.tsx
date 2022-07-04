@@ -32,7 +32,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { ReactNode, useState } from 'react';
-import { SOCIAL_LINKS } from '../../utils/constants';
+import { SOCIAL_LINKS } from '../../utils/misc/constants';
 import { sendEmail } from './contactFormActions';
 
 export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {

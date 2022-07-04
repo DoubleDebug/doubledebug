@@ -6,7 +6,8 @@ export function getStartingPositionX(
     return 0;
   }
   return Math.round(
-    Math.random() * (osRef.clientWidth - projectData.osSettings.windowSize.w)
+    Math.random() *
+      (osRef.clientWidth - (projectData.osSettings?.windowSize.w || 0))
   );
 }
 
@@ -24,7 +25,7 @@ export function getStartingPositionY(
       Math.random() *
         (osRef.clientHeight -
           TASKBAR_HEIGHT -
-          projectData.osSettings.windowSize.h)
+          (projectData.osSettings?.windowSize.h || 0))
     ) - OFFSET
   );
 }

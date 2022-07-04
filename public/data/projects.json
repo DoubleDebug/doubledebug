@@ -25,7 +25,7 @@
                 "React",
                 "Typescript",
                 "Firebase",
-                "NodeJS",
+                "Node",
                 "Express"
             ],
             "urls": {
@@ -54,6 +54,7 @@
             "description": "Cloning Wordle in Javascript in 30 minutes (exercise)",
             "technologies": [
                 "Javascript",
+                "HTML",
                 "CSS"
             ],
             "urls": {
@@ -62,7 +63,8 @@
                     "https://i.imgur.com/ofa3hJa.png"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/wordle-speedrun"
-            }
+            },
+            "showOnHomepage": true
         },
         {
             "id": "minesweeper",
@@ -90,8 +92,7 @@
                     "x": 710,
                     "y": 42
                 }
-            },
-            "showOnHomepage": true
+            }
         },
         {
             "id": "project-manager",
@@ -118,8 +119,7 @@
                     "x": 800,
                     "y": 42
                 }
-            },
-            "showOnHomepage": true
+            }
         },
         {
             "id": "probcut",
@@ -141,7 +141,8 @@
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/probcut",
                 "isPrivate": true
-            }
+            },
+            "showOnHomepage": true
         },
         {
             "id": "implement-your-own",
@@ -194,7 +195,8 @@
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/technical-office",
                 "isPrivate": true
-            }
+            },
+            "showOnHomepage": true
         }
     ]
 }

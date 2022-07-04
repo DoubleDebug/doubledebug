@@ -1,4 +1,4 @@
-import { SIDEBAR_WIDTH } from '../constants';
+import { SIDEBAR_WIDTH } from '../misc/constants';
 
 export function playExpandAnimation(element: HTMLDivElement | undefined) {
   if (!element) return;

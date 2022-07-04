@@ -4,11 +4,11 @@ import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import { useWindowSize } from 'usehooks-ts';
-import { OS_MIN_WINDOW_WIDTH } from '../../utils/constants';
+import { OS_MIN_WINDOW_WIDTH } from '../../utils/misc/constants';
 import {
   getStartingPositionX,
   getStartingPositionY,
-} from '../../utils/windows';
+} from '../../utils/misc/windows';
 import { OSContext } from './osContext';
 import OSDefaultIcons from './osDefaultIcons';
 import OSIcon from './osIcon';

@@ -13,7 +13,7 @@ import { useWindowSize } from 'usehooks-ts';
 import {
   OS_MIN_WINDOW_WIDTH,
   HOMEPAGE_SPEECH_BUBBLE_MIN_WINDOW_WIDTH as W_CONSTRAINT,
-} from '../../utils/constants';
+} from '../../utils/misc/constants';
 import HomepageDialogue from './dialogue/Dialogue';
 
 export const HomepageCTA = () => {
