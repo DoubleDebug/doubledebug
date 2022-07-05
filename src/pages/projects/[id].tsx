@@ -4,6 +4,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Button,
   Container,
   Flex,
   Heading,
@@ -11,8 +12,6 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { fetchBlog } from '../../utils/fetching/fetchBlogs';
-import { BlogAuthor, BlogTags } from './components';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import ReactMarkdown from 'react-markdown';
@@ -21,13 +20,19 @@ import path from 'path';
 import fs from 'fs/promises';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { fetchProject } from '../../utils/fetching/fetchProject';
+import { BlogTags } from '../blog/components';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Carousel } from './components';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const filePath = path.join(process.cwd(), 'public/data/blogs.json');
-  const blogIdsRaw = await fs.readFile(filePath);
-  const blogIds = JSON.parse(blogIdsRaw.toString());
+  const filePath = path.join(process.cwd(), 'public/data/projects.json');
+  const projectIdsRaw = await fs.readFile(filePath);
+  const projectIds = JSON.parse(projectIdsRaw.toString());
 
-  const paths = blogIds.blogs.map((b: any) => ({ params: { id: b.id } }));
+  const paths = projectIds.projects.map((p: any) => ({ params: { id: p.id } }));
 
   return {
     paths: paths,
@@ -36,24 +41,28 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const blogData = await fetchBlog(context.params?.id as string);
+  const projectData = await fetchProject(context.params?.id as string);
 
   return {
-    props: blogData,
+    props: projectData,
   };
 };
 
-interface IBlogArticleProps {
+interface IProjectArticleProps {
   content: string;
-  metadata: Blog;
+  metadata: Project;
 }
 
-const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
+const ProjectArticle: React.FC<IProjectArticleProps> = ({
+  content,
+  metadata,
+}) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)');
+
   return (
     <>
       <Head>
-        <title>{metadata.title} | Double Debug</title>
+        <title>Project "{metadata.title}" | Double Debug</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
       <Container maxW={'7xl'} p={12} pt={8}>
@@ -65,34 +74,47 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
             mb={4}
           >
             <BreadcrumbItem>
-              <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+              <BreadcrumbLink href="/projects">Projects</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/blog/${metadata.id}`}>
+              <BreadcrumbLink href={`/projects/${metadata.id}`}>
                 {metadata.title}
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
         )}
-        <Heading as="h1" size="3xl" mb={8}>
+        <Heading as="h1" size="3xl" mb={4}>
           {metadata.title}
         </Heading>
-        <Flex mb={6}>
-          <BlogTags tags={metadata.tags} />
-          <Box ml="auto">
-            <BlogAuthor
-              name={metadata.author.name}
-              icon={metadata.author.icon}
-              createdAt={metadata.author.createdAt}
-            />
-          </Box>
-        </Flex>
-        <Box
-          bg={useColorModeValue('gray.100', 'white')}
-          rounded="3xl"
-          p={8}
-          color="black"
+        <Flex
+          justify="space-between"
+          flexDirection={{ base: 'column', md: 'row' }}
+          mb={6}
         >
+          <BlogTags tags={metadata.technologies} />
+          <Flex
+            alignItems={{ base: undefined, md: 'center' }}
+            columnGap={4}
+            flexDirection={{ base: 'column', md: 'row' }}
+            rowGap={2}
+            mt={{ base: 8, md: 0 }}
+            w={{ base: 'full', md: 'min-content' }}
+          >
+            {metadata.urls.liveDemo && (
+              <Button variant="outline" px={12} columnGap={2}>
+                Live demo <ExternalLinkIcon />
+              </Button>
+            )}
+            {!metadata.urls.isPrivate && (
+              <Button variant="outline" px={6} columnGap={2}>
+                Source code
+                <FontAwesomeIcon icon={faGithub} />
+              </Button>
+            )}
+          </Flex>
+        </Flex>
+        <Carousel images={metadata.urls.previewImages} />
+        <Box rounded="3xl" py={8}>
           <ReactMarkdown
             children={content}
             rehypePlugins={[rehypeRaw]}
@@ -125,4 +147,4 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
   );
 };
 
-export default BlogArticle;
+export default ProjectArticle;

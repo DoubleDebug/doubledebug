@@ -1,0 +1,30 @@
+.dark {
+  color: white;
+}
+
+.light {
+  color: #1a202c;
+}
+
+.btnPrev {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 27px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnPrev::after {
+  content: 'prev';
+  font-family: swiper-icons;
+  font-size: 2rem;
+  text-transform: none !important;
+  letter-spacing: 0;
+  line-height: 1;
+}

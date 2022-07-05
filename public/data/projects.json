@@ -32,7 +32,12 @@
                 "liveDemo": "https://fake-reddit.com",
                 "icon": "https://i.imgur.com/LSSbGSc.png",
                 "previewImages": [
-                    "https://i.imgur.com/O3OPruB.png"
+                    "https://i.imgur.com/px2diwq.png",
+                    "https://i.imgur.com/lWYuRp1.png",
+                    "https://i.imgur.com/Ggcs6YP.png",
+                    "https://i.imgur.com/x3UqeD6.png",
+                    "https://i.imgur.com/KMAqbol.png",
+                    "https://i.imgur.com/AirJ4iF.png"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/fake-reddit"
             },
