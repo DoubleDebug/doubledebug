@@ -1,30 +1,21 @@
-.dark {
-  color: white;
+.carousel {
+  --slider-height-percentage: 55%;
+  --slider-transition-duration: 250ms;
+  --control-bullet-active-color: #c0c0c0;
 }
 
 .light {
-  color: #1a202c;
+  --content-background-color: #edf2f7;
+  --organic-arrow-color: black;
+  --control-bullet-color: #c0c0c0;
 }
 
-.btnPrev {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 27px;
-  height: 44px;
-  margin-top: -22px;
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.dark {
+  --content-background-color: #1a202c;
+  --organic-arrow-color: white;
+  --control-bullet-color: #c0c0c0;
 }
 
-.btnPrev::after {
-  content: 'prev';
-  font-family: swiper-icons;
-  font-size: 2rem;
-  text-transform: none !important;
-  letter-spacing: 0;
-  line-height: 1;
+.mobile {
+  --control-button-opacity: 0%;
 }

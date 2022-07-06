@@ -1,4 +1,3 @@
-import css from '../../styles/Blog.module.css';
 import {
   Box,
   Breadcrumb,
@@ -12,15 +11,12 @@ import {
 } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { fetchBlog } from '../../utils/fetching/fetchBlogs';
-import { BlogAuthor, BlogTags } from './components';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 import path from 'path';
 import fs from 'fs/promises';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
+import { BlogTags } from '../../components/blog/BlogTags';
+import { BlogAuthor } from '../../components/blog/BlogAuthor';
+import { Markdown } from '../../components/blog/Markdown';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const filePath = path.join(process.cwd(), 'public/data/blogs.json');
@@ -93,32 +89,7 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
           p={8}
           color="black"
         >
-          <ReactMarkdown
-            children={content}
-            rehypePlugins={[rehypeRaw]}
-            remarkPlugins={[remarkGfm]}
-            className={css.markdown}
-            components={{
-              code({ node, inline, className, children, ...props }) {
-                const match = /language-(\w+)/.exec(className || '');
-                return !inline && match ? (
-                  <SyntaxHighlighter
-                    children={String(children).replace(/\n$/, '')}
-                    style={atomDark as any}
-                    language={match[1]}
-                    PreTag="div"
-                    showLineNumbers
-                    wrapLongLines
-                    {...props}
-                  />
-                ) : (
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                );
-              },
-            }}
-          />
+          <Markdown content={content} />
         </Box>
       </Container>
     </>

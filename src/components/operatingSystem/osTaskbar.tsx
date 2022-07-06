@@ -18,7 +18,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
-import { formatDate, formatTime } from '../../utils/formatTime';
+import { formatDate, formatTime } from '../../utils/misc/formatTime';
 import { OSContext } from './osContext';
 
 function getTaskbarWindowColor(colorMode: ColorMode, isActive: boolean) {

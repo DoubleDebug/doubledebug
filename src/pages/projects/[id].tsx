@@ -1,4 +1,3 @@
-import css from '../../styles/Blog.module.css';
 import {
   Box,
   Breadcrumb,
@@ -12,20 +11,16 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 import path from 'path';
 import fs from 'fs/promises';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
 import { fetchProject } from '../../utils/fetching/fetchProject';
-import { BlogTags } from '../blog/components';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { Carousel } from './components';
+import { BlogTags } from '../../components/blog/BlogTags';
+import { Carousel } from '../../components/projects/Carousel';
+import { Markdown } from '../../components/blog/Markdown';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const filePath = path.join(process.cwd(), 'public/data/projects.json');
@@ -101,12 +96,22 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
             w={{ base: 'full', md: 'min-content' }}
           >
             {metadata.urls.liveDemo && (
-              <Button variant="outline" px={12} columnGap={2}>
+              <Button
+                variant="outline"
+                px={6}
+                columnGap={2}
+                onClick={() => window.open(metadata.urls.liveDemo)}
+              >
                 Live demo <ExternalLinkIcon />
               </Button>
             )}
             {!metadata.urls.isPrivate && (
-              <Button variant="outline" px={6} columnGap={2}>
+              <Button
+                variant="outline"
+                px={6}
+                columnGap={2}
+                onClick={() => window.open(metadata.urls.githubRepo)}
+              >
                 Source code
                 <FontAwesomeIcon icon={faGithub} />
               </Button>
@@ -115,32 +120,7 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
         </Flex>
         <Carousel images={metadata.urls.previewImages} />
         <Box rounded="3xl" py={8}>
-          <ReactMarkdown
-            children={content}
-            rehypePlugins={[rehypeRaw]}
-            remarkPlugins={[remarkGfm]}
-            className={css.markdown}
-            components={{
-              code({ node, inline, className, children, ...props }) {
-                const match = /language-(\w+)/.exec(className || '');
-                return !inline && match ? (
-                  <SyntaxHighlighter
-                    children={String(children).replace(/\n$/, '')}
-                    style={atomDark as any}
-                    language={match[1]}
-                    PreTag="div"
-                    showLineNumbers
-                    wrapLongLines
-                    {...props}
-                  />
-                ) : (
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                );
-              },
-            }}
-          />
+          <Markdown content={content} />
         </Box>
       </Container>
     </>

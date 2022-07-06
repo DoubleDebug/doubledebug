@@ -1,4 +1,5 @@
-.markdown p {
+.markdown p,
+.markdown li {
   font-size: 1.35rem;
 }
 
@@ -57,7 +58,7 @@
 }
 
 .markdown a:visited {
-  color: purple;
+  color: brown;
 }
 
 .markdown blockquote {

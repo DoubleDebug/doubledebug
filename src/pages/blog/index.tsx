@@ -2,9 +2,9 @@ import { Container, Heading, Divider } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import path from 'path';
 import fs from 'fs/promises';
-import { BlogArticlePreview } from './components';
 import { fetchBlogMetadata } from '../../utils/fetching/fetchBlogs';
 import Head from 'next/head';
+import { BlogArticlePreview } from '../../components/blog/BlogArticlePreview';
 
 export const getStaticProps: GetStaticProps = async () => {
   const filePath = path.join(process.cwd(), 'public/data/blogs.json');

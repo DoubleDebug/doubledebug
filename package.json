@@ -22,14 +22,15 @@
     "next": "12.1.6",
     "path": "^0.12.7",
     "react": "18.1.0",
+    "react-awesome-slider": "^4.1.0",
     "react-dom": "18.1.0",
     "react-draggable": "^4.4.5",
     "react-markdown": "^8.0.3",
     "react-syntax-highlighter": "^15.5.0",
     "react-vertical-timeline-component": "^3.5.2",
     "rehype-raw": "^6.1.1",
+    "remark-emoji": "^3.0.2",
     "remark-gfm": "^3.0.1",
-    "swiper": "^8.2.6",
     "usehooks-ts": "^2.5.4"
   },
   "devDependencies": {

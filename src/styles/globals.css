@@ -95,3 +95,22 @@ p {
     }
   }
 }
+
+/* Carousel */
+
+.awssld__content div {
+  display: flex;
+  height: 100%;
+}
+
+.awssld__content div img {
+  height: 100%;
+}
+
+.awssld__prev {
+  left: -30px !important;
+}
+
+.awssld__next {
+  right: -30px !important;
+}

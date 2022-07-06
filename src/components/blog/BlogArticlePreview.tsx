@@ -1,43 +1,13 @@
 import {
   Heading,
-  HStack,
-  Tag,
   Link,
   Text,
   Image,
   Box,
   useColorModeValue,
 } from '@chakra-ui/react';
-
-export const BlogTags: React.FC<{ tags: string[] }> = (props) => {
-  return (
-    <HStack spacing={2}>
-      {props.tags.map((tag) => {
-        return (
-          <Tag size={'md'} variant="solid" colorScheme="blue" key={tag}>
-            {tag}
-          </Tag>
-        );
-      })}
-    </HStack>
-  );
-};
-
-export const BlogAuthor: React.FC<BlogAuthor> = (props) => {
-  return (
-    <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-      <Image
-        borderRadius="full"
-        boxSize="40px"
-        src={props.icon}
-        alt={`Avatar of ${props.name}`}
-      />
-      <Text fontWeight="medium">{props.name}</Text>
-      <Text>—</Text>
-      <Text>{props.createdAt}</Text>
-    </HStack>
-  );
-};
+import { BlogAuthor } from './BlogAuthor';
+import { BlogTags } from './BlogTags';
 
 export const BlogArticlePreview: React.FC<Blog> = (blog) => {
   return (
