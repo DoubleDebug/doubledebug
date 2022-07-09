@@ -23,11 +23,16 @@ import { Carousel } from '../../components/projects/Carousel';
 import { Markdown } from '../../components/blog/Markdown';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const filePath = path.join(process.cwd(), 'public/data/projects.json');
-  const projectIdsRaw = await fs.readFile(filePath);
-  const projectIds = JSON.parse(projectIdsRaw.toString());
+  const filePath = path.join(
+    process.cwd(),
+    'public/data/projects/metadata.json'
+  );
+  const projectsMetadataRaw = await fs.readFile(filePath);
+  const projectsMetadata = JSON.parse(projectsMetadataRaw.toString());
 
-  const paths = projectIds.projects.map((p: any) => ({ params: { id: p.id } }));
+  const paths = projectsMetadata.projects.map((p: any) => ({
+    params: { id: p.id },
+  }));
 
   return {
     paths: paths,

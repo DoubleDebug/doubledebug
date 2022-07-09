@@ -7,7 +7,7 @@ export async function fetchProject(
   // metadata
   const metadataFilePath = path.join(
     process.cwd(),
-    `public/data/projects.json`
+    `public/data/projects/metadata.json`
   );
   const metadataTask = fs.readFile(metadataFilePath);
 

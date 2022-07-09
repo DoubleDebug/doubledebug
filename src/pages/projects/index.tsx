@@ -29,7 +29,10 @@ import { AddIcon, CloseIcon, Search2Icon } from '@chakra-ui/icons';
 import { updateFilteredProjects } from './projectsActions';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const filePath = path.join(process.cwd(), 'public/data/projects.json');
+  const filePath = path.join(
+    process.cwd(),
+    'public/data/projects/metadata.json'
+  );
   const projectsRaw = await fs.readFile(filePath);
   const projectsJson = JSON.parse(projectsRaw.toString());
 

@@ -1,49 +1,30 @@
 import { Container, Heading, Divider } from '@chakra-ui/react';
+import { BlogArticlePreview } from '../../components/blog/BlogArticlePreview';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import path from 'path';
 import fs from 'fs/promises';
-import { fetchBlogMetadata } from '../../utils/fetching/fetchBlogs';
-import Head from 'next/head';
-import { BlogArticlePreview } from '../../components/blog/BlogArticlePreview';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const filePath = path.join(process.cwd(), 'public/data/blogs.json');
-  const blogIdsRaw = await fs.readFile(filePath);
-  const blogIdsJson = JSON.parse(blogIdsRaw.toString());
-
-  const allBlogIds: string[] = blogIdsJson.blogs.map((b: any) => b.id);
-  const latestBlogIds: string[] = allBlogIds.slice(
-    Math.max(allBlogIds.length - 3, 0)
-  );
-  const recommendedBlogIds: string[] = blogIdsJson.blogs
-    .filter((b: any) => b.isRecommended)
-    .map((b: any) => b.id);
-
-  const blogIdsToFetch = Array.from(
-    new Set([...latestBlogIds, ...recommendedBlogIds])
-  );
-  const blogs = await fetchBlogMetadata(blogIdsToFetch);
-  const latestBlogs = blogs
-    .filter((b) => latestBlogIds.includes(b.id))
-    .reverse();
-  const recommendedBlogs = blogs.filter((b) =>
-    recommendedBlogIds.includes(b.id)
-  );
+  const filePath = path.join(process.cwd(), 'public/data/blogs/metadata.json');
+  const blogsRaw = await fs.readFile(filePath);
+  const blogsJson = JSON.parse(blogsRaw.toString());
 
   return {
     props: {
-      latestBlogs,
-      recommendedBlogs,
+      blogs: blogsJson.blogs,
     },
   };
 };
 
 interface IBlogArticleListProps {
-  latestBlogs: Blog[];
-  recommendedBlogs: Blog[];
+  blogs: Blog[];
 }
 
-const BlogArticleList: React.FC<IBlogArticleListProps> = (props) => {
+const BlogArticleList: React.FC<IBlogArticleListProps> = ({ blogs }) => {
+  const latestBlogs = blogs.slice(Math.max(blogs.length - 3, 0));
+  const recommendedBlogs = blogs.filter((b) => b.isRecommended);
+
   return (
     <>
       <Head>
@@ -54,12 +35,12 @@ const BlogArticleList: React.FC<IBlogArticleListProps> = (props) => {
         <Heading as="h1" size="2xl">
           Latest blog articles
         </Heading>
-        {props.latestBlogs.map((blog, index) => (
+        {latestBlogs.map((blog, index) => (
           <BlogArticlePreview key={`blog-article-preview-${index}`} {...blog} />
         ))}
         {/* <Divider my={16} />
         <Heading as="h1">Top 5 picks</Heading>
-        {props.recommendedBlogs.map((blog, index) => (
+        {recommendedBlogs.map((blog, index) => (
           <BlogArticlePreview key={`blog-article-preview-${index}`} {...blog} />
         ))} */}
       </Container>

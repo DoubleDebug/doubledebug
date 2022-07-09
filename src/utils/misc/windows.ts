@@ -18,7 +18,7 @@ export function getStartingPositionY(
   if (!osRef) {
     return 0;
   }
-  const OFFSET = 300; // not sure why this exists
+  const OFFSET = 420; // not sure why this exists
   const TASKBAR_HEIGHT = 42;
   return (
     Math.round(

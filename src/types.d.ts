@@ -30,6 +30,7 @@ type Blog = {
   author: BlogAuthorInfo;
   tags: string[];
   previewImageURL: string;
+  isRecommended?: true;
 };
 
 type BlogAuthor = {

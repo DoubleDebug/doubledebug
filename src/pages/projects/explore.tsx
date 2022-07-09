@@ -6,7 +6,10 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const filePath = path.join(process.cwd(), 'public/data/projects.json');
+  const filePath = path.join(
+    process.cwd(),
+    'public/data/projects/metadata.json'
+  );
   const projectsRaw = await fs.readFile(filePath);
   const projectsJson = JSON.parse(projectsRaw.toString());
 

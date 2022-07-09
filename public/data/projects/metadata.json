@@ -30,7 +30,7 @@
             ],
             "urls": {
                 "liveDemo": "https://fake-reddit.com",
-                "icon": "https://i.imgur.com/LSSbGSc.png",
+                "icon": "https://i.imgur.com/RZQt874.png",
                 "previewImages": [
                     "https://i.imgur.com/px2diwq.png",
                     "https://i.imgur.com/lWYuRp1.png",
@@ -63,40 +63,40 @@
                 "CSS"
             ],
             "urls": {
+                "liveDemo": "https://doubledebug.github.io/wordle-speedrun/",
                 "icon": "https://i.imgur.com/CnqxIq4.png",
                 "previewImages": [
                     "https://i.imgur.com/ofa3hJa.png"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/wordle-speedrun"
             },
-            "showOnHomepage": true
-        },
-        {
-            "id": "minesweeper",
-            "title": "Minesweeper",
-            "description": "Simple Javascript Minesweeper game",
-            "technologies": [
-                "HTML",
-                "CSS",
-                "Javascript"
-            ],
-            "urls": {
-                "liveDemo": "https://minesweeper-52419.web.app",
-                "icon": "https://i.imgur.com/7rcDJEy.png",
-                "previewImages": [
-                    "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/minesweeper"
-            },
             "osSettings": {
                 "windowSize": {
                     "w": 500,
-                    "h": 710
+                    "h": 700
                 },
                 "iconOffset": {
-                    "x": 710,
-                    "y": 42
+                    "x": 815,
+                    "y": 43
                 }
+            },
+            "showOnHomepage": true
+        },
+        {
+            "id": "implement-your-own",
+            "title": "Implement your own",
+            "description": "Rewriting existing classes and features of Javascript (exercise)",
+            "technologies": [
+                "Javascript",
+                "ES6",
+                "Jest"
+            ],
+            "urls": {
+                "icon": "https://i.imgur.com/rQTImVR.png",
+                "previewImages": [
+                    "https://i.imgur.com/EryoL55.png"
+                ],
+                "githubRepo": "https://github.com/DoubleDebug/implement-your-own"
             }
         },
         {
@@ -106,7 +106,8 @@
             "technologies": [
                 "HTML",
                 "CSS",
-                "Typescript"
+                "Typescript",
+                "RxJS"
             ],
             "urls": {
                 "icon": "https://i.imgur.com/tkgsusx.png",
@@ -150,20 +151,31 @@
             "showOnHomepage": true
         },
         {
-            "id": "implement-your-own",
-            "title": "Implement your own",
-            "description": "Rewriting existing classes and features of Javascript (exercise)",
+            "id": "minesweeper",
+            "title": "Minesweeper",
+            "description": "Simple Javascript Minesweeper game",
             "technologies": [
-                "Javascript",
-                "ES6",
-                "Jest"
+                "HTML",
+                "CSS",
+                "Javascript"
             ],
             "urls": {
-                "icon": "https://i.imgur.com/rQTImVR.png",
+                "liveDemo": "https://minesweeper-52419.web.app",
+                "icon": "https://i.imgur.com/JOxfik0.png",
                 "previewImages": [
-                    "https://i.imgur.com/EryoL55.png"
+                    "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png"
                 ],
-                "githubRepo": "https://github.com/DoubleDebug/implement-your-own"
+                "githubRepo": "https://github.com/DoubleDebug/minesweeper"
+            },
+            "osSettings": {
+                "windowSize": {
+                    "w": 500,
+                    "h": 710
+                },
+                "iconOffset": {
+                    "x": 705,
+                    "y": 70
+                }
             }
         },
         {
@@ -175,11 +187,23 @@
                 "Express"
             ],
             "urls": {
+                "liveDemo": "https://doubledebug.github.io/random-persona-example/",
                 "icon": "https://i.imgur.com/QesQwmJ.png",
                 "previewImages": [
-                    "https://i.imgur.com/voMjETj.png"
+                    "https://i.imgur.com/mXxCzXG.png",
+                    "https://i.imgur.com/beb9Iby.png"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/random-persona"
+            },
+            "osSettings": {
+                "windowSize": {
+                    "w": 550,
+                    "h": 820
+                },
+                "iconOffset": {
+                    "x": 920,
+                    "y": 0
+                }
             }
         },
         {

@@ -19,11 +19,11 @@ import { BlogAuthor } from '../../components/blog/BlogAuthor';
 import { Markdown } from '../../components/blog/Markdown';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const filePath = path.join(process.cwd(), 'public/data/blogs.json');
-  const blogIdsRaw = await fs.readFile(filePath);
-  const blogIds = JSON.parse(blogIdsRaw.toString());
+  const filePath = path.join(process.cwd(), 'public/data/blogs/metadata.json');
+  const blogMetadataRaw = await fs.readFile(filePath);
+  const blogMetadata = JSON.parse(blogMetadataRaw.toString());
 
-  const paths = blogIds.blogs.map((b: any) => ({ params: { id: b.id } }));
+  const paths = blogMetadata.blogs.map((b: any) => ({ params: { id: b.id } }));
 
   return {
     paths: paths,
