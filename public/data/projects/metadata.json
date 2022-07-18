@@ -12,7 +12,12 @@
             "urls": {
                 "icon": "images/avatar_circle_meh.png",
                 "previewImages": [
-                    "https://i.imgur.com/y6JGvm8.png"
+                    "https://i.imgur.com/3Z3H9LG.png",
+                    "https://i.imgur.com/y6JGvm8.png",
+                    "https://i.imgur.com/OVpWD6f.png",
+                    "https://i.imgur.com/TC3JxjS.png",
+                    "https://i.imgur.com/nU64yE1.png",
+                    "https://i.imgur.com/0PMC6EB.png"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/portfolio-website"
             }
@@ -20,7 +25,7 @@
         {
             "id": "fake-reddit",
             "title": "Fake Reddit",
-            "description": "Reddit clone with React, Typescript and Firebase",
+            "description": "Full stack Reddit clone with React, Typescript and Firebase",
             "technologies": [
                 "React",
                 "Typescript",
@@ -32,7 +37,7 @@
                 "liveDemo": "https://fake-reddit.com",
                 "icon": "https://i.imgur.com/RZQt874.png",
                 "previewImages": [
-                    "https://i.imgur.com/px2diwq.png",
+                    "https://i.imgur.com/He244ZB.png",
                     "https://i.imgur.com/lWYuRp1.png",
                     "https://i.imgur.com/Ggcs6YP.png",
                     "https://i.imgur.com/x3UqeD6.png",
@@ -66,7 +71,8 @@
                 "liveDemo": "https://doubledebug.github.io/wordle-speedrun/",
                 "icon": "https://i.imgur.com/CnqxIq4.png",
                 "previewImages": [
-                    "https://i.imgur.com/ofa3hJa.png"
+                    "https://i.imgur.com/ofa3hJa.png",
+                    "/images/wordle-preview.gif"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/wordle-speedrun"
             },
@@ -102,7 +108,7 @@
         {
             "id": "project-manager",
             "title": "Project manager",
-            "description": "Typescript web app for project management",
+            "description": "Typescript web app for project management, tasks and to do lists",
             "technologies": [
                 "HTML",
                 "CSS",
@@ -110,20 +116,25 @@
                 "RxJS"
             ],
             "urls": {
-                "icon": "https://i.imgur.com/tkgsusx.png",
+                "liveDemo": "https://doubledebug.github.io/project-manager/",
+                "icon": "https://i.imgur.com/nGZ4pj6.png",
                 "previewImages": [
-                    "https://i.imgur.com/zigSgrb.png"
+                    "https://i.imgur.com/jmPQP6p.png",
+                    "https://i.imgur.com/SYpgXkr.png",
+                    "https://i.imgur.com/NfTIRxo.png",
+                    "https://i.imgur.com/RTFp4AT.png",
+                    "https://i.imgur.com/Zvfxbqm.gif"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/project-manager"
             },
             "osSettings": {
                 "windowSize": {
-                    "w": 500,
-                    "h": 800
+                    "w": 799,
+                    "h": 700
                 },
                 "iconOffset": {
-                    "x": 800,
-                    "y": 42
+                    "x": 1040,
+                    "y": -20
                 }
             }
         },

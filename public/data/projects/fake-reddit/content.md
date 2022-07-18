@@ -19,7 +19,7 @@ This was my first full stack web application of this scale. I had lots of fun co
 - Searching for posts
 - Account and profile settings
 
-# The tech stuff
+# Technology stack
 
 Now, let's talk tech. At the beginning of development, I started out making FakeReddit strictly as a frontend application. However, as I dove deeper into the features of Reddit, I realised that I needed a backend. So, in addition to Firebase, which I used as a BaaS (backend as a service), I started developing a NodeJS server. The main purpose of the server was to communicate with Firebase (along with other 3rd party services such as Algolia), so I created a RestAPI using the Express framework.
 

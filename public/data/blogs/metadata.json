@@ -1,8 +1,8 @@
 {
     "blogs": [
         {
-            "id": "how-i-made-this-react-dialogue-component",
-            "title": "How I made this React Dialogue Component",
+            "id": "my-react-dialogue-minigame",
+            "title": "My React Dialogue Minigame",
             "summary": "On today's episode of overengineering, I'm making an interactive dialogue mini game in React. The setup: you're talking to my avatar and whenever he says something, you can choose your reply. Different replies lead the conversation in different paths, mimicing a real life conversation.",
             "author": {
                 "name": "Double Debug",
