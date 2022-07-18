@@ -36,7 +36,7 @@ export const BlogArticlePreview: React.FC<Blog> = (blog) => {
         justifyContent="center"
         marginTop={{ base: '3', sm: '0' }}
       >
-        <Heading title={blog.title}>
+        <Heading title={blog.title} mb={2}>
           <Link
             textDecoration="none"
             _hover={{ textDecoration: 'none' }}

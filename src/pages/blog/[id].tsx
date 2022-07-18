@@ -52,7 +52,11 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
         <title>{metadata.title} | Double Debug</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
-      <Container maxW={'7xl'} p={12} pt={8}>
+      <Container
+        maxW={{ base: 'initial', md: '7xl' }}
+        p={{ base: 4, md: 12 }}
+        pt={8}
+      >
         {!isMobile && (
           <Breadcrumb
             fontWeight="medium"
@@ -70,12 +74,23 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
             </BreadcrumbItem>
           </Breadcrumb>
         )}
-        <Heading as="h1" size="3xl" mb={8}>
+        <Heading
+          as="h1"
+          size="3xl"
+          mb={8}
+          textAlign={{ base: 'center', md: 'left' }}
+        >
           {metadata.title}
         </Heading>
-        <Flex mb={6}>
-          <BlogTags tags={metadata.tags} />
-          <Box ml="auto">
+        <Flex mb={6} flexDirection={{ base: 'column', md: 'row' }}>
+          <Flex
+            ml={{ base: 'auto', md: 0 }}
+            mr={{ base: 'auto', md: 0 }}
+            alignItems="center"
+          >
+            <BlogTags tags={metadata.tags} />
+          </Flex>
+          <Box ml="auto" mr={{ base: 'auto', md: 0 }}>
             <BlogAuthor
               name={metadata.author.name}
               icon={metadata.author.icon}

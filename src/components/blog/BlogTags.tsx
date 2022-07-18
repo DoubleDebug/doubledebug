@@ -2,7 +2,7 @@ import { HStack, Tag } from '@chakra-ui/react';
 
 export const BlogTags: React.FC<{ tags: string[] }> = (props) => {
   return (
-    <HStack spacing={2}>
+    <HStack flexWrap="wrap" gap={2}>
       {props.tags.map((tag) => {
         return (
           <Tag
@@ -11,6 +11,8 @@ export const BlogTags: React.FC<{ tags: string[] }> = (props) => {
             colorScheme="blue"
             key={tag}
             minWidth="none"
+            whiteSpace="nowrap"
+            marginInlineStart="0 !important"
           >
             {tag}
           </Tag>

@@ -2,6 +2,7 @@
   --slider-height-percentage: 55%;
   --slider-transition-duration: 250ms;
   --control-bullet-active-color: #c0c0c0;
+  margin-bottom: 2rem;
 }
 
 .light {

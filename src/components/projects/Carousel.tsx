@@ -16,6 +16,8 @@ export const Carousel: React.FC<ICarouselProps> = ({ images }) => {
         isMobile ? css.mobile : ''
       }`}
       mobileTouch
+      bullets={images.length !== 1}
+      organicArrows={images.length !== 1}
     >
       {images.map((image, index) => (
         <Box key={`carousel-slide-${index}`}>

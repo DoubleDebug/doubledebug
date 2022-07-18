@@ -20,7 +20,7 @@ import {
   AccordionIcon,
 } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
-import ProjectPreview from '../../components/homepage/homepageProject';
+import ProjectPreview from '../../components/projects/projectPreview';
 import path from 'path';
 import fs from 'fs/promises';
 import Head from 'next/head';

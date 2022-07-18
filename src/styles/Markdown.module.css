@@ -50,7 +50,7 @@
 }
 
 .markdown a {
-  color: blue;
+  color: rgb(123, 123, 255);
 }
 
 .markdown a:hover {
@@ -105,10 +105,8 @@
 }
 
 .markdown th {
-  background: #f7fafc;
   font-weight: 600;
   padding: 0.5rem;
-  font-size: 0.875rem;
   display: table-cell;
   border-bottom-width: 2px;
   border-color: inherit;
@@ -126,10 +124,6 @@
   border-color: inherit;
   font-size: 0.875rem;
   white-space: normal;
-}
-
-.markdown tbody :nth-child(2) td {
-  background: #f7fafc;
 }
 
 .markdown img {

@@ -8,7 +8,10 @@ import { HomepageCTA } from '../components/homepage/homepageCTA';
 import HomepageProjectsSection from '../components/homepage/homepageProjectsSection';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const filePath = path.join(process.cwd(), 'public/data/projects.json');
+  const filePath = path.join(
+    process.cwd(),
+    'public/data/projects/metadata.json'
+  );
   const projectsRaw = await fs.readFile(filePath);
   const projectsJson = JSON.parse(projectsRaw.toString());
 
