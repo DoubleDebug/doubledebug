@@ -47,3 +47,15 @@ type ResponseStatus =
       success: false;
       message: string;
     };
+
+type GithubContributionsData = {
+  totalContributions: number;
+  weeks: {
+    contributionDays: {
+      contributionCount: number;
+      weekday: number;
+      date: string;
+      color: string;
+    }[];
+  }[];
+};
