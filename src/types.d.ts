@@ -2,6 +2,7 @@ type Project = {
   id: string;
   title: string;
   description: string;
+  duration?: string;
   technologies: string[];
   urls: {
     liveDemo?: string;

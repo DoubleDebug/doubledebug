@@ -1,5 +1,6 @@
 import {
   Box,
+  Text,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -15,7 +16,7 @@ import Head from 'next/head';
 import path from 'path';
 import fs from 'fs/promises';
 import { fetchProject } from '../../utils/fetching/fetchProject';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon, TimeIcon } from '@chakra-ui/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { BlogTags } from '../../components/blog/BlogTags';
@@ -91,13 +92,27 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
           flexDirection={{ base: 'column', md: 'row' }}
           mb={6}
         >
-          <BlogTags tags={metadata.technologies} />
+          <Flex columnGap={4}>
+            <BlogTags tags={metadata.technologies} />
+            {metadata.duration && (
+              <Flex gap={2} alignItems="center" title="Project duration">
+                <TimeIcon color={useColorModeValue('gray.800', 'gray.400')} />
+                <Text
+                  color={useColorModeValue('gray.800', 'gray.400')}
+                  whiteSpace="nowrap"
+                >
+                  {metadata.duration}
+                </Text>
+              </Flex>
+            )}
+          </Flex>
           <Flex
             alignItems={{ base: undefined, md: 'center' }}
             columnGap={4}
             flexDirection={{ base: 'column', md: 'row' }}
             rowGap={2}
             mt={{ base: 8, md: 0 }}
+            ml="auto"
             w={{ base: 'full', md: 'min-content' }}
           >
             {metadata.urls.liveDemo && (
@@ -106,6 +121,7 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
                 px={6}
                 columnGap={2}
                 onClick={() => window.open(metadata.urls.liveDemo)}
+                title={metadata.urls.liveDemo}
               >
                 Live demo <ExternalLinkIcon />
               </Button>
@@ -116,6 +132,7 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
                 px={6}
                 columnGap={2}
                 onClick={() => window.open(metadata.urls.githubRepo)}
+                title={metadata.urls.githubRepo}
               >
                 Source code
                 <FontAwesomeIcon icon={faGithub} />
