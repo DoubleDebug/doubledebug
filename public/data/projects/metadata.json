@@ -4,8 +4,10 @@
             "id": "portfolio-website",
             "title": "Portfolio website",
             "description": "Project showcase + blog website with NextJS, Typescript and Chakra UI",
+            "duration": "1.5 months",
             "technologies": [
                 "NextJS",
+                "React",
                 "Typescript",
                 "Chakra UI"
             ],
@@ -26,6 +28,7 @@
             "id": "fake-reddit",
             "title": "Fake Reddit",
             "description": "Full stack Reddit clone with React, Typescript and Firebase",
+            "duration": "5 months",
             "technologies": [
                 "React",
                 "Typescript",
@@ -62,6 +65,7 @@
             "id": "wordle",
             "title": "Wordle clone",
             "description": "Cloning Wordle in Javascript in 30 minutes (exercise)",
+            "duration": "30 minutes",
             "technologies": [
                 "Javascript",
                 "HTML",
@@ -109,11 +113,13 @@
             "id": "project-manager",
             "title": "Project manager",
             "description": "Typescript web app for project management, tasks and to do lists",
+            "duration": "1 month",
             "technologies": [
                 "HTML",
                 "CSS",
                 "Typescript",
-                "RxJS"
+                "RxJS",
+                "MVC"
             ],
             "urls": {
                 "liveDemo": "https://doubledebug.github.io/project-manager/",
@@ -142,6 +148,7 @@
             "id": "probcut",
             "title": "ProbCut Barbershop",
             "description": "Barbershop appointment scheduling app with ASP.NET Core",
+            "duration": "3 months",
             "technologies": [
                 "C#",
                 "ASP.NET Core",
@@ -165,16 +172,21 @@
             "id": "minesweeper",
             "title": "Minesweeper",
             "description": "Simple Javascript Minesweeper game",
+            "duration": "1.5 months",
             "technologies": [
                 "HTML",
                 "CSS",
-                "Javascript"
+                "Javascript",
+                "MVC"
             ],
             "urls": {
                 "liveDemo": "https://minesweeper-52419.web.app",
                 "icon": "https://i.imgur.com/JOxfik0.png",
                 "previewImages": [
-                    "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png"
+                    "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png",
+                    "https://i.imgur.com/QS92jHU.png",
+                    "https://i.imgur.com/lacRp7b.png",
+                    "https://i.imgur.com/AZQgWX6.png"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/minesweeper"
             },
@@ -193,9 +205,11 @@
             "id": "random-persona",
             "title": "Random persona",
             "description": "NodeJS API for generating random personnal data",
+            "duration": "3 days",
             "technologies": [
                 "Node",
-                "Express"
+                "Express",
+                "Typescript"
             ],
             "urls": {
                 "liveDemo": "https://doubledebug.github.io/random-persona-example/",
@@ -221,6 +235,7 @@
             "id": "technical-office",
             "title": "Technical Office",
             "description": "Technical PDF drawing management system",
+            "duration": "1 month",
             "technologies": [
                 "Javascript",
                 "Firebase",
@@ -231,7 +246,10 @@
                 "previewImages": [
                     "https://i.imgur.com/X0mSCwI.png",
                     "https://i.imgur.com/GwiVFkl.png",
-                    "https://i.imgur.com/EFFOSrk.png"
+                    "https://i.imgur.com/EFFOSrk.png",
+                    "https://i.imgur.com/B1Y7ie5.png",
+                    "https://i.imgur.com/LZCHf7n.png",
+                    "https://i.imgur.com/LKg7XTJ.png"
                 ],
                 "githubRepo": "https://github.com/DoubleDebug/technical-office",
                 "isPrivate": true

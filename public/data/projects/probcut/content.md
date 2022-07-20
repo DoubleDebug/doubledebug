@@ -2,13 +2,17 @@ ProbCut was a college group project for a class called "Object oriented design".
 
 I always enjoy looking back at the 3 months spent on this project, mainly because of all the planning and collaborating with my colleagues.
 
+# Technology stack
+
 - C# (backend)
 - [Razor Pages in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/razor-pages) (backend)
 - Page-Model approach
 - HTML, CSS & Javascript (frontend)
-- Bootstrap (styling library)
+- Bootstrap (CSS library)
 
-The technology stack is not something I would pick today, if I were to start a project. However, at the time, my team (myself included) wasn't very familiar with any JavaScript frameworks or even web technologies. We've been working mostly with C-like languages (C, C++, C# & Java), so we picked the closest thing to a web application, which is the C# .NET Core technology. The frontend code was written in plain Javascript, HTML and CSS and we used Bootstrap as our component library.
+<br />
+
+If I were to start a project today, I wouldn't pick this technology stack. However, at the time, my team (myself included) wasn't very familiar with any JavaScript frameworks. We've mostly been working with C-like languages (C, C++, C# & Java), so we picked the web framework closest to what's familiar to us, which is the ASP.NET Core Razor Pages technology. The frontend code was written in plain Javascript, HTML and CSS and we used Bootstrap as our CSS component library.
 
 # Features
 
@@ -27,7 +31,7 @@ The technology stack is not something I would pick today, if I were to start a p
 
 # What I learned
 
-This was my first ever web application, so I learned a lot from this project. I didn't know much about HTML and vanilla Javascript, so jumping into a complex framework like Razor pages had a high learning curve. At times, it felt like I skipped a few steps which is definitely true, looking back at it now. I remember that throughout the project I found myself struggling to even understand the difference between server side and client side code. However, it gave me a decent introduction into the world of web frameworks and showed me the potential of web development.
+This was my first ever web application, so I learned a lot from this project. I didn't know much about HTML and vanilla Javascript, so a complex framework like Razor pages had a high learning curve for me. At times, it felt like I skipped a few steps, which — looking back at it now, is definitely true. I remember that throughout the project I found myself struggling to even understand the difference between server side and client side code. However, it gave me a decent introduction into the world of web frameworks and showed me the potential of web development.
 
 I learned how to use the Page-Model approach in the Razor pages technology. I learned how annotations work in CSHTML files and C# models. The annotations reminded me of JSF (Java Server Faces), which is another Java web framework we used in college.
 
@@ -55,6 +59,14 @@ namespace ProbCut.Models
 }
 ```
 
-I learned how to bind form inputs to C# model properties. I learned how to write handler methods in C# that validate forms and perform CRUD (create-read-update-delete) operations in the database.
+I learned how to bind form inputs to C# model properties. I learned how to write handler methods in C# that validate forms and perform CRUD (create-read-update-delete) operations on the database.
 
-I learned all about database context, migrations and I wrote SQL queries in a real world project for the first time.
+I learned all about database context, asynchronous data fetching and migrations. I applied the previous knowledge I had about SQL queries and data modeling.
+
+<br />
+
+<hr />
+
+<br />
+
+Even though Razor pages is not a technology that's very popular today, I have a fond memory and a positive experience using it. If I ever decide to create a backend written in C#, I will definitely go back to it, only this time with a lot more knowledge about Javascript and web development in general.

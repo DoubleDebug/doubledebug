@@ -40,7 +40,9 @@ It has lots of mockup icons and buttons from real operating systems, such as "My
 
 <br />
 
-![Fake operating system preview](/images/operating-system-preview-low.gif)
+<video width="100%" autoplay muted loop>
+    <source src="https://i.imgur.com/eEQS71d.mp4" type="video/mp4">
+</video>
 
 <br />
 
