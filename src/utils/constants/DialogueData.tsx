@@ -243,11 +243,11 @@ export const dialogueData: DialogueItem[] = [
         },
       },
       {
-        text: 'Hire me',
+        text: 'Get in touch',
         nextStage: 6,
         isPrimary: false,
         action: () => {
-          window.scrollTo(0, 5000);
+          document.getElementById('homepage-section-contact')?.scrollIntoView();
         },
       },
     ],

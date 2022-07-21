@@ -115,13 +115,13 @@ export const HomepageCTA = () => {
                   size={'lg'}
                   fontWeight={'normal'}
                   px={6}
-                  onClick={() =>
-                    window.scrollTo({
-                      top: 5000,
-                    })
-                  }
+                  onClick={() => {
+                    document
+                      .getElementById('homepage-section-contact')
+                      ?.scrollIntoView();
+                  }}
                 >
-                  Hire me
+                  Get in touch
                 </Button>
               </Stack>
             </Stack>

@@ -65,10 +65,7 @@ const HomepageDialogue: React.FC = () => {
                 top="-65px"
                 left={595}
               >
-                <Link
-                  href="/blog/how-i-made-this-react-dialogue-component"
-                  isExternal
-                >
+                <Link href="/blog/my-react-dialogue-minigame" isExternal>
                   <IconButton
                     aria-label="learn more"
                     variant="ghost"
@@ -162,7 +159,9 @@ const HomepageDialogue: React.FC = () => {
                       if (dialogueStage === 6) {
                         if (dialogueReply.isPrimary) {
                         } else {
-                          window.scrollTo(0, 5000);
+                          document
+                            .getElementById('homepage-section-contact')
+                            ?.scrollIntoView();
                         }
                         return;
                       }

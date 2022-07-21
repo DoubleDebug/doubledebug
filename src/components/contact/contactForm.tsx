@@ -90,7 +90,12 @@ export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
   }
 
   return (
-    <Flex align="center" justifyContent="center" width="full">
+    <Flex
+      align="center"
+      justifyContent="center"
+      width="full"
+      id="homepage-section-contact"
+    >
       <Flex
         borderRadius="lg"
         m={{ base: 5, md: 16, lg: 10 }}
