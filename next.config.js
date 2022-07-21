@@ -2,10 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      'i.imgur.com'
-    ]
-  }
+    loader: 'akamai',
+    path: '',
+    domains: ['i.imgur.com'],
+  },
 };
 
 module.exports = nextConfig;
