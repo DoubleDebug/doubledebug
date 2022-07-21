@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Get to know me, explore my projects and read my blog | Web developer portfolio website"
         />
-        <meta property="og:image" content="images/og-image.png" />
+        <meta property="og:image" content="https://i.imgur.com/E0Qmqhb.png" />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="twitter:description"
           content="Get to know me, explore my projects and read my blog | Web developer portfolio website"
         />
-        <meta name="twitter:image" content="images/og-image.png" />
+        <meta name="twitter:image" content="https://i.imgur.com/E0Qmqhb.png" />
       </Head>
       <Nav />
       <Component {...pageProps} />
