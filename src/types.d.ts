@@ -60,3 +60,26 @@ type GithubContributionsData = {
     }[];
   }[];
 };
+
+type DialogueItem = {
+  stage: number;
+  elements: {
+    text: string | ReactNode;
+    props: TextProps;
+    duration: number;
+    delay: number;
+  }[];
+  replies: {
+    text: string;
+    isPrimary: boolean;
+    nextStage: number;
+    action?: ({
+      router,
+      setShowReplyBox,
+    }: {
+      router: NextRouter;
+      setShowReplyBox: (s: boolean) => void;
+    }) => void;
+  }[];
+  repliesDelay: number;
+};

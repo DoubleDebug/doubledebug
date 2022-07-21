@@ -1,4 +1,4 @@
-import { SIDEBAR_WIDTH } from '../misc/constants';
+import { SIDEBAR_WIDTH } from '../constants/misc';
 
 export function playTranslateButtonsAnimation(
   element: HTMLDivElement | null,

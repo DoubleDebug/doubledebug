@@ -13,7 +13,7 @@ import { useWindowSize } from 'usehooks-ts';
 import {
   OS_MIN_WINDOW_WIDTH,
   HOMEPAGE_SPEECH_BUBBLE_MIN_WINDOW_WIDTH as W_CONSTRAINT,
-} from '../../utils/misc/constants';
+} from '../../utils/constants/misc';
 import HomepageDialogue from './dialogue/Dialogue';
 
 export const HomepageCTA = () => {
@@ -68,7 +68,7 @@ export const HomepageCTA = () => {
                   }}
                   mb={2}
                 >
-                  I'm Double Debug,
+                  {`I'm Double Debug,`}
                 </Text>
                 <Text
                   fontSize={{ base: '3xl', sm: '4xl', lg: '4xl' }}
@@ -89,10 +89,12 @@ export const HomepageCTA = () => {
                 fontSize="lg"
                 fontFamily="Mosk"
               >
-                Feel free to browse through my past projects and read about my
-                work and education. <br /> In case you need a beautiful, well
+                {`Feel free to browse through my past projects and read about my
+                work and education.`}
+                <br />
+                {`In case you need a beautiful, well
                 designed and fully responsive website like this one, contact me
-                and let's talk.
+                and let's talk.`}
               </Text>
               <Stack spacing={4} direction={{ base: 'column', lg: 'row' }}>
                 <Button

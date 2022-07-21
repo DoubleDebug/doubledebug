@@ -26,7 +26,7 @@ import fs from 'fs/promises';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { AddIcon, CloseIcon, Search2Icon } from '@chakra-ui/icons';
-import { updateFilteredProjects } from './projectsActions';
+import { updateFilteredProjects } from '../../components/projects/projectsActions';
 
 export const getStaticProps: GetStaticProps = async () => {
   const filePath = path.join(
@@ -57,6 +57,7 @@ const ProjectsPage: React.FC<{ projects: Project[] }> = ({ projects }) => {
       selectedTechnologies,
       searchValue
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTechnologies]);
 
   const technologies = Array.from(

@@ -1,30 +1,4 @@
-import css from '../../../styles/HomepageDialogue.module.css';
-import { TextProps } from '@chakra-ui/react';
-import { ReactNode } from 'react';
-import { NextRouter } from 'next/router';
-
-type DialogueItem = {
-  stage: number;
-  elements: {
-    text: string | ReactNode;
-    props: TextProps;
-    duration: number;
-    delay: number;
-  }[];
-  replies: {
-    text: string;
-    isPrimary: boolean;
-    nextStage: number;
-    action?: ({
-      router,
-      setShowReplyBox,
-    }: {
-      router: NextRouter;
-      setShowReplyBox: (s: boolean) => void;
-    }) => void;
-  }[];
-  repliesDelay: number;
-};
+import css from '../../../src/styles/HomepageDialogue.module.css';
 
 export const dialogueData: DialogueItem[] = [
   {

@@ -11,7 +11,7 @@ import {
 } from 'react-vertical-timeline-component';
 import Head from 'next/head';
 import 'react-vertical-timeline-component/style.min.css';
-import { educationData, getStyles } from './data';
+import { getStyles } from '../../components/education/styles';
 import {
   Text,
   Box,
@@ -19,9 +19,12 @@ import {
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { educationData } from '../../utils/constants/EducationData';
 
 const EducationPage: React.FC = () => {
   const styles = getStyles(useColorMode().colorMode);
+  const timelineDateClassName = useColorModeValue(css.dateLight, css.dateDark);
+  const timelineBottomLineClassName = useColorModeValue('light', 'dark');
 
   return (
     <>
@@ -57,7 +60,7 @@ const EducationPage: React.FC = () => {
                 borderRight: `7px solid ${styles.colorBlue}`,
               }}
               date={eduPoint.date}
-              dateClassName={useColorModeValue(css.dateLight, css.dateDark)}
+              dateClassName={timelineDateClassName}
               iconStyle={{
                 background: styles.colorBlue,
                 color: '#fff',
@@ -74,18 +77,13 @@ const EducationPage: React.FC = () => {
               <Text color="white" fontWeight={300} as="h4" mt={4}>
                 {eduPoint.description}
               </Text>
-              <span
-                className={`bottom-line ${useColorModeValue('light', 'dark')}`}
-              />
+              <span className={`bottom-line ${timelineBottomLineClassName}`} />
             </VerticalTimelineElement>
           ))}
           <VerticalTimelineElement
             className="date-no-content"
             date="Present"
-            dateClassName={`${useColorModeValue(
-              css.dateLight,
-              css.dateDark
-            )} date-no-content`}
+            dateClassName={`${timelineDateClassName} date-no-content`}
             iconStyle={{
               background: styles.colorBlue,
               color: '#fff',

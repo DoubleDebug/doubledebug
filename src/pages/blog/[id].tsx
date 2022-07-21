@@ -46,6 +46,8 @@ interface IBlogArticleProps {
 
 const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const breadcrumbColor = useColorModeValue('gray.800', 'gray.400');
+  const contentBgColor = useColorModeValue('gray.100', 'white');
   return (
     <>
       <Head>
@@ -61,7 +63,7 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
           <Breadcrumb
             fontWeight="medium"
             fontSize="lg"
-            color={useColorModeValue('gray.800', 'gray.400')}
+            color={breadcrumbColor}
             mb={4}
           >
             <BreadcrumbItem>
@@ -98,12 +100,7 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
             />
           </Box>
         </Flex>
-        <Box
-          bg={useColorModeValue('gray.100', 'white')}
-          rounded="3xl"
-          p={8}
-          color="black"
-        >
+        <Box bg={contentBgColor} rounded="3xl" p={8} color="black">
           <Markdown content={content} />
         </Box>
       </Container>

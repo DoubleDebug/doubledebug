@@ -5,12 +5,12 @@ import {
   Image as ImageChakra,
   Button,
   Grid,
-  useColorModeValue,
   Flex,
   Box,
   IconButton,
   Link,
   Tooltip,
+  useColorMode,
 } from '@chakra-ui/react';
 import {
   faChevronRight,
@@ -19,7 +19,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
-import { dialogueData } from './data';
+import { dialogueData } from '../../../utils/constants/DialogueData';
 import FadeInOut from './FadeInComponent';
 
 const HomepageDialogue: React.FC = () => {
@@ -30,6 +30,7 @@ const HomepageDialogue: React.FC = () => {
     () => dialogueData.filter((s) => s.stage === dialogueStage)[0],
     [dialogueStage]
   );
+  const { colorMode } = useColorMode();
 
   return (
     <>
@@ -124,7 +125,7 @@ const HomepageDialogue: React.FC = () => {
           <FadeInOut delay={currentDialogueStage.repliesDelay}>
             <Grid position="absolute" top={-150} left={50} rowGap={2}>
               <Text
-                color={useColorModeValue('gray.600', 'gray.400')}
+                color={colorMode === 'light' ? 'gray.600' : 'gray.400'}
                 fontSize="lg"
                 fontWeight="semibold"
               >
@@ -134,7 +135,7 @@ const HomepageDialogue: React.FC = () => {
                 rounded="lg"
                 borderWidth="2px"
                 borderStyle="solid"
-                borderColor={useColorModeValue('gray.400', 'gray.600')}
+                borderColor={colorMode === 'light' ? 'gray.400' : 'gray.600'}
                 width={500}
                 height={134}
                 rowGap={4}

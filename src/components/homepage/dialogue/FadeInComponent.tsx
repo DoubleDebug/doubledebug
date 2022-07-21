@@ -10,16 +10,17 @@ interface IFadeInOutProps extends BoxProps {
 const FadeInOut: React.FC<IFadeInOutProps> = (props) => {
   const elementRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    const ref = elementRef.current;
     setTimeout(() => {
-      if (!elementRef.current) return;
-      elementRef.current.style.opacity = '100%';
+      if (!ref) return;
+      ref.style.opacity = '100%';
     }, props.delay);
 
     return () => {
-      if (!elementRef.current) return;
-      elementRef.current.style.opacity = '0%';
+      if (!ref) return;
+      ref.style.opacity = '0%';
     };
-  }, []);
+  }, [props.delay]);
 
   return (
     <Box

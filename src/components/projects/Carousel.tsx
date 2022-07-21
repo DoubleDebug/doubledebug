@@ -21,7 +21,12 @@ export const Carousel: React.FC<ICarouselProps> = ({ images }) => {
     >
       {images.map((image, index) => (
         <Box key={`carousel-slide-${index}`}>
-          <Image src={image} px={isMobile ? 0 : 16} my="auto" />
+          <Image
+            alt={`Carousel slide ${index}`}
+            src={image}
+            px={isMobile ? 0 : 16}
+            my="auto"
+          />
         </Box>
       ))}
     </AwesomeSlider>

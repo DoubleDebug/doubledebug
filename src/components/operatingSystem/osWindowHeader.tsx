@@ -5,7 +5,7 @@ import { useContext, useRef, useState } from 'react';
 import { playCompressAnimation } from '../../utils/animations/compress';
 import { playExpandAnimation } from '../../utils/animations/expand';
 import { playTranslateButtonsAnimation } from '../../utils/animations/translateButtons';
-import { SIDEBAR_WIDTH } from '../../utils/misc/constants';
+import { SIDEBAR_WIDTH } from '../../utils/constants/misc';
 import { OSContext } from './osContext';
 
 interface IOSWindowHeaderProps {

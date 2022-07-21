@@ -32,13 +32,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { ReactNode, useState } from 'react';
-import { SOCIAL_LINKS } from '../../utils/misc/constants';
+import { SOCIAL_LINKS } from '../../utils/constants/misc';
 import { sendEmail } from './contactFormActions';
 
 export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
   const [formStage, setFormStage] = useState<
     'initial' | 'in-progress' | 'successful' | 'failed'
   >('initial');
+  const formBgColor = useColorModeValue('white', 'gray.700');
+  const formFontColor = useColorModeValue('gray.700', 'whiteAlpha.900');
 
   if (formStage === 'successful') {
     return (
@@ -181,8 +183,8 @@ export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
               </Stack>
 
               <Box
-                bg={useColorModeValue('white', 'gray.700')}
-                color={useColorModeValue('gray.700', 'whiteAlpha.900')}
+                bg={formBgColor}
+                color={formFontColor}
                 borderRadius="lg"
                 p={8}
                 shadow="2xl"
@@ -207,9 +209,9 @@ export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
                     <FormLabel>Name</FormLabel>
 
                     <InputGroup>
-                      <InputLeftElement
-                        children={<FontAwesomeIcon icon={faUser} />}
-                      />
+                      <InputLeftElement>
+                        <FontAwesomeIcon icon={faUser} />
+                      </InputLeftElement>
                       <Input
                         type="text"
                         name="name"
@@ -226,9 +228,9 @@ export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
                     <FormLabel>Subject</FormLabel>
 
                     <InputGroup>
-                      <InputLeftElement
-                        children={<FontAwesomeIcon icon={faLightbulb} />}
-                      />
+                      <InputLeftElement>
+                        <FontAwesomeIcon icon={faLightbulb} />
+                      </InputLeftElement>
                       <Input
                         type="text"
                         name="subject"
@@ -245,9 +247,9 @@ export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
                     <FormLabel>Email</FormLabel>
 
                     <InputGroup>
-                      <InputLeftElement
-                        children={<FontAwesomeIcon icon={faEnvelope} />}
-                      />
+                      <InputLeftElement>
+                        <FontAwesomeIcon icon={faEnvelope} />
+                      </InputLeftElement>
                       <Input
                         type="email"
                         name="email"

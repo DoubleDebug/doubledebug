@@ -13,7 +13,6 @@ interface IMarkdownProps {
 export const Markdown: React.FC<IMarkdownProps> = ({ content }) => {
   return (
     <ReactMarkdown
-      children={content}
       rehypePlugins={[rehypeRaw]}
       remarkPlugins={[remarkGfm, remarkEmoji]}
       className={css.markdown}
@@ -22,14 +21,15 @@ export const Markdown: React.FC<IMarkdownProps> = ({ content }) => {
           const match = /language-(\w+)/.exec(className || '');
           return !inline && match ? (
             <SyntaxHighlighter
-              children={String(children).replace(/\n$/, '')}
               style={atomDark as any}
               language={match[1]}
               PreTag="div"
               showLineNumbers
               wrapLongLines
               {...props}
-            />
+            >
+              {String(children).replace(/\n$/, '')}
+            </SyntaxHighlighter>
           ) : (
             <code className={className} {...props}>
               {children}
@@ -37,6 +37,8 @@ export const Markdown: React.FC<IMarkdownProps> = ({ content }) => {
           );
         },
       }}
-    />
+    >
+      {content}
+    </ReactMarkdown>
   );
 };

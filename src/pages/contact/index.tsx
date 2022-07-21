@@ -15,7 +15,7 @@ import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import { ContactForm } from '../../components/contact/contactForm';
 import { getGithubContributions } from '../../components/contact/github/GithubContributionsActions';
-import { contactStyles } from './styles';
+import { contactStyles } from '../../components/contact/styles';
 import { GithubContributions } from '../../components/contact/github/GithubContributions';
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
@@ -49,14 +49,14 @@ const ContactPage: React.FC<IContactPageProps> = ({ data: githubData }) => {
         <Container maxW={'3xl'}>
           <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 4 }}>
             <Heading size="2xl" textAlign={{ base: 'center', md: 'left' }}>
-              Let's talk
+              {`Let's talk`}
             </Heading>
             <Text
               textAlign={{ base: 'center', md: 'left' }}
               color={'gray.500'}
               mt="1rem !important"
             >
-              Send me a message and I'll get back to you as soon as possible.
+              {`Send me a message and I'll get back to you as soon as possible.`}
             </Text>
           </Stack>
         </Container>

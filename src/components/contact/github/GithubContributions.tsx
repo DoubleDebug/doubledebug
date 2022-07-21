@@ -4,13 +4,17 @@ import {
   Text,
   Flex,
   Grid,
-  useColorModeValue,
   Tooltip,
   Link,
+  useColorMode,
 } from '@chakra-ui/react';
 import { formatColor, formatTooltip } from './GithubContributionsActions';
-import { gitColors, gitDays, gitMonths } from './staticData';
-import { SOCIAL_LINKS } from '../../../utils/misc/constants';
+import { SOCIAL_LINKS } from '../../../utils/constants/misc';
+import {
+  gitMonths,
+  gitDays,
+  gitColors,
+} from '../../../utils/constants/GithubContributionsData';
 
 interface IGithubContributionsProps {
   data: GithubContributionsData;
@@ -19,6 +23,8 @@ interface IGithubContributionsProps {
 export const GithubContributions: React.FC<IGithubContributionsProps> = ({
   data,
 }) => {
+  const { colorMode } = useColorMode();
+
   return (
     <Grid maxW="100%">
       <Text textAlign="left" mb={2}>
@@ -70,10 +76,11 @@ export const GithubContributions: React.FC<IGithubContributionsProps> = ({
                   placement="top"
                 >
                   <Box
-                    bgColor={useColorModeValue(
-                      formatColor(day.contributionCount).light,
-                      formatColor(day.contributionCount).dark
-                    )}
+                    bgColor={
+                      colorMode === 'light'
+                        ? formatColor(day.contributionCount).light
+                        : formatColor(day.contributionCount).dark
+                    }
                     borderRadius={2}
                     width="10px"
                     height="10px"
@@ -97,10 +104,11 @@ export const GithubContributions: React.FC<IGithubContributionsProps> = ({
             {[0, 1, 2, 3, 4].map((number) => (
               <Box
                 key={`github-example-color-${number}`}
-                bgColor={useColorModeValue(
-                  gitColors.get(number)?.light,
-                  gitColors.get(number)?.dark
-                )}
+                bgColor={
+                  colorMode === 'light'
+                    ? gitColors.get(number)?.light
+                    : gitColors.get(number)?.dark
+                }
                 borderRadius={2}
                 width="10px"
                 height="10px"

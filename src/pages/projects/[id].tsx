@@ -59,11 +59,12 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
   metadata,
 }) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const breadcrumbColor = useColorModeValue('gray.800', 'gray.400');
 
   return (
     <>
       <Head>
-        <title>Project "{metadata.title}" | Double Debug</title>
+        <title>{`Project "${metadata.title}" | Double Debug`}</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
       <Container maxW={'7xl'} p={12} pt={8}>
@@ -71,7 +72,7 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
           <Breadcrumb
             fontWeight="medium"
             fontSize="lg"
-            color={useColorModeValue('gray.800', 'gray.400')}
+            color={breadcrumbColor}
             mb={4}
           >
             <BreadcrumbItem>
@@ -96,11 +97,8 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
             <BlogTags tags={metadata.technologies} />
             {metadata.duration && (
               <Flex gap={2} alignItems="center" title="Project duration">
-                <TimeIcon color={useColorModeValue('gray.800', 'gray.400')} />
-                <Text
-                  color={useColorModeValue('gray.800', 'gray.400')}
-                  whiteSpace="nowrap"
-                >
+                <TimeIcon color={breadcrumbColor} />
+                <Text color={breadcrumbColor} whiteSpace="nowrap">
                   {metadata.duration}
                 </Text>
               </Flex>

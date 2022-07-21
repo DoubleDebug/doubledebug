@@ -18,7 +18,7 @@ import { useWindowSize } from 'usehooks-ts';
 import {
   NAVIGATION_ITEMS,
   OS_MIN_WINDOW_WIDTH,
-} from '../../utils/misc/constants';
+} from '../../utils/constants/misc';
 
 const NavLink = (props: { children: ReactNode; link: string }) => (
   <Link
@@ -62,6 +62,7 @@ const Nav = () => {
             }}
           >
             <Image
+              alt="DoubleDebug logo"
               src={
                 colorMode === 'light'
                   ? '/images/avatar_light.png'

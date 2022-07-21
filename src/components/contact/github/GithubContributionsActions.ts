@@ -1,4 +1,4 @@
-import { gitColors } from './staticData';
+import { gitColors } from '../../../utils/constants/GithubContributionsData';
 
 export async function getGithubContributions(accessToken: string) {
   const headers = {

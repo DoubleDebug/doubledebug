@@ -48,6 +48,7 @@ const OSIcon: React.FC<IOSIconProps & any> = ({
       {...rest}
     >
       <Image
+        alt="Project icon"
         src={data.urls.icon}
         width={30}
         height={30}
