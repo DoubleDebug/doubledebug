@@ -14,7 +14,23 @@
                 "Data structures",
                 "Graphs"
             ],
-            "previewImageURL": "https://i.imgur.com/m7iyWz8.png",
+            "previewImageURL": "https://i.imgur.com/m7iyWz8.png"
+        },
+        {
+            "id": "using-a-bot-to-navigate-a-website",
+            "title": "Using a bot to navigate a website",
+            "summary": "Have you ever needed some data from a website, but there's no public API available? Well today, web scraping is easier than ever and you can do it with just a few lines of code.",
+            "author": {
+                "name": "Double Debug",
+                "icon": "/images/avatar_circle_meh.png",
+                "createdAt": "7/20/2022"
+            },
+            "tags": [
+                "Node",
+                "Javascript",
+                "Web scraping"
+            ],
+            "previewImageURL": "https://i.imgur.com/XuZQjDi.jpg",
             "isRecommended": true
         }
     ]
