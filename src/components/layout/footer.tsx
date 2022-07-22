@@ -6,7 +6,9 @@ import {
   Link,
   Stack,
   Text,
+  useColorMode,
   useColorModeValue,
+  useMediaQuery,
   VisuallyHidden,
 } from '@chakra-ui/react';
 import {
@@ -51,6 +53,9 @@ const SocialButton = ({
 };
 
 export const Footer = () => {
+  const [isScreenBigEnough] = useMediaQuery('(min-width: 470px)');
+  const { colorMode } = useColorMode();
+
   return (
     <Box
       bg={useColorModeValue('gray.100', 'gray.900')}
@@ -69,10 +74,14 @@ export const Footer = () => {
               {navItem.title}
             </Link>
           ))}
-          <span
-            className={useColorModeValue('vSeparatorLight', 'vSeparatorDark')}
-            role="separator"
-          />
+          {isScreenBigEnough && (
+            <span
+              className={
+                colorMode === 'light' ? 'vSeparatorLight' : 'vSeparatorDark'
+              }
+              role="separator"
+            />
+          )}
           <Link
             href="#"
             onClick={() => window.scrollTo(0, 0)}
@@ -98,7 +107,9 @@ export const Footer = () => {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© 2022 Double Debug. All rights reserved.</Text>
+          <Text textAlign="center">
+            © 2022 Double Debug. All rights reserved.
+          </Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Github'} href={SOCIAL_LINKS.github}>
               <div className={css.socialMediaButton} title="Github">

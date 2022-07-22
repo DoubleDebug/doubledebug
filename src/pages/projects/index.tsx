@@ -18,6 +18,7 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionIcon,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import ProjectPreview from '../../components/projects/projectPreview';
@@ -49,6 +50,7 @@ const ProjectsPage: React.FC<{ projects: Project[] }> = ({ projects }) => {
     []
   );
   const [searchValue, setSearchValue] = useState('');
+  const [isScreenBigEnough] = useMediaQuery('(min-width: 350px)');
 
   useEffect(() => {
     updateFilteredProjects(
@@ -87,9 +89,11 @@ const ProjectsPage: React.FC<{ projects: Project[] }> = ({ projects }) => {
           >
             Projects
           </Heading>
-          <Text fontWeight="medium">
-            Showing {filteredProjects.length} of {projects.length}
-          </Text>
+          {isScreenBigEnough && (
+            <Text fontWeight="medium">
+              Showing {filteredProjects.length} of {projects.length}
+            </Text>
+          )}
         </Flex>
         <Accordion allowToggle mt={8} defaultIndex={0}>
           <AccordionItem borderStyle="none">

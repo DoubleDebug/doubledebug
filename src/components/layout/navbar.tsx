@@ -10,6 +10,7 @@ import {
   HStack,
   useDisclosure,
   IconButton,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
@@ -36,10 +37,11 @@ const NavLink = (props: { children: ReactNode; link: string }) => (
 );
 
 const Nav = () => {
+  const router = useRouter();
+  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { width: windowWidth } = useWindowSize();
-  const { colorMode, toggleColorMode } = useColorMode();
-  const router = useRouter();
+  const [isScreenBigEnough] = useMediaQuery('(min-width: 300px)');
 
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -65,8 +67,8 @@ const Nav = () => {
               alt="DoubleDebug logo"
               src={
                 colorMode === 'light'
-                  ? '/images/avatar_light.png'
-                  : '/images/avatar_dark.png'
+                  ? 'https://i.imgur.com/oEyQiC5.png'
+                  : 'https://i.imgur.com/zq2wx0n.png'
               }
               width={50}
               height={50}
@@ -83,7 +85,7 @@ const Nav = () => {
         <Flex alignItems={'center'}>
           <Button
             variant="solid"
-            mr={4}
+            mr={isScreenBigEnough ? 4 : 0}
             colorScheme="blue"
             onClick={() => {
               if (windowWidth <= OS_MIN_WINDOW_WIDTH) {
@@ -95,18 +97,20 @@ const Nav = () => {
           >
             Explore projects
           </Button>
-          <Stack direction={'row'} spacing={7}>
-            <Button
-              title={useColorModeValue('Light theme', 'Dark theme')}
-              bgColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
-              onClick={toggleColorMode}
-              _hover={{
-                bgColor: colorMode === 'light' ? 'gray.300' : 'gray.600',
-              }}
-            >
-              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-            </Button>
-          </Stack>
+          {isScreenBigEnough && (
+            <Stack direction={'row'} spacing={7}>
+              <Button
+                title={colorMode === 'light' ? 'Light theme' : 'Dark theme'}
+                bgColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
+                onClick={toggleColorMode}
+                _hover={{
+                  bgColor: colorMode === 'light' ? 'gray.300' : 'gray.600',
+                }}
+              >
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              </Button>
+            </Stack>
+          )}
         </Flex>
       </Flex>
 

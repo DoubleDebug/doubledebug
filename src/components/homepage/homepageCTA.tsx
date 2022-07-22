@@ -51,7 +51,6 @@ export const HomepageCTA = () => {
                 <ImageChakra
                   src="/images/avatar_circle_meh.png"
                   width={300}
-                  height={300}
                   animation="fadeIn 1s ease"
                 />
               </Box>

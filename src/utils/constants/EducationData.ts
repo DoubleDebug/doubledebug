@@ -16,7 +16,7 @@ export const educationData = [
   },
   {
     date: '2013 - 2017',
-    title: 'Gymnasium high school',
+    title: 'Grammar school',
     location: 'Leskovac, Serbia',
     description:
       'English language (B2), Informatics, Computer hardware, Binary system, Algorithms, Basic concepts of programming, Fortran, Windows forms.',
