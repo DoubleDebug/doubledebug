@@ -26,7 +26,7 @@ and you can reply with either
 
 The first reply has a property called <code>nextStage</code> with a value of 2, which means that it leads to the second graph node.
 
-<div style="display: grid; grid-template-columns: 50% 50%; width: 100%; justify-content: center">
+<div class="custom-flexible-layout">
     <img src="https://i.imgur.com/FbLEliC.png" alt="First graph node" />
     
 ```json
@@ -53,7 +53,7 @@ Some nodes are a dead end and they point to themselves. For example, if you find
 
 Other nodes, such as Node 6, are considered "successful" nodes because they've led you to the end of the sequence and of this <code>Call To Action (CTA)</code> component. Node 6 offers you two replies, but both of these replies are **actions**. You can either explore my past projects or you can head to the "Hire me" section.
 
-<div style="display: grid; grid-template-columns: 50% 50%; width: 100%; justify-content: center">
+<div class="custom-flexible-layout">
     <img src="https://i.imgur.com/yWAIIru.png" alt="Graph Node number 6" />
     
 ```json
@@ -127,7 +127,7 @@ To be clear, the examples shown above are simplified for the sake of this blog. 
 <br />
 <br />
 
-<div style="display: grid; grid-template-columns: 60% 40%; width: 100%; column-gap: 1rem; align-items: center;">
+<div class="custom-flexible-layout" style="column-gap: 1rem; align-items: center;">
 
 ```ts
 const Dialogue: React.FC = () => {
@@ -147,7 +147,7 @@ On a higher level, we have a Dialogue react component which holds state regardin
 
 </div>
 
-<div style="display: grid; grid-template-columns: 40% 60%; width: 100%; align-items: center;">
+<div class="custom-flexible-layout" style="align-items: center;">
 
 Whenever I choose a reply, I will update the current stage of the conversation and set it to <code>nextStage</code> number of the chosen reply.
 

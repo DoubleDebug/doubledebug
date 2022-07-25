@@ -2,7 +2,7 @@ Minesweeper single page game using vanilla JavaScript and awesome animations.
 
 # Features
 
-<div style="display: grid; grid-template-columns: 50% 50%;">
+<div class="custom-flexible-layout">
 
 <div>
 

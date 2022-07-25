@@ -160,7 +160,9 @@ export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
                       aria-label="twitter"
                       variant="ghost"
                       size="lg"
-                      icon={<FontAwesomeIcon icon={faTwitter} size="lg" />}
+                      icon={
+                        <FontAwesomeIcon icon={faTwitter} fontSize="1.75em" />
+                      }
                       _hover={{
                         bg: 'blue.500',
                         color: 'white',
@@ -176,7 +178,9 @@ export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
                       aria-label="linkedin"
                       variant="ghost"
                       size="lg"
-                      icon={<FontAwesomeIcon icon={faLinkedin} size="lg" />}
+                      icon={
+                        <FontAwesomeIcon icon={faLinkedin} fontSize="1.75em" />
+                      }
                       _hover={{
                         bg: 'blue.500',
                         color: 'white',
@@ -191,7 +195,7 @@ export const ContactForm: React.FC<{ children?: ReactNode }> = (props) => {
                 bg={formBgColor}
                 color={formFontColor}
                 borderRadius="lg"
-                p={8}
+                p={{ base: 4, md: 8 }}
                 shadow="2xl"
                 width={{ base: 'full', md: '600px' }}
               >

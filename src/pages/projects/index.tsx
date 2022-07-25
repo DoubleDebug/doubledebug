@@ -80,12 +80,18 @@ const ProjectsPage: React.FC<{ projects: Project[] }> = ({ projects }) => {
         <title>Projects | Double Debug</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
-      <Container display="grid" justifyContent="center" maxW={1200} p="12">
+      <Container
+        display="grid"
+        justifyContent="center"
+        maxW={1200}
+        p={{ base: 4, md: 12 }}
+      >
         <Flex justify="space-between" alignItems="center">
           <Heading
             as="h1"
             size="2xl"
             textAlign={{ base: 'center', lg: 'left' }}
+            mt={{ base: 4, md: 0 }}
           >
             Projects
           </Heading>

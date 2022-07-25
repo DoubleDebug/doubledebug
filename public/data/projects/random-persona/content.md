@@ -1,6 +1,6 @@
 Random Persona is a RestAPI for generating random personnal data, such as:
 
-<div style="display: grid; grid-template-columns: 50% 50%;">
+<div class="custom-flexible-layout">
 
 <div>
 

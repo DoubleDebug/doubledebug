@@ -1,4 +1,4 @@
-import { Container, Heading, Divider } from '@chakra-ui/react';
+import { Container, Heading, Divider, Grid } from '@chakra-ui/react';
 import { BlogArticlePreview } from '../../components/blog/BlogArticlePreview';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
@@ -31,18 +31,30 @@ const BlogArticleList: React.FC<IBlogArticleListProps> = ({ blogs }) => {
         <title>Blog | Double Debug</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
-      <Container maxW={'7xl'} p="12">
-        <Heading as="h1" size="2xl">
+      <Container maxW={'7xl'} p={{ base: 4, md: 12 }}>
+        <Heading as="h1" size="2xl" mb={6}>
           Latest blog articles
         </Heading>
-        {latestBlogs.map((blog, index) => (
-          <BlogArticlePreview key={`blog-article-preview-${index}`} {...blog} />
-        ))}
-        <Divider my={16} />
-        <Heading as="h1">Top 5 picks</Heading>
-        {recommendedBlogs.map((blog, index) => (
-          <BlogArticlePreview key={`blog-article-preview-${index}`} {...blog} />
-        ))}
+        <Grid rowGap={4}>
+          {latestBlogs.map((blog, index) => (
+            <BlogArticlePreview
+              key={`blog-article-preview-${index}`}
+              {...blog}
+            />
+          ))}
+        </Grid>
+        <Divider my={{ base: 8, md: 16 }} />
+        <Heading as="h1" size="2xl" mb={6}>
+          Top 5 picks
+        </Heading>
+        <Grid rowGap={4}>
+          {recommendedBlogs.map((blog, index) => (
+            <BlogArticlePreview
+              key={`blog-article-preview-${index}`}
+              {...blog}
+            />
+          ))}
+        </Grid>
       </Container>
     </>
   );

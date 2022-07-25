@@ -32,7 +32,7 @@ const EducationPage: React.FC = () => {
         <title>Education | Double Debug</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
-      <Box my={100}>
+      <Box mt={{ base: 8, md: 50 }} mb={50}>
         <Heading as="h1" size="2xl" mb={{ base: 8, lg: 16 }} textAlign="center">
           Education timeline
         </Heading>

@@ -78,8 +78,10 @@ const ContactPage: React.FC<IContactPageProps> = ({ data: githubData }) => {
           <Flex
             w="full"
             columnGap={8}
+            rowGap={4}
             alignItems="center"
             justify={{ base: 'center', md: 'left' }}
+            flexDirection={{ base: 'column', sm: 'row' }}
           >
             <Grid rowGap={2}>
               <Box
@@ -121,6 +123,7 @@ const ContactPage: React.FC<IContactPageProps> = ({ data: githubData }) => {
               borderColor={'chakra-border-color'}
               rounded={'lg'}
               height="min-content"
+              w={{ base: 'full', sm: undefined }}
             >
               <StatLabel fontWeight={'medium'}>Average response time</StatLabel>
               <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
@@ -128,7 +131,7 @@ const ContactPage: React.FC<IContactPageProps> = ({ data: githubData }) => {
               </StatNumber>
             </Stat>
           </Flex>
-          <Box mt="3rem !important">
+          <Box mt={{ base: '2rem !important', sm: '3rem !important' }}>
             <GithubContributions data={githubData} />
           </Box>
         </Stack>

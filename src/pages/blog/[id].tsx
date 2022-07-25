@@ -76,12 +76,7 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
             </BreadcrumbItem>
           </Breadcrumb>
         )}
-        <Heading
-          as="h1"
-          size="3xl"
-          mb={8}
-          textAlign={{ base: 'center', md: 'left' }}
-        >
+        <Heading as="h1" size="3xl" mb={8}>
           {metadata.title}
         </Heading>
         <Flex mb={6} flexDirection={{ base: 'column', md: 'row' }}>
@@ -100,7 +95,12 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
             />
           </Box>
         </Flex>
-        <Box bg={contentBgColor} rounded="3xl" p={8} color="black">
+        <Box
+          bg={contentBgColor}
+          rounded="3xl"
+          p={{ base: 2, sm: 8 }}
+          color="black"
+        >
           <Markdown content={content} />
         </Box>
       </Container>

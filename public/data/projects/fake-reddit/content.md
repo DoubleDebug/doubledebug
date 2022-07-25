@@ -25,13 +25,7 @@ Now, let's talk tech. At the beginning of development, I started out making Fake
 
 To sum things up, here's the final tech stack: <br />
 
-<div style="display: grid; grid-template-columns: 50% 50%;">
-
 ### Frontend:
-
-### Backend:
-
-<div>
 
 - React
 - Typescript
@@ -48,9 +42,9 @@ To sum things up, here's the final tech stack: <br />
 - React Loading Skeleton
 - React Quill
 
-</div>
+<br />
 
-<div>
+### Backend:
 
 - Node
 - Express
@@ -59,10 +53,6 @@ To sum things up, here's the final tech stack: <br />
   - Admin SDK
 - Algolia search
 - Node Cron
-
-</div>
-
-</div>
 
 # What I learned
 

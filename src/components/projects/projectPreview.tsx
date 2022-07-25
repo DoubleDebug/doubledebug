@@ -33,7 +33,7 @@ const ProjectPreview: React.FC<{ data: Project }> = (props) => {
       <Box
         display="flex"
         flex="1"
-        marginRight="3"
+        marginRight={{ base: undefined, md: 8, lg: 0 }}
         position="relative"
         alignItems="center"
       >

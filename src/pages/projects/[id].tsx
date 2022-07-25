@@ -67,7 +67,7 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
         <title>{`Project "${metadata.title}" | Double Debug`}</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
-      <Container maxW={'7xl'} p={12} pt={8}>
+      <Container maxW={'7xl'} p={{ base: 4, sm: 12 }} pt={8}>
         {!isMobile && (
           <Breadcrumb
             fontWeight="medium"
