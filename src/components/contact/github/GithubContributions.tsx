@@ -63,15 +63,15 @@ export const GithubContributions: React.FC<IGithubContributionsProps> = ({
           ))}
         </Flex>
         <Flex columnGap={1}>
-          {data.weeks.map((week) => (
+          {data.weeks.map((week, weekIndex) => (
             <Grid
-              key={`column-${week}`}
+              key={`column-${weekIndex}`}
               gridTemplateColumns="min-content"
               gap={1}
             >
               {week.contributionDays.map((day) => (
                 <Tooltip
-                  key={`cell-${week}-${day.weekday}`}
+                  key={`cell-${weekIndex}-${day.weekday}`}
                   label={formatTooltip(day)}
                   placement="top"
                 >

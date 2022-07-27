@@ -63,7 +63,7 @@ const HomepageDialogue: React.FC = () => {
                 placement="top"
                 position="absolute"
                 top="-65px"
-                left={595}
+                left={{ base: 555, xl: 575, '2xl': 595 }}
               >
                 <Link href="/blog/my-react-dialogue-minigame" isExternal>
                   <IconButton
@@ -79,7 +79,7 @@ const HomepageDialogue: React.FC = () => {
                     isRound
                     position="absolute"
                     top={-16}
-                    left={570}
+                    left={{ base: 530, xl: 550, '2xl': 570 }}
                     animation="popUp 2s ease 3s"
                   />
                 </Link>

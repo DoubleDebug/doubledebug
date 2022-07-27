@@ -93,7 +93,7 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
           flexDirection={{ base: 'column', md: 'row' }}
           mb={6}
         >
-          <Flex columnGap={4}>
+          <Flex gap={4} flexDirection={{ base: 'column', md: 'row' }}>
             <BlogTags tags={metadata.technologies} />
             {metadata.duration && (
               <Flex gap={2} alignItems="center" title="Project duration">

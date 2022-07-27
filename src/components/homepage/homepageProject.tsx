@@ -23,7 +23,7 @@ const ProjectPreview: React.FC<{ data: Project }> = (props) => {
     <Box
       marginTop={{ base: '1', sm: '5' }}
       display="flex"
-      flexDirection={{ sm: 'column', md: 'row', lg: 'row', xl: 'row' }}
+      flexDirection={{ base: 'column', md: 'row' }}
       justifyContent="space-between"
       mb={16}
     >

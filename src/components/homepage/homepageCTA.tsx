@@ -62,8 +62,6 @@ export const HomepageCTA = () => {
                   textAlign={{
                     base: 'center',
                     md: 'left',
-                    lg: 'left',
-                    xl: 'left',
                   }}
                   mb={2}
                 >
@@ -74,8 +72,6 @@ export const HomepageCTA = () => {
                   textAlign={{
                     base: 'center',
                     md: 'left',
-                    lg: 'left',
-                    xl: 'left',
                   }}
                   color={'blue.300'}
                 >

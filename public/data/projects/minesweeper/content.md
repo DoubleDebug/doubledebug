@@ -51,7 +51,7 @@ The game is designed dynamically and allows changing certain game parameters. Th
 
 <br />
 
-<img src="https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gameSettings.png" style="width: 477px; height: 215px;" />
+<img src="https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gameSettings.png" style="width: 477px; aspect-ratio: 477 / 215;" />
 
 <br />
 
@@ -68,23 +68,23 @@ There are 3 sets of difficulties available - easy, medium and hard. Switching be
       </thead>
       <tbody>
          <tr>
-            <td style="font-size: 2rem;">easy</td>
-            <td style="font-size: 1.5rem;">- width: 8<br>- height: 8<br>- number of mines: 7</td>
+            <td style="font-size: 1.5rem;">easy</td>
+            <td style="font-size: 1.2rem;">- width: 8<br>- height: 8<br>- number of mines: 7</td>
             <td><img style="max-width:300px;object-fit:contain" src="https://i.imgur.com/huQDlKF.png"></td>
          </tr>
          <tr>
-            <td style="font-size: 2rem;">medium</td>
-            <td style="font-size: 1.5rem;">- width: 12<br>- height: 12<br>- number of mines: 25</td>
+            <td style="font-size: 1.5rem;">medium</td>
+            <td style="font-size: 1.2rem;">- width: 12<br>- height: 12<br>- number of mines: 25</td>
             <td><img style="max-width:300px;object-fit:contain" src="https://i.imgur.com/QgllJ3b.png"></td>
          </tr>
          <tr>
-            <td style="font-size: 2rem;">hard</td>
-            <td style="font-size: 1.5rem;">- width: 20<br>- height: 12<br>- number of mines: 50</td>
+            <td style="font-size: 1.5rem;">hard</td>
+            <td style="font-size: 1.2rem;">- width: 20<br>- height: 12<br>- number of mines: 50</td>
             <td><img style="max-width:300px;object-fit:contain" src="https://i.imgur.com/efdnS5g.png"></td>
          </tr>
          <tr>
-            <td style="font-size: 2rem;">custom</td>
-            <td style="font-size: 1.5rem;">- width: [5-30]<br>- height: [5-12]<br>- number of mines: [2-(width * height / 2) - 1]</td>
+            <td style="font-size: 1.5rem;">custom</td>
+            <td style="font-size: 1.2rem;">- width: [5-30]<br>- height: [5-12]<br>- number of mines: [2-(width * height / 2) - 1]</td>
             <td><img style="max-width:300px;object-fit:contain" src="https://i.imgur.com/ssYGzte.png"></td>
          </tr>
       </tbody>

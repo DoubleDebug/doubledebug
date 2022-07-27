@@ -5,10 +5,11 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Nav from '../components/layout/navbar';
 import Head from 'next/head';
 import { Footer } from '../components/layout/footer';
+import theme from '../utils/misc/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 

@@ -28,7 +28,7 @@ const ExploreProjects: React.FC<{ projects: Project[] }> = ({ projects }) => {
         <meta name="description" content="Web developer portfolio website" />
       </Head>
       <main>
-        <Box marginLeft={10} my={10}>
+        <Box mx={{ base: 4, md: 10 }} my={10}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
