@@ -105,6 +105,7 @@ const HomepageDialogue: React.FC = () => {
           fontWeight={600}
           position="absolute"
           left={-6}
+          right={0}
           top={-550}
         >
           {showReplyBox &&
