@@ -6,6 +6,7 @@ import { playCompressAnimation } from '../../utils/animations/compress';
 import { playExpandAnimation } from '../../utils/animations/expand';
 import { playTranslateButtonsAnimation } from '../../utils/animations/translateButtons';
 import { SIDEBAR_WIDTH } from '../../utils/constants/misc';
+import { getCurrentPositions, refreshWindows } from './operatingSystemActions';
 import { OSContext } from './osContext';
 
 interface IOSWindowHeaderProps {
@@ -79,6 +80,11 @@ const OSWindowHeader: React.FC<IOSWindowHeaderProps> = (props) => {
                 openedWindows.filter((w) => w.id !== props.windowId)
               );
             }, 300);
+
+            const currentWindowPositions = getCurrentPositions();
+            setTimeout(() => {
+              refreshWindows(currentWindowPositions);
+            }, 400);
           }}
         />
       </Flex>

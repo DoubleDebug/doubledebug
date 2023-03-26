@@ -39,11 +39,13 @@ const OSIcon: React.FC<IOSIconProps & any> = ({
         e.stopPropagation();
         setSelectedIconId(data.id);
       }}
-      onDoubleClick={() => {
-        if (data.urls.liveDemo && data.urls.liveDemo !== '') {
+      onDoubleClick={(e) => {
+        e.preventDefault();
+        if (!data.urls.liveDemo || data.urls.liveDemo === '') return;
+        if (!openedWindows.map((w) => w.id).includes(data.id)) {
           setOpenedWindows([...openedWindows, data]);
-          setActiveWindowId(data.id);
         }
+        setActiveWindowId(data.id);
       }}
       {...rest}
     >

@@ -61,6 +61,7 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
       overflow="hidden"
       className={`os-window ${css.window}`}
       ref={windowRef}
+      data-id={project.id}
     >
       <OSWindowHeader
         windowTitle={project.title}

@@ -25,11 +25,11 @@ const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
   const [selectedIconId, setSelectedIconId] = useState<string | undefined>();
   const [openedWindows, setOpenedWindows] = useState<Project[]>([]);
   const [activeWindowId, setActiveWindowId] = useState<string | undefined>();
-  const { width: windowWidth } = useWindowSize();
+  const { width: browserWidth } = useWindowSize();
   const osRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  if (windowWidth <= OS_MIN_WINDOW_WIDTH) {
+  if (browserWidth <= OS_MIN_WINDOW_WIDTH) {
     return (
       <Box textAlign="center" height="60vh" mt={32}>
         <WarningTwoIcon boxSize={'50px'} color={'orange.300'} />
