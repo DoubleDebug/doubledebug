@@ -31,11 +31,19 @@ export const educationData = [
     icon: faGraduationCap,
   },
   {
-    date: '2021 - present',
+    date: 'September 2021 - January 2022',
     title: 'Freelance Web developer',
     location: 'Niš, Serbia + remote',
     description:
       'Designing both static and dynamic websites using technologies such as HTML, CSS, Javascript, Typescript, React, NodeJS, Express, Firebase, MongoDB, Bootstrap, MaterialUI, ChakraUI and more.',
+    icon: faCode,
+  },
+  {
+    date: 'August 2022 - present',
+    title: 'Software engineer',
+    location: 'Ascalab, Niš, Serbia',
+    description:
+      'Full time frontend developer position at Ascalab. Working on multiple agile development projects with a team of 3-5 people, involving different full stack web development technologies such as NextJS, React, Typescript, NodeJS and more.',
     icon: faCode,
   },
 ];
