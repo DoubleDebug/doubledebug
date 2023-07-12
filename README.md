@@ -3,9 +3,6 @@
 # hey ✌ i'm double debug.
 
 * welcome to my github page!
-* explore all my projects IN ONE PLACE [on my website](https://doubledebug.vercel.app).
-* in case you need a
-  * **beautiful**,
-  * **well designed** and
-  * **fully responsive** website,
-* contact me and let's talk about it.
+* feel free to explore my projects here, or on my [website](https://doubledebug.vercel.app).
+* message me if you have any questions about my work,
+* or [email me](mailto:duledodicc@gmail.com) if you're looking for consultations!
