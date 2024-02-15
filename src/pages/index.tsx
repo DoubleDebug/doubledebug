@@ -1,10 +1,14 @@
 import fs from 'fs/promises';
 import path from 'path';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import type { GetStaticProps, NextPage } from 'next';
 import { Heading } from '@chakra-ui/react';
 import { ContactForm } from '../components/contact/contactForm';
-import { HomepageCTA } from '../components/homepage/homepageCTA';
+const HomepageCTA = dynamic(
+  () => import('../components/homepage/homepageCTA'),
+  { ssr: false }
+);
 import HomepageProjectsSection from '../components/homepage/homepageProjectsSection';
 
 export const getStaticProps: GetStaticProps = async () => {

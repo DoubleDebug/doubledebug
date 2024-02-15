@@ -17,9 +17,9 @@ export const Markdown: React.FC<IMarkdownProps> = ({ content }) => {
       remarkPlugins={[remarkGfm, remarkEmoji]}
       className={css.markdown}
       components={{
-        code({ node, inline, className, children, ...props }) {
+        code({ node, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '');
-          return !inline && match ? (
+          return match ? (
             <SyntaxHighlighter
               style={atomDark as any}
               language={match[1]}
@@ -27,6 +27,7 @@ export const Markdown: React.FC<IMarkdownProps> = ({ content }) => {
               showLineNumbers
               wrapLongLines
               {...props}
+              ref={undefined}
             >
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>

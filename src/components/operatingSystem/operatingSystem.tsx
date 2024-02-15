@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import { useWindowSize } from 'usehooks-ts';
-import { OS_MIN_WINDOW_WIDTH } from '../../utils/constants/misc';
+import { OS_MIN_WINDOW_WIDTH } from '../../utils/constants/navigation';
 import {
   getStartingPositionX,
   getStartingPositionY,

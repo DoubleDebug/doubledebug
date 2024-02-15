@@ -107,6 +107,7 @@ const HomepageDialogue: React.FC = () => {
           left={-6}
           right={0}
           top={-550}
+          mt="2.5rem"
         >
           {showReplyBox &&
             currentDialogueStage.elements.map((dialogueElement, index) => (
@@ -126,6 +127,7 @@ const HomepageDialogue: React.FC = () => {
                 color={colorMode === 'light' ? 'gray.600' : 'gray.400'}
                 fontSize="lg"
                 fontWeight="semibold"
+                mb={0}
               >
                 Choose a reply:
               </Text>
