@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { FC, ReactNode, useMemo } from 'react';
 import {
   Box,
   Flex,
@@ -19,22 +19,41 @@ import { useWindowSize } from 'usehooks-ts';
 import {
   NAVIGATION_ITEMS,
   OS_MIN_WINDOW_WIDTH,
-} from '../../utils/constants/misc';
+} from '../../utils/constants/navigation';
 
-const NavLink = (props: { children: ReactNode; link: string }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
+const NavLink: FC<{ children: ReactNode; link: string }> = (props) => {
+  const { pathname } = useRouter();
+  const background = useColorModeValue('gray.300', 'gray.600');
+  const hoverStyles = useMemo(
+    () => ({
       textDecoration: 'none',
-      bg: useColorModeValue('gray.300', 'gray.600'),
-    }}
-    href={props.link}
-  >
-    {props.children}
-  </Link>
-);
+      bg: background,
+    }),
+    [background]
+  );
+  const isSelected = useMemo(() => {
+    if (props.link === '/') {
+      if (pathname === '/') {
+        return true;
+      }
+    } else {
+      return pathname.startsWith(props.link);
+    }
+  }, [pathname, props.link]);
+
+  return (
+    <Link
+      px={2}
+      py={1}
+      rounded={'md'}
+      _hover={hoverStyles}
+      href={props.link}
+      {...(isSelected ? hoverStyles : {})}
+    >
+      {props.children}
+    </Link>
+  );
+};
 
 const Nav = () => {
   const router = useRouter();
