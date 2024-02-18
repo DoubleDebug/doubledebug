@@ -12,15 +12,18 @@ import {
   useColorModeValue,
   Box,
   useMediaQuery,
+  Text,
 } from '@chakra-ui/react';
 import { ReasonCard } from '../../../components/blog/rwilt/ReasonCard';
 import { reasons } from '../../../components/blog/rwilt/Reasons';
+import Link from 'next/link';
+import { BlogAuthor } from '../../../components/blog/BlogAuthor';
 
 const HeroSection: FC = () => {
+  const breadcrumbColor = useColorModeValue('gray.800', 'gray.400');
   const [isXsScreen] = useMediaQuery('(max-width: 460px)');
   const [isSmScreen] = useMediaQuery('(max-width: 612px)');
   const [isMdScreen] = useMediaQuery('(max-width: 805px)');
-  const breadcrumbColor = useColorModeValue('gray.800', 'gray.400');
   const titleSize = useMemo(() => {
     if (isXsScreen) return '60px';
     if (isSmScreen) return '80px';
@@ -72,6 +75,24 @@ const HeroSection: FC = () => {
             </div>
           </Heading>
         </div>
+        <Box mb={10} color="gray.400">
+          <BlogAuthor
+            name={'Dušan Dodić'}
+            icon={useColorModeValue(
+              '/images/avatar_light.png',
+              '/images/avatar_dark.png'
+            )}
+            createdAt={'2/17/2024'}
+          />
+          <Text fontSize="1.25rem" mt={2} textIndent="3rem">
+            I started my web development journey in 2019 and ever since I wrote
+            my first piece of Javascript code, I thought the lack of types was
+            quite unsettling. Naturally, I quickly moved on to Typescript. In
+            this new series, which is a combination of blogs, short video
+            content and Jsfiddle examples, I will share a list of my favorite
+            Typescript features.
+          </Text>
+        </Box>
         <Box
           display={'grid'}
           gridTemplateColumns={isMdScreen ? 'auto' : 'auto auto auto'}
@@ -79,13 +100,19 @@ const HeroSection: FC = () => {
           gap={'15px'}
         >
           <Box display="grid" height="min-content" gap="15px">
-            <ReasonCard flex={1} data={reasons[0]} />
+            <Link href="reasons-why-i-love-typescript/1">
+              <ReasonCard flex={1} data={reasons[0]} />
+            </Link>
           </Box>
           <Box display="grid" height="min-content" gap="15px">
-            <ReasonCard flex={1} data={reasons[1]} />
+            <Link href="reasons-why-i-love-typescript/2">
+              <ReasonCard flex={1} data={reasons[1]} />
+            </Link>
           </Box>
           <Box display="grid" height="min-content" gap="15px">
-            <ReasonCard flex={1} data={reasons[2]} />
+            <Link href="reasons-why-i-love-typescript/3">
+              <ReasonCard flex={1} data={reasons[2]} />
+            </Link>
           </Box>
         </Box>
       </Container>
