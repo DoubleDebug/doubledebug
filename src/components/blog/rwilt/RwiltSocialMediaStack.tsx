@@ -19,7 +19,7 @@ export const RwiltSocialMediaStack: FC<Props> = (props) => {
   const [shareTimeout, setShareTimeout] = useState(false);
 
   return (
-    <Box display="grid" gap={3} height="min-content">
+    <Box display="grid" gap={3} height="min-content" width="min-content">
       <iframe
         width="315"
         height="560"
