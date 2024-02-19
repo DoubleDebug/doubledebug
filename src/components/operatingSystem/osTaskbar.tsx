@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import {
   Text,
   Box,
@@ -10,16 +11,18 @@ import {
 } from '@chakra-ui/react';
 import {
   faBatteryThreeQuarters,
-  faCompress,
-  faExpand,
   faHouse,
   faVolumeLow,
   faWifi,
 } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
-import { formatDate, formatTime } from '../../utils/misc/formatTime';
+import { formatDate } from '../../utils/misc/formatDate';
+import { formatTime } from '../../utils/misc/formatTime';
 import { OSContext } from './osContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const OSFullScreenIcon = dynamic(() => import('./osFullScreenIcon'), {
+  ssr: false,
+});
 
 function getTaskbarWindowColor(colorMode: ColorMode, isActive: boolean) {
   if (colorMode === 'light') {
@@ -125,13 +128,7 @@ const OSTaskbar: React.FC<IOSTaskbarProps & any> = (props) => {
             }
           }}
         >
-          <FontAwesomeIcon
-            icon={document.fullscreenElement ? faCompress : faExpand}
-            size="lg"
-            title={
-              document.fullscreenElement ? 'Exit full screen' : 'Full screen'
-            }
-          />
+          <OSFullScreenIcon />
         </OSTaskbarButton>
       </Box>
     </Box>

@@ -1,4 +1,5 @@
 import { HStack, Text, Image } from '@chakra-ui/react';
+import { formatDate } from '../../utils/misc/formatDate';
 
 export const BlogAuthor: React.FC<BlogAuthor> = (props) => {
   return (
@@ -11,7 +12,7 @@ export const BlogAuthor: React.FC<BlogAuthor> = (props) => {
       />
       <Text fontWeight="medium">{props.name}</Text>
       <Text>—</Text>
-      <Text>{props.createdAt}</Text>
+      <Text>{formatDate(props.createdAt)}</Text>
     </HStack>
   );
 };

@@ -9,7 +9,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { formatColor, formatTooltip } from './GithubContributionsActions';
-import { SOCIAL_LINKS } from '../../../utils/constants/misc';
+import { SOCIAL_LINKS } from '../../../utils/constants/navigation';
 import {
   gitMonths,
   gitDays,

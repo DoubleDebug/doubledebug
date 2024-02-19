@@ -51,7 +51,7 @@ const BlogArticle: React.FC<IBlogArticleProps> = ({ content, metadata }) => {
   return (
     <>
       <Head>
-        <title>{metadata.title} | Double Debug</title>
+        <title>{`${metadata.title} | Double Debug`}</title>
         <meta name="description" content="Web developer portfolio website" />
       </Head>
       <Container

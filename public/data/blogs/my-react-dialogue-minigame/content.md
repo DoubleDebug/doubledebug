@@ -127,7 +127,7 @@ To be clear, the examples shown above are simplified for the sake of this blog. 
 <br />
 <br />
 
-<div class="custom-flexible-layout" style="column-gap: 1rem; align-items: center;">
+<div class="custom-flexible-layout-60-40" style="column-gap: 1rem; align-items: center;">
 
 ```ts
 const Dialogue: React.FC = () => {
@@ -147,7 +147,7 @@ On a higher level, we have a Dialogue react component which holds state regardin
 
 </div>
 
-<div class="custom-flexible-layout" style="align-items: center;">
+<div class="custom-flexible-layout-40-60" style="align-items: center;">
 
 Whenever I choose a reply, I will update the current stage of the conversation and set it to <code>nextStage</code> number of the chosen reply.
 

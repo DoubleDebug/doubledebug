@@ -5,7 +5,7 @@ import { useContext, useRef, useState } from 'react';
 import { playCompressAnimation } from '../../utils/animations/compress';
 import { playExpandAnimation } from '../../utils/animations/expand';
 import { playTranslateButtonsAnimation } from '../../utils/animations/translateButtons';
-import { SIDEBAR_WIDTH } from '../../utils/constants/misc';
+import { SIDEBAR_WIDTH } from '../../utils/constants/navigation';
 import { getCurrentPositions, refreshWindows } from './operatingSystemActions';
 import { OSContext } from './osContext';
 

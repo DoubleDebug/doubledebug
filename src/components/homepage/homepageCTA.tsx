@@ -13,15 +13,15 @@ import { useWindowSize } from 'usehooks-ts';
 import {
   OS_MIN_WINDOW_WIDTH,
   HOMEPAGE_SPEECH_BUBBLE_MIN_WINDOW_WIDTH as W_CONSTRAINT,
-} from '../../utils/constants/misc';
+} from '../../utils/constants/navigation';
 import HomepageDialogue from './dialogue/Dialogue';
 
-export const HomepageCTA = () => {
+const HomepageCTA = () => {
   const { width: windowWidth } = useWindowSize();
   const router = useRouter();
   const isLargeScreen = windowWidth > W_CONSTRAINT;
 
-  if (windowWidth === 0) {
+  if (!windowWidth) {
     return <Container maxW="7xl" height="100vh" />;
   }
 
@@ -82,7 +82,6 @@ export const HomepageCTA = () => {
                 color={'gray.500'}
                 textAlign={{ sm: 'center', md: 'left', lg: 'left' }}
                 fontSize="lg"
-                fontFamily="Mosk"
               >
                 {`Feel free to browse through my past projects and read about my
                 work and education.`}
@@ -126,3 +125,5 @@ export const HomepageCTA = () => {
     </Container>
   );
 };
+
+export default HomepageCTA;

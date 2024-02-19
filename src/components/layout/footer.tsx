@@ -18,7 +18,10 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactNode } from 'react';
-import { NAVIGATION_ITEMS, SOCIAL_LINKS } from '../../utils/constants/misc';
+import {
+  NAVIGATION_ITEMS,
+  SOCIAL_LINKS,
+} from '../../utils/constants/navigation';
 
 const SocialButton = ({
   children,
