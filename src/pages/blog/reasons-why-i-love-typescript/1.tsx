@@ -76,9 +76,9 @@ const ReasonOne: React.FC = () => {
                     >
                       <Text>
                         Javascript is a weakly typed programming language. This
-                        means that there's no way to know the exact type of a
-                        variable before your code runs. Let's take a look at the
-                        following example:
+                        means that there&apos;s no way to know the exact type of
+                        a variable before your code runs. Let&apos;s take a look
+                        at the following example:
                       </Text>
                       <Markdown
                         content={`~~~js
@@ -88,10 +88,11 @@ function formatName(user) {
 `}
                       />
                       <Text>
-                        Here we relying on the fact that the "user" parameter is
-                        an object that contains the "name" and "age" properties.
-                        We're trusting the user of this function to pass the
-                        correctly typed parameter.
+                        Here we relying on the fact that the &quot;user&quot;
+                        parameter is an object that contains the
+                        &quot;name&quot; and &quot;age&quot; properties.
+                        We&apos;re trusting the user of this function to pass
+                        the correctly typed parameter.
                       </Text>
                       <br />
                       <Text>
@@ -124,20 +125,21 @@ function formatName(user: User) {
                       />
                       <Text>
                         In the Typescript example, we set the conditions that
-                        need to be met by the "user" parameter. We're ensuring
-                        that it's safe to assume the user has a "name" and
-                        "age", and we also get the sweet-sweet intellisense!
+                        need to be met by the &quot;user&quot; parameter.
+                        We&apos;re ensuring that it&apos;s safe to assume the
+                        user has a &quot;name&quot; and &quot;age&quot;, and we
+                        also get the sweet-sweet intellisense!
                       </Text>
                       <hr style={{ marginTop: '1rem', marginBottom: '1rem' }} />
                       <Text>
                         💡 Some might say that we can still pass any paramter to
-                        this function, as long as we cast the type to "any".
-                        This is true, but at that point, the developer has
-                        already been warned and is now taking the responsibility
-                        of explicitly casting the parameter type.
+                        this function, as long as we cast the type to
+                        &quot;any&quot;. This is true, but at that point, the
+                        developer has already been warned and is now taking the
+                        responsibility of explicitly casting the parameter type.
                         <br />
                         <br />
-                        At that point, it's the developer's fault. 🤷
+                        At that point, it&apos;s the developer&apos;s fault. 🤷
                       </Text>
                     </Box>
                   </TabPanel>
