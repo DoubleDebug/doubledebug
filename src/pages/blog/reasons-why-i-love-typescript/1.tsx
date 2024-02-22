@@ -32,7 +32,7 @@ const ReasonOne: React.FC = () => {
         />
       </Head>
       <Container maxW={'7xl'}>
-        <Stack py={{ base: 16, md: 24 }}>
+        <Stack py={{ base: 4, md: 12 }}>
           {!isMobile && (
             <Breadcrumb
               fontWeight="medium"

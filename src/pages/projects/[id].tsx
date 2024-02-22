@@ -106,7 +106,7 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
           </Flex>
           <Flex
             alignItems={{ base: undefined, md: 'center' }}
-            columnGap={4}
+            columnGap={2}
             flexDirection={{ base: 'column', md: 'row' }}
             rowGap={2}
             mt={{ base: 8, md: 0 }}
@@ -116,10 +116,12 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
             {metadata.urls.liveDemo && (
               <Button
                 variant="outline"
-                px={6}
+                px={4}
                 columnGap={2}
                 onClick={() => window.open(metadata.urls.liveDemo)}
                 title={metadata.urls.liveDemo}
+                fontWeight={400}
+                fontSize="0.9rem"
               >
                 Live demo <ExternalLinkIcon />
               </Button>
@@ -127,10 +129,12 @@ const ProjectArticle: React.FC<IProjectArticleProps> = ({
             {!metadata.urls.isPrivate && (
               <Button
                 variant="outline"
-                px={6}
+                px={4}
                 columnGap={2}
                 onClick={() => window.open(metadata.urls.githubRepo)}
                 title={metadata.urls.githubRepo}
+                fontWeight={400}
+                fontSize="0.9rem"
               >
                 Source code
                 <FontAwesomeIcon icon={faGithub} />

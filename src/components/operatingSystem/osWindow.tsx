@@ -79,7 +79,6 @@ const OSWindow: React.FC<IOSWindowProps & any> = ({
           src={project.urls.liveDemo}
           height="100%"
           width="100%"
-          scrolling="no"
           style={{
             width: `calc(${project.osSettings.windowSize.w}px - 2rem)`,
             backgroundColor: 'white',

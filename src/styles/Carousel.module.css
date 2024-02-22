@@ -6,13 +6,13 @@
 }
 
 .light {
-  --content-background-color: #edf2f7;
+  --content-background-color: none !important;
   --organic-arrow-color: black;
   --control-bullet-color: #c0c0c0;
 }
 
 .dark {
-  --content-background-color: #1a202c;
+  --content-background-color: none !important;
   --organic-arrow-color: white;
   --control-bullet-color: #c0c0c0;
 }

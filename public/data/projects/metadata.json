@@ -1,261 +1,249 @@
 {
-    "projects": [
-        {
-            "id": "portfolio-website",
-            "title": "Portfolio website",
-            "description": "Project showcase + blog website with NextJS, Typescript and Chakra UI",
-            "duration": "1.5 months",
-            "technologies": [
-                "NextJS",
-                "React",
-                "Typescript",
-                "Chakra UI"
-            ],
-            "urls": {
-                "icon": "images/avatar_circle_meh.png",
-                "previewImages": [
-                    "https://i.imgur.com/3Z3H9LG.png",
-                    "https://i.imgur.com/y6JGvm8.png",
-                    "https://i.imgur.com/OVpWD6f.png",
-                    "https://i.imgur.com/TC3JxjS.png",
-                    "https://i.imgur.com/nU64yE1.png",
-                    "https://i.imgur.com/0PMC6EB.png"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/portfolio-website"
-            }
+  "projects": [
+    {
+      "id": "diffinder",
+      "title": "Find the differences",
+      "description": "Take a closer look at the images and compare them. If you see a difference, click on it. But be careful, because if you make 3 mistakes - you're out!",
+      "duration": "30 days",
+      "technologies": ["SolidJS", "Typescript", "Tailwind", "Flowbite"],
+      "urls": {
+        "liveDemo": "https://diffinder.web.app",
+        "icon": "https://i.imgur.com/HqS1cLU.png",
+        "previewImages": [
+          "https://i.imgur.com/9AuBvaE.png",
+          "https://i.imgur.com/RRBHYlY.png",
+          "https://i.imgur.com/ikwTVyw.png",
+          "https://i.imgur.com/5j8lNUo.png"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/diffinder"
+      },
+      "osSettings": {
+        "windowSize": {
+          "w": 1000,
+          "h": 700
         },
-        {
-            "id": "fake-reddit",
-            "title": "Fake Reddit",
-            "description": "Full stack Reddit clone with React, Typescript and Firebase",
-            "duration": "5 months",
-            "technologies": [
-                "React",
-                "Typescript",
-                "Firebase",
-                "Node",
-                "Express"
-            ],
-            "urls": {
-                "liveDemo": "https://fake-reddit.com",
-                "icon": "https://i.imgur.com/RZQt874.png",
-                "previewImages": [
-                    "https://i.imgur.com/He244ZB.png",
-                    "https://i.imgur.com/lWYuRp1.png",
-                    "https://i.imgur.com/Ggcs6YP.png",
-                    "https://i.imgur.com/x3UqeD6.png",
-                    "https://i.imgur.com/KMAqbol.png",
-                    "https://i.imgur.com/AirJ4iF.png"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/fake-reddit"
-            },
-            "osSettings": {
-                "windowSize": {
-                    "w": 1000,
-                    "h": 700
-                },
-                "iconOffset": {
-                    "x": 600,
-                    "y": 100
-                }
-            },
-            "showOnHomepage": true
-        },
-        {
-            "id": "wordle",
-            "title": "Wordle clone",
-            "description": "Cloning Wordle in Javascript in 30 minutes (exercise)",
-            "duration": "30 minutes",
-            "technologies": [
-                "Javascript",
-                "HTML",
-                "CSS"
-            ],
-            "urls": {
-                "liveDemo": "https://doubledebug.github.io/wordle-speedrun/",
-                "icon": "https://i.imgur.com/CnqxIq4.png",
-                "previewImages": [
-                    "https://i.imgur.com/ofa3hJa.png",
-                    "/images/wordle-preview.gif"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/wordle-speedrun"
-            },
-            "osSettings": {
-                "windowSize": {
-                    "w": 500,
-                    "h": 700
-                },
-                "iconOffset": {
-                    "x": 815,
-                    "y": 43
-                }
-            },
-            "showOnHomepage": true
-        },
-        {
-            "id": "implement-your-own",
-            "title": "Implement your own",
-            "description": "Rewriting existing classes and features of Javascript (exercise)",
-            "technologies": [
-                "Javascript",
-                "ES6",
-                "Jest"
-            ],
-            "urls": {
-                "icon": "https://i.imgur.com/rQTImVR.png",
-                "previewImages": [
-                    "https://i.imgur.com/EryoL55.png"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/implement-your-own"
-            }
-        },
-        {
-            "id": "project-manager",
-            "title": "Project manager",
-            "description": "Typescript web app for project management, tasks and to do lists",
-            "duration": "1 month",
-            "technologies": [
-                "HTML",
-                "CSS",
-                "Typescript",
-                "RxJS",
-                "MVC"
-            ],
-            "urls": {
-                "liveDemo": "https://doubledebug.github.io/project-manager/",
-                "icon": "https://i.imgur.com/nGZ4pj6.png",
-                "previewImages": [
-                    "https://i.imgur.com/jmPQP6p.png",
-                    "https://i.imgur.com/SYpgXkr.png",
-                    "https://i.imgur.com/NfTIRxo.png",
-                    "https://i.imgur.com/RTFp4AT.png",
-                    "https://i.imgur.com/Zvfxbqm.gif"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/project-manager"
-            },
-            "osSettings": {
-                "windowSize": {
-                    "w": 799,
-                    "h": 700
-                },
-                "iconOffset": {
-                    "x": 1040,
-                    "y": -20
-                }
-            }
-        },
-        {
-            "id": "probcut",
-            "title": "ProbCut Barbershop",
-            "description": "Barbershop appointment scheduling app with ASP.NET Core",
-            "duration": "3 months",
-            "technologies": [
-                "C#",
-                "ASP.NET Core",
-                "Javascript",
-                "Razor pages",
-                "Bootstrap"
-            ],
-            "urls": {
-                "icon": "https://i.imgur.com/L4MdxlM.png",
-                "previewImages": [
-                    "https://i.imgur.com/lvmw9CW.png",
-                    "https://i.imgur.com/06jxbTj.png",
-                    "https://i.imgur.com/b4rjlIh.png",
-                    "https://i.imgur.com/0i4E9PE.png"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/probcut",
-                "isPrivate": true
-            },
-            "showOnHomepage": true
-        },
-        {
-            "id": "minesweeper",
-            "title": "Minesweeper",
-            "description": "Simple Javascript Minesweeper game",
-            "duration": "1.5 months",
-            "technologies": [
-                "HTML",
-                "CSS",
-                "Javascript",
-                "MVC"
-            ],
-            "urls": {
-                "liveDemo": "https://minesweeper-52419.web.app",
-                "icon": "https://i.imgur.com/JOxfik0.png",
-                "previewImages": [
-                    "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png",
-                    "https://i.imgur.com/QS92jHU.png",
-                    "https://i.imgur.com/lacRp7b.png",
-                    "https://i.imgur.com/AZQgWX6.png"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/minesweeper"
-            },
-            "osSettings": {
-                "windowSize": {
-                    "w": 500,
-                    "h": 710
-                },
-                "iconOffset": {
-                    "x": 705,
-                    "y": 70
-                }
-            }
-        },
-        {
-            "id": "random-persona",
-            "title": "Random persona",
-            "description": "NodeJS API for generating random personnal data",
-            "duration": "3 days",
-            "technologies": [
-                "Node",
-                "Express",
-                "Typescript"
-            ],
-            "urls": {
-                "liveDemo": "https://doubledebug.github.io/random-persona-example/",
-                "icon": "https://i.imgur.com/QesQwmJ.png",
-                "previewImages": [
-                    "https://i.imgur.com/mXxCzXG.png",
-                    "https://i.imgur.com/beb9Iby.png"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/random-persona"
-            },
-            "osSettings": {
-                "windowSize": {
-                    "w": 550,
-                    "h": 820
-                },
-                "iconOffset": {
-                    "x": 920,
-                    "y": 0
-                }
-            }
-        },
-        {
-            "id": "technical-office",
-            "title": "Technical Office",
-            "description": "Technical PDF drawing management system",
-            "duration": "1 month",
-            "technologies": [
-                "Javascript",
-                "Firebase",
-                "Tailwind"
-            ],
-            "urls": {
-                "icon": "https://i.imgur.com/fmMky53.png",
-                "previewImages": [
-                    "https://i.imgur.com/X0mSCwI.png",
-                    "https://i.imgur.com/GwiVFkl.png",
-                    "https://i.imgur.com/EFFOSrk.png",
-                    "https://i.imgur.com/B1Y7ie5.png",
-                    "https://i.imgur.com/LZCHf7n.png",
-                    "https://i.imgur.com/LKg7XTJ.png"
-                ],
-                "githubRepo": "https://github.com/DoubleDebug/technical-office",
-                "isPrivate": true
-            },
-            "showOnHomepage": true
+        "iconOffset": {
+          "x": 815,
+          "y": 20
         }
-    ]
+      }
+    },
+    {
+      "id": "portfolio-website",
+      "title": "Portfolio website",
+      "description": "Project showcase + blog website with NextJS, Typescript and Chakra UI",
+      "duration": "1.5 months",
+      "technologies": ["NextJS", "React", "Typescript", "Chakra UI"],
+      "urls": {
+        "icon": "images/avatar_circle_meh.png",
+        "previewImages": [
+          "https://i.imgur.com/3Z3H9LG.png",
+          "https://i.imgur.com/y6JGvm8.png",
+          "https://i.imgur.com/OVpWD6f.png",
+          "https://i.imgur.com/TC3JxjS.png",
+          "https://i.imgur.com/nU64yE1.png",
+          "https://i.imgur.com/0PMC6EB.png"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/portfolio-website"
+      }
+    },
+    {
+      "id": "fake-reddit",
+      "title": "Fake Reddit",
+      "description": "Full stack Reddit clone with React, Typescript and Firebase",
+      "duration": "5 months",
+      "technologies": ["React", "Typescript", "Firebase", "Node", "Express"],
+      "urls": {
+        "liveDemo": "https://fake-reddit.com",
+        "icon": "https://i.imgur.com/RZQt874.png",
+        "previewImages": [
+          "https://i.imgur.com/He244ZB.png",
+          "https://i.imgur.com/lWYuRp1.png",
+          "https://i.imgur.com/Ggcs6YP.png",
+          "https://i.imgur.com/x3UqeD6.png",
+          "https://i.imgur.com/KMAqbol.png",
+          "https://i.imgur.com/AirJ4iF.png"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/fake-reddit"
+      },
+      "osSettings": {
+        "windowSize": {
+          "w": 1000,
+          "h": 700
+        },
+        "iconOffset": {
+          "x": 600,
+          "y": 100
+        }
+      },
+      "showOnHomepage": true
+    },
+    {
+      "id": "wordle",
+      "title": "Wordle clone",
+      "description": "Cloning Wordle in Javascript in 30 minutes (exercise)",
+      "duration": "30 minutes",
+      "technologies": ["Javascript", "HTML", "CSS"],
+      "urls": {
+        "liveDemo": "https://doubledebug.github.io/wordle-speedrun/",
+        "icon": "https://i.imgur.com/CnqxIq4.png",
+        "previewImages": [
+          "https://i.imgur.com/ofa3hJa.png",
+          "/images/wordle-preview.gif"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/wordle-speedrun"
+      },
+      "osSettings": {
+        "windowSize": {
+          "w": 500,
+          "h": 700
+        },
+        "iconOffset": {
+          "x": 815,
+          "y": 43
+        }
+      },
+      "showOnHomepage": true
+    },
+    {
+      "id": "implement-your-own",
+      "title": "Implement your own",
+      "description": "Rewriting existing classes and features of Javascript (exercise)",
+      "technologies": ["Javascript", "ES6", "Jest"],
+      "urls": {
+        "icon": "https://i.imgur.com/rQTImVR.png",
+        "previewImages": ["https://i.imgur.com/EryoL55.png"],
+        "githubRepo": "https://github.com/DoubleDebug/implement-your-own"
+      }
+    },
+    {
+      "id": "project-manager",
+      "title": "Project manager",
+      "description": "Typescript web app for project management, tasks and to do lists",
+      "duration": "1 month",
+      "technologies": ["HTML", "CSS", "Typescript", "RxJS", "MVC"],
+      "urls": {
+        "liveDemo": "https://doubledebug.github.io/project-manager/",
+        "icon": "https://i.imgur.com/nGZ4pj6.png",
+        "previewImages": [
+          "https://i.imgur.com/jmPQP6p.png",
+          "https://i.imgur.com/SYpgXkr.png",
+          "https://i.imgur.com/NfTIRxo.png",
+          "https://i.imgur.com/RTFp4AT.png",
+          "https://i.imgur.com/Zvfxbqm.gif"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/project-manager"
+      },
+      "osSettings": {
+        "windowSize": {
+          "w": 799,
+          "h": 700
+        },
+        "iconOffset": {
+          "x": 1040,
+          "y": -20
+        }
+      }
+    },
+    {
+      "id": "probcut",
+      "title": "ProbCut Barbershop",
+      "description": "Barbershop appointment scheduling app with ASP.NET Core",
+      "duration": "3 months",
+      "technologies": [
+        "C#",
+        "ASP.NET Core",
+        "Javascript",
+        "Razor pages",
+        "Bootstrap"
+      ],
+      "urls": {
+        "icon": "https://i.imgur.com/L4MdxlM.png",
+        "previewImages": [
+          "https://i.imgur.com/lvmw9CW.png",
+          "https://i.imgur.com/06jxbTj.png",
+          "https://i.imgur.com/b4rjlIh.png",
+          "https://i.imgur.com/0i4E9PE.png"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/probcut",
+        "isPrivate": true
+      },
+      "showOnHomepage": true
+    },
+    {
+      "id": "minesweeper",
+      "title": "Minesweeper",
+      "description": "Simple Javascript Minesweeper game",
+      "duration": "1.5 months",
+      "technologies": ["HTML", "CSS", "Javascript", "MVC"],
+      "urls": {
+        "liveDemo": "https://minesweeper-52419.web.app",
+        "icon": "https://i.imgur.com/JOxfik0.png",
+        "previewImages": [
+          "https://raw.githubusercontent.com/DoubleDebug/minesweeper/main/res/images/previews/gamePreview.png",
+          "https://i.imgur.com/QS92jHU.png",
+          "https://i.imgur.com/lacRp7b.png",
+          "https://i.imgur.com/AZQgWX6.png"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/minesweeper"
+      },
+      "osSettings": {
+        "windowSize": {
+          "w": 500,
+          "h": 710
+        },
+        "iconOffset": {
+          "x": 705,
+          "y": 70
+        }
+      }
+    },
+    {
+      "id": "random-persona",
+      "title": "Random persona",
+      "description": "NodeJS API for generating random personnal data",
+      "duration": "3 days",
+      "technologies": ["Node", "Express", "Typescript"],
+      "urls": {
+        "liveDemo": "https://doubledebug.github.io/random-persona-example/",
+        "icon": "https://i.imgur.com/QesQwmJ.png",
+        "previewImages": [
+          "https://i.imgur.com/mXxCzXG.png",
+          "https://i.imgur.com/beb9Iby.png"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/random-persona"
+      },
+      "osSettings": {
+        "windowSize": {
+          "w": 550,
+          "h": 820
+        },
+        "iconOffset": {
+          "x": 920,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "technical-office",
+      "title": "Technical Office",
+      "description": "Technical PDF drawing management system",
+      "duration": "1 month",
+      "technologies": ["Javascript", "Firebase", "Tailwind"],
+      "urls": {
+        "icon": "https://i.imgur.com/fmMky53.png",
+        "previewImages": [
+          "https://i.imgur.com/X0mSCwI.png",
+          "https://i.imgur.com/GwiVFkl.png",
+          "https://i.imgur.com/EFFOSrk.png",
+          "https://i.imgur.com/B1Y7ie5.png",
+          "https://i.imgur.com/LZCHf7n.png",
+          "https://i.imgur.com/LKg7XTJ.png"
+        ],
+        "githubRepo": "https://github.com/DoubleDebug/technical-office",
+        "isPrivate": true
+      },
+      "showOnHomepage": true
+    }
+  ]
 }

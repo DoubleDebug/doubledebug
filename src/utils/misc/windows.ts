@@ -11,21 +11,6 @@ export function getStartingPositionX(
   );
 }
 
-export function getStartingPositionY(
-  osRef: HTMLDivElement | null,
-  projectData: Project
-) {
-  if (!osRef) {
-    return 0;
-  }
-  const OFFSET = 420; // not sure why this exists
-  const TASKBAR_HEIGHT = 42;
-  return (
-    Math.round(
-      Math.random() *
-        (osRef.clientHeight -
-          TASKBAR_HEIGHT -
-          (projectData.osSettings?.windowSize.h || 0))
-    ) - OFFSET
-  );
+export function getStartingPositionY() {
+  return -550;
 }

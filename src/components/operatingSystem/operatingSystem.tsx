@@ -104,7 +104,7 @@ const OperatingSystem: React.FC<IOperatingSystemProps> = (props) => {
               key={`os-window-${index}`}
               defaultPosition={{
                 x: getStartingPositionX(osRef.current, proj),
-                y: getStartingPositionY(osRef.current, proj),
+                y: getStartingPositionY(),
               }}
             >
               <OSWindow project={proj} isActive={proj.id === activeWindowId} />

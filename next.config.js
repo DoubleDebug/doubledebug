@@ -5,9 +5,12 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    loader: 'akamai',
-    path: '',
-    domains: ['i.imgur.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.imgur.com',
+      },
+    ],
   },
 };
 
