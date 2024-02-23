@@ -56,7 +56,7 @@ const SocialButton = ({
 };
 
 export const Footer = () => {
-  const [isScreenBigEnough] = useMediaQuery('(min-width: 470px)');
+  const [isScreenBigEnough] = useMediaQuery('(min-width: 475px)');
   const { colorMode } = useColorMode();
 
   return (
@@ -88,7 +88,6 @@ export const Footer = () => {
           <Link
             href="#"
             onClick={() => window.scrollTo(0, 0)}
-            ml="auto"
             whiteSpace="nowrap"
           >
             Back to top
