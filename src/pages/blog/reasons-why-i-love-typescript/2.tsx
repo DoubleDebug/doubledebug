@@ -48,15 +48,15 @@ const ReasonOne: React.FC = () => {
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbItem>
-                <span>Reason 1</span>
+                <span>Reason 2</span>
               </BreadcrumbItem>
             </Breadcrumb>
           )}
           <Stack direction={{ base: 'column', md: 'row' }} gap={10}>
             <Stack flex={1} spacing={{ base: 5, md: 10 }}>
               <Heading lineHeight={1.2} fontWeight={600} fontSize="5xl">
-                <Text as={'span'}>Reason #1 why I love Typescript:</Text>
-                <Text color={'red.400'}>The Intellisense</Text>
+                <Text as={'span'}>Reason #2 why I love Typescript:</Text>
+                <Text color={'red.400'}>Global types</Text>
               </Heading>
               <Tabs variant="enclosed">
                 <TabList>
@@ -75,91 +75,75 @@ const ReasonOne: React.FC = () => {
                       }}
                     >
                       <Text>
-                        Javascript is a weakly typed programming language. This
-                        means that there&apos;s no way to know the exact type of
-                        a variable before your code runs. Let&apos;s take a look
-                        at the following example:
-                      </Text>
-                      <Markdown
-                        content={`~~~js
-function formatName(user) {
-  return \`\${user.name}, \${user.age}\`;
-}
-`}
-                      />
-                      <Text>
-                        Here we relying on the fact that the &quot;user&quot;
-                        parameter is an object that contains the
-                        &quot;name&quot; and &quot;age&quot; properties.
-                        We&apos;re trusting the user of this function to pass
-                        the correctly typed parameter.
+                        Did you know you can access Typescript types from other
+                        files without importing them?
                       </Text>
                       <br />
                       <Text>
-                        In the real world, the data passed to this function can
-                        come from various sources:
+                        Besides the regular .ts files, the Typescript
+                        programming language also has support for .d.ts files.
                       </Text>
+                      <Text>
+                        These are called DTS Modules, where D stands for{' '}
+                        <strong>declaration</strong>.
+                      </Text>
+                      <br />
+                      <Text>DTS files are used to:</Text>
                       <ul style={{ marginLeft: '2.5rem' }}>
-                        <li>an external API</li>
-                        <li>user input</li>
-                        <li>your own code</li>
+                        <li>declare types</li>
+                        <li>declare interfaces</li>
+                        <li>declare function signatures</li>
+                        <li>
+                          give Typescript information about some Javascript API
+                        </li>
                       </ul>
                       <br />
-                      <Text>
-                        The shocking truth is that <strong>you</strong> can also
-                        be the source of an error 😱. So...
-                      </Text>
                       <Markdown
                         content={`~~~ts
-type User = {
-  name: string;
-  age: number;
+type Circle = {
+  radius: number;
+  color: string;
 }
 
-function formatName(user: User) {
-  return \`\${user.name}, \${user.age}\`;
-}
+function getCircleArea(circle: Circle): number;
+function getCircleCirumference(circle: Circle): number;
+
+const PI: number;
 `}
                       />
-                      <Text>
-                        In the Typescript example, we set the conditions that
-                        need to be met by the &quot;user&quot; parameter.
-                        We&apos;re ensuring that it&apos;s safe to assume the
-                        user has a &quot;name&quot; and &quot;age&quot;, and we
-                        also get the sweet-sweet intellisense!
-                      </Text>
                       <hr style={{ marginTop: '1rem', marginBottom: '1rem' }} />
                       <Text>
-                        💡 Some might say that we can still pass any paramter to
-                        this function, as long as we cast the type to
-                        &quot;any&quot;. This is true, but at that point, the
-                        developer has already been warned and is now taking the
-                        responsibility of explicitly casting the parameter type.
-                        <br />
-                        <br />
-                        At that point, it&apos;s the developer&apos;s fault. 🤷
+                        💡 You can also find .d.ts files in NPM modules that
+                        were initially written in Javascript. Instead of
+                        re-writing these libraries in Typescript, the
+                        maintaineres often write .d.ts files to provide
+                        developers the information they need to know about their
+                        API.
                       </Text>
                     </Box>
                   </TabPanel>
                   <TabPanel>
                     <iframe
-                      width="100%"
-                      height="300"
-                      src="//jsfiddle.net/doubledebug/7kj2s4fg/1/embedded/js,result/dark/"
+                      src="https://codesandbox.io/embed/9rzhqs?view=editor&module=%2Fsrc%2Fapp.tsx"
+                      style={{
+                        width: '100%',
+                        height: '500px',
+                        border: '0',
+                        borderRadius: '4px',
+                        overflow: 'hidden',
+                      }}
+                      title="RWILT #2 - Global types"
+                      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
                     ></iframe>
-                    <iframe
-                      width="100%"
-                      height="350"
-                      src="//jsfiddle.net/doubledebug/5nhkvb20/25/embedded/js,result/dark/"
-                    />
                   </TabPanel>
                 </TabPanels>
               </Tabs>
             </Stack>
             <Box display="flex" justifyContent="center">
               <RwiltSocialMediaStack
-                youtubeLink="https://www.youtube.com/shorts/3XK8hWcM2ak"
-                tiktokLink="https://www.tiktok.com/@imdoubled/video/7336602385189555461"
+                youtubeLink="https://www.youtube.com/shorts/gbRGI92S_J0"
+                tiktokLink="https://www.tiktok.com/@imdoubled/video/7340033972656753925"
               />
             </Box>
           </Stack>
