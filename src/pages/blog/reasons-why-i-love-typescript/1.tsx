@@ -48,7 +48,7 @@ const ReasonOne: React.FC = () => {
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbItem>
-                <span>Reason 1</span>
+                <span>#1</span>
               </BreadcrumbItem>
             </Breadcrumb>
           )}

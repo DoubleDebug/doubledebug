@@ -48,15 +48,15 @@ const ReasonOne: React.FC = () => {
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbItem>
-                <span>#2</span>
+                <span>#3</span>
               </BreadcrumbItem>
             </Breadcrumb>
           )}
           <Stack direction={{ base: 'column', md: 'row' }} gap={10}>
             <Stack flex={1} spacing={{ base: 5, md: 10 }}>
               <Heading lineHeight={1.2} fontWeight={600} fontSize="5xl">
-                <Text as={'span'}>Reason #2 why I love Typescript:</Text>
-                <Text color={'red.400'}>Global types</Text>
+                <Text as={'span'}>Reason #3 why I love Typescript:</Text>
+                <Text color={'red.400'}>Type indexing</Text>
               </Heading>
               <Tabs variant="enclosed">
                 <TabList>
@@ -75,56 +75,99 @@ const ReasonOne: React.FC = () => {
                       }}
                     >
                       <Text>
-                        Did you know you can access Typescript types from other
-                        files without importing them?
+                        One of the key principles when writing code is DRY -{' '}
+                        <u>Don't Repeat Yourself</u>.
                       </Text>
                       <br />
                       <Text>
-                        Besides the regular .ts files, the Typescript
-                        programming language also has support for .d.ts files.
+                        In Typescript, one of the ways I found myself applying
+                        this principle is using type indexing.
                       </Text>
                       <Text>
-                        These are called DTS Modules, where D stands for{' '}
-                        <strong>declaration</strong>.
+                        Type indexing allows you to reference a piece of another
+                        type.
                       </Text>
                       <br />
-                      <Text>DTS files are used to:</Text>
-                      <ul style={{ marginLeft: '2.5rem' }}>
-                        <li>declare types</li>
-                        <li>declare interfaces</li>
-                        <li>declare function signatures</li>
-                        <li>
-                          give Typescript information about some Javascript API
-                        </li>
-                      </ul>
-                      <br />
+                      <Text>Let's take a look at an example:</Text>
                       <Markdown
                         content={`~~~ts
-type Circle = {
-  radius: number;
-  color: string;
+type User = {
+  id: string;
+  name: string;
+  age: number;
 }
 
-function getCircleArea(circle: Circle): number;
-function getCircleCirumference(circle: Circle): number;
-
-const PI: number;
+function findUser(userId: string) { ... };
+function getUserProfilePhoto(userId: string) { ... };
 `}
                       />
-                      <hr style={{ marginTop: '1rem', marginBottom: '1rem' }} />
                       <Text>
-                        💡 You can also find .d.ts files in NPM modules that
-                        were initially written in Javascript. Instead of
-                        re-writing these libraries in Typescript, the
-                        maintaineres often write .d.ts files to provide
-                        developers the information they need to know about their
-                        API.
+                        In this example, we have a User type.
+                        <br />
+                        We're also using a piece of that type (the user ID) as
+                        an argument in the{' '}
+                        <code style={{ fontStyle: 'italic' }}>
+                          findUser
+                        </code>{' '}
+                        and{' '}
+                        <code style={{ fontStyle: 'italic' }}>
+                          getUserProfilePhoto
+                        </code>{' '}
+                        methods.
+                      </Text>
+                      <br />
+                      <Text>
+                        💡 The user ID is a string. <br />
+                        But what happens if, in the future, for whatever reason,
+                        I want to change it to a number?
+                      </Text>
+                      <br />
+                      <Text>
+                        I would have to update the type, but also find all
+                        instances where the user ID is referenced. This is not
+                        only a tidious job, but sometimes an impossible one.
+                      </Text>
+                      <br />
+                      <Text>
+                        Now, let's look at the same example, but with ✨type
+                        indexing✨:
+                      </Text>
+                      <Markdown
+                        content={`~~~ts
+type User = {
+  id: string;
+  name: string;
+  age: number;
+}
+
+function findUser(userId: User['id']) { ... };
+function getUserProfilePhoto(userId: User['id']) { ... };
+`}
+                      />
+                      <br />
+                      <Text>
+                        Here, If I ever decided to change the user ID type to a
+                        number, all <code>userId</code> instances would be
+                        automatically updated.
+                        <br />
+                        <br />
+                        Not only that, but if there were any instances where the
+                        ID is specifically treated as a string (e.g.{' '}
+                        <code style={{ fontStyle: 'italic' }}>
+                          userId.toUppercase()
+                        </code>
+                        ), I would get a compile time error.
+                      </Text>
+                      <br />
+                      <Text>
+                        This would force me to decide how to handle this
+                        situation, and it would avoid any future runtime errors.
                       </Text>
                     </Box>
                   </TabPanel>
                   <TabPanel>
                     <iframe
-                      src="https://codesandbox.io/embed/9rzhqs?view=editor&module=%2Fsrc%2Ftypes%2Findex.d.ts"
+                      src="https://codesandbox.io/embed/hh66sw?view=editor&module=%2Fsrc%2Findex.ts"
                       style={{
                         width: '100%',
                         height: '500px',
@@ -132,7 +175,7 @@ const PI: number;
                         borderRadius: '4px',
                         overflow: 'hidden',
                       }}
-                      title="RWILT #2 - Global types"
+                      title="RWILT #3"
                       allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
                       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
                     ></iframe>
