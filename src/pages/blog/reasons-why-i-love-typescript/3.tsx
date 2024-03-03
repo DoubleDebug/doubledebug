@@ -76,7 +76,7 @@ const ReasonOne: React.FC = () => {
                     >
                       <Text>
                         One of the key principles when writing code is DRY -{' '}
-                        <u>Don't Repeat Yourself</u>.
+                        <u>Don&apos;t Repeat Yourself</u>.
                       </Text>
                       <br />
                       <Text>
@@ -88,7 +88,7 @@ const ReasonOne: React.FC = () => {
                         type.
                       </Text>
                       <br />
-                      <Text>Let's take a look at an example:</Text>
+                      <Text>Let&apos;s take a look at an example:</Text>
                       <Markdown
                         content={`~~~ts
 type User = {
@@ -104,8 +104,8 @@ function getUserProfilePhoto(userId: string) { ... };
                       <Text>
                         In this example, we have a User type.
                         <br />
-                        We're also using a piece of that type (the user ID) as
-                        an argument in the{' '}
+                        We&apos;re also using a piece of that type (the user ID)
+                        as an argument in the{' '}
                         <code style={{ fontStyle: 'italic' }}>
                           findUser
                         </code>{' '}
@@ -129,8 +129,8 @@ function getUserProfilePhoto(userId: string) { ... };
                       </Text>
                       <br />
                       <Text>
-                        Now, let's look at the same example, but with ✨type
-                        indexing✨:
+                        Now, let&apos;s look at the same example, but with
+                        ✨type indexing✨:
                       </Text>
                       <Markdown
                         content={`~~~ts
