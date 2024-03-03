@@ -152,7 +152,9 @@ function getUserProfilePhoto(userId: User['id']) { ... };
                         <br />
                         <br />
                         Not only that, but if there were any instances where the
-                        ID is specifically treated as a string (e.g.{' '}
+                        ID is specifically treated as a string
+                        <br />
+                        (e.g.{' '}
                         <code style={{ fontStyle: 'italic' }}>
                           userId.toUppercase()
                         </code>
