@@ -187,8 +187,8 @@ function getUserProfilePhoto(userId: User['id']) { ... };
             </Stack>
             <Box display="flex" justifyContent="center">
               <RwiltSocialMediaStack
-                youtubeLink="https://www.youtube.com/shorts/gbRGI92S_J0"
-                tiktokLink="https://www.tiktok.com/@imdoubled/video/7340033972656753925"
+                youtubeLink="https://www.youtube.com/shorts/q-3EvIAJsEA"
+                tiktokLink="https://www.tiktok.com/@imdoubled/video/7342650882716093701"
               />
             </Box>
           </Stack>
