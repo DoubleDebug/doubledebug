@@ -48,13 +48,13 @@
       }
     },
     {
-      "id": "fake-reddit",
-      "title": "Fake Reddit",
+      "id": "moj-reddit",
+      "title": "Moj Reddit",
       "description": "Full stack Reddit clone with React, Typescript and Firebase",
       "duration": "5 months",
       "technologies": ["React", "Typescript", "Firebase", "Node", "Express"],
       "urls": {
-        "liveDemo": "https://fake-reddit.com",
+        "liveDemo": "https://mojreddit.com",
         "icon": "https://i.imgur.com/RZQt874.png",
         "previewImages": [
           "https://i.imgur.com/He244ZB.png",

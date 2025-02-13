@@ -1,6 +1,6 @@
 # How this project came about
 
-FakeReddit is a clone of the Reddit website, but with my own spin when it comes to the UI. This was so far my biggest passion project that took around 4-5 months and 90 commits to complete. Even though I plan on improving it and making changes in the future, I consider it a completed project as it is hosted on the fake-reddit.com domain.
+MojReddit is a clone of the Reddit website, but with my own spin when it comes to the UI. This was so far my biggest passion project that took around 4-5 months and 90 commits to complete. Even though I plan on improving it and making changes in the future, I consider it a completed project as it is hosted on the mojreddit.com domain.
 
 This was my first full stack web application of this scale. I had lots of fun coding it, learned plenty of new things and used technologies I've never used before.
 
@@ -21,7 +21,7 @@ This was my first full stack web application of this scale. I had lots of fun co
 
 # Technology stack
 
-Now, let's talk tech. At the beginning of development, I started out making FakeReddit strictly as a frontend application. However, as I dove deeper into the features of Reddit, I realised that I needed a backend. So, in addition to Firebase, which I used as a BaaS (backend as a service), I started developing a NodeJS server. The main purpose of the server was to communicate with Firebase (along with other 3rd party services such as Algolia), so I created a RestAPI using the Express framework.
+Now, let's talk tech. At the beginning of development, I started out making MojReddit strictly as a frontend application. However, as I dove deeper into the features of Reddit, I realised that I needed a backend. So, in addition to Firebase, which I used as a BaaS (backend as a service), I started developing a NodeJS server. The main purpose of the server was to communicate with Firebase (along with other 3rd party services such as Algolia), so I created a RestAPI using the Express framework.
 
 To sum things up, here's the final tech stack: <br />
 
@@ -62,10 +62,10 @@ Firebase turned out to be, once again, a great pick. The developer experience wa
 
 <br />
 
-![Fake Reddit main technologys stack](https://i.imgur.com/lsgBRD2.png)
+![Moj Reddit main technologys stack](https://i.imgur.com/lsgBRD2.png)
 
 <br />
 
 I leared that the Algolia search engine is amazing — so much customizability, so fast and easy to setup. For smaller projects with search features, it can even be used as a primary database.
 
-I also learned that writing a RestAPI Node server can be lots of fun! I even wrote the documetation for it using Swagger (another awesome tool), which you can find [here](https://fake-reddit-api.herokuapp.com). But most importantly, I learned how big of a challenge it is to write a full stack web application from start to finish. It was one of those things where I found myself quoting Socrates, saying that _I know only one thing — I know nothing._ It is very time consuming, requires lots of patience and will to go on, but it is also very rewarding, because finishing a 5 month project was the best thing ever.
+I also learned that writing a RestAPI Node server can be lots of fun! I even wrote the documetation for it using Swagger (another awesome tool), which you can find [here](https://moj-reddit-backend.onrender.com). But most importantly, I learned how big of a challenge it is to write a full stack web application from start to finish. It was one of those things where I found myself quoting Socrates, saying that _I know only one thing — I know nothing._ It is very time consuming, requires lots of patience and will to go on, but it is also very rewarding, because finishing a 5 month project was the best thing ever.
